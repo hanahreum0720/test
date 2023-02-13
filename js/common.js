@@ -179,5 +179,16 @@ $(function () {
 
     });
 
-
+    // safari 브라우저    
+    function safari() { 
+        if(navigator.userAgent.indexOf("Safari") != -1)
+        {
+            var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+            if (mobile) { 
+                $('body').addClass('uni-safari');
+            }
+        }
+    }
+    safari() ;
 });
+

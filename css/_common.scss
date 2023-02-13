@@ -2563,25 +2563,19 @@ select {
 
 }
 
-/* Safari 10.1+ */
-
-@media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) {
+.uni-safari{
     html,body{
         width:100%; height:100%;
         .content{
           position:fixed;
-          width:100%;height:100%;
+          width:100%;
+          height:100%;
           overflow:auto;
-          min-height: -webkit-fill-available;
-          -webkit-overflow-scrolling: touch; 
+          //min-height: -webkit-fill-available;
+          //-webkit-overflow-scrolling: touch; 
         }
-        .station-main,.station-sub{
-          min-height: -webkit-fill-available;
-        } 
       } 
       .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong{
         color: #f00 !important;
       }
-    
-}}
+}
