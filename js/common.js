@@ -87,7 +87,15 @@ $(function () {
             behavior: 'smooth'
         });
     });
-
+    $( 'input').on('focus',function(){
+        if ($('body').hasClass('uni-mob')) {
+         $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').hide();  
+        }
+    }).on('blur',function(){
+        if ($('body').hasClass('uni-mob')) {
+            $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').show();  
+        }
+    });
     //탭박스
     $('.tab-list li > *').on('click', function (e) {
         e.preventDefault();
