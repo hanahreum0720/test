@@ -2258,11 +2258,15 @@ html.uni-safari .contentWrap .content, body.uni-safari .contentWrap .content {
 html.uni-safari .contentWrap footer, body.uni-safari .contentWrap footer {
   margin-bottom: 4.25rem;
 }
-html.uni-safari .contentWrap.user-main .content, html.uni-safari .contentWrap.pointshop .content, body.uni-safari .contentWrap.user-main .content, body.uni-safari .contentWrap.pointshop .content {
+html.uni-safari.user-main .contentWrap .content, html.uni-safari.pointshop .contentWrap .content, body.uni-safari.user-main .contentWrap .content, body.uni-safari.pointshop .contentWrap .content {
   margin-bottom: 0rem;
 }
-html.uni-safari .contentWrap.login footer, body.uni-safari .contentWrap.login footer {
+html.uni-safari.login .contentWrap footer, body.uni-safari.login .contentWrap footer {
   margin-bottom: 0rem;
+}
+
+.bottom-menu.hide, .btn-fixed-area.hide, .station-sub .btn-area.hide {
+  display: none;
 }
 
 header {

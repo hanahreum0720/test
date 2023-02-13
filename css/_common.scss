@@ -2579,17 +2579,22 @@ html,body{
           footer{
             margin-bottom: 4.25rem;
           }
-          &.user-main, &.pointshop{
-            .content{
-              margin-bottom: 0rem;
-            }
-
+        }
+        &.user-main, &.pointshop{
+          .contentWrap .content{
+            margin-bottom: 0rem;
           }
-          &.login {
-            footer{
-                margin-bottom: 0rem;
-            }
+
+        }
+        &.login {
+          .contentWrap footer{
+              margin-bottom: 0rem;
           }
         }
     }
   } 
+  .bottom-menu,.btn-fixed-area,.station-sub .btn-area{
+    &.hide{
+        display: none;
+    }
+  }
