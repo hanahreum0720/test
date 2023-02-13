@@ -185,7 +185,7 @@ $(function () {
         {
             var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
             if (mobile) { 
-                $('body').addClass('uni-safari');
+                $('html, body').addClass('uni-safari');
             }
         }
     }
