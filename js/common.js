@@ -179,12 +179,20 @@ $(function () {
 
     });
 
-    
-});
+    // safari 브라우저        
+    function isBrowserCheck(){
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf("chrome") != -1){
+            $('html, body').addClass('uni-chrome'); 
+        }else if(agent.indexOf("safari") != -1){
+            if ($('body').hasClass('uni-mob')) { 
+                $('html, body').addClass('uni-safari'); 
+                $("header,.content,footer").wrapAll("<div class='contentWrap'></div>");
+            }
+        }
+        
 
-// safari 브라우저        
-var agent = navigator.userAgent.toLowerCase();
-if ($('body').hasClass('uni-mob') && agent.indexOf("safari") != -1) { 
-    $('html, body').addClass('uni-safari'); 
-    $("header,.content,footer").wrapAll("<div class='contentWrap'></div>");
-}
+    }
+    isBrowserCheck();
+
+});
