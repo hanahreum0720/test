@@ -290,6 +290,7 @@ select {
     text-align: center;
     border: 1px solid transparent;
     line-height: 1;
+    color: $main-txt;
 
     &.btn-r {
         @include virtualIcon($w:1.25rem, $h:1.25rem) {
@@ -2572,9 +2573,23 @@ html,body{
           overflow:auto;
           min-height: -webkit-fill-available;
           -webkit-overflow-scrolling: touch;
-            footer{
-                margin-bottom: 4.25rem;
+          .content{
+            margin-bottom: 4.25rem;
+          }
+          footer{
+            margin-bottom: 4.25rem;
+          }
+          &.user-main, &.pointshop{
+            .content{
+              margin-bottom: 0rem;
             }
+
+          }
+          &.login {
+            footer{
+                margin-bottom: 0rem;
+            }
+          }
         }
     }
   } 

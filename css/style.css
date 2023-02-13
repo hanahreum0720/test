@@ -381,6 +381,7 @@ select::-ms-expand {
   text-align: center;
   border: 1px solid transparent;
   line-height: 1;
+  color: #292929;
 }
 .btn.btn-r {
   content: "";
@@ -2250,8 +2251,17 @@ html.uni-safari .contentWrap, body.uni-safari .contentWrap {
   min-height: -webkit-fill-available;
   -webkit-overflow-scrolling: touch;
 }
+html.uni-safari .contentWrap .content, body.uni-safari .contentWrap .content {
+  margin-bottom: 4.25rem;
+}
 html.uni-safari .contentWrap footer, body.uni-safari .contentWrap footer {
   margin-bottom: 4.25rem;
+}
+html.uni-safari .contentWrap.user-main .content, html.uni-safari .contentWrap.pointshop .content, body.uni-safari .contentWrap.user-main .content, body.uni-safari .contentWrap.pointshop .content {
+  margin-bottom: 0rem;
+}
+html.uni-safari .contentWrap.login footer, body.uni-safari .contentWrap.login footer {
+  margin-bottom: 0rem;
 }
 
 header {
