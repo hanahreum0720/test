@@ -2242,7 +2242,7 @@ html.uni-safari, body.uni-safari {
   width: 100%;
   height: 100%;
 }
-html.uni-safari .content, body.uni-safari .content {
+html.uni-safari .contentWrap, body.uni-safari .contentWrap {
   position: fixed;
   width: 100%;
   height: 100%;
