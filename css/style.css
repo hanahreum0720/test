@@ -2238,17 +2238,19 @@ select::-ms-expand {
     font-size: 12px !important;
   }
 }
-.uni-safari html, .uni-safari body {
+html.uni-safari, body.uni-safari {
   width: 100%;
   height: 100%;
 }
-.uni-safari html .content, .uni-safari body .content {
+html.uni-safari .content, body.uni-safari .content {
   position: fixed;
   width: 100%;
   height: 100%;
   overflow: auto;
+  min-height: -webkit-fill-available;
+  -webkit-overflow-scrolling: touch;
 }
-.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, .uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong {
+html.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, html.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong, body.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, body.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong {
   color: #f00 !important;
 }
 
