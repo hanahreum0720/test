@@ -1096,27 +1096,3 @@
     }
   }
 }
-
-/* Safari 10.1+ */
-
-@media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) {
-  html,body{
-    width:100%; height:100%;
-  }
-  .content{
-    position:fixed;
-    width:100%;height:100%;
-    overflow:auto;
-    min-height: -webkit-fill-available;
-  }
-  .station-main,.station-sub{
-    min-height: -webkit-fill-available;
-  }  
-}}
-
-@supports (-webkit-appearance:none) and (stroke-color: transparent) {  
-  .station-main,.station-sub{
-    min-height: -webkit-fill-available;
-  }
-}
