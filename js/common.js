@@ -180,15 +180,15 @@ $(function () {
     });
 
     // safari 브라우저    
-    function safari() { 
-        if(navigator.userAgent.indexOf("Safari") != -1)
-        {
-            var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
-            if (mobile) { 
-                $('html, body').addClass('uni-safari');
+    var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) { 
+        function safari() { 
+            if(navigator.userAgent.indexOf("Safari") != -1)
+            {
+                $('html, body').addClass('uni-safari');            
             }
         }
+        safari() ;
     }
-    safari() ;
 });
 
