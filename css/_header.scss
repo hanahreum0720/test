@@ -41,7 +41,7 @@ header {
         transform: translateY(-50%);
         font-size: 0.875rem;
         font-weight: 700;
-
+        color: $main-txt;
         &::before {
             @include virtualIcon($w:1.125rem, $h:1.125rem) {
                 background-image: url(../image/icon_logout.svg);

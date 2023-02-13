@@ -2306,6 +2306,7 @@ header .logout-btn {
   transform: translateY(-50%);
   font-size: 0.875rem;
   font-weight: 700;
+  color: #292929;
 }
 header .logout-btn::before {
   content: "";
@@ -6454,6 +6455,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
   text-align: center;
   box-sizing: border-box;
   font-size: 0.938rem;
+  color: #292929;
 }
 .pointshop .category-wrap .category-slide-wrap .category-slide li button[type=button] img {
   display: block;
@@ -6473,6 +6475,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
   overflow: hidden;
   line-height: 1.2rem;
   height: auto;
+  color: #292929;
 }
 .pointshop .category-wrap .category-slide-wrap .category-slide li button[type=button]:hover, .pointshop .category-wrap .category-slide-wrap .category-slide li button[type=button].on {
   border: 2px solid #ffc600;

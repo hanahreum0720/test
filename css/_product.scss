@@ -469,6 +469,7 @@
                     text-align: center; 
                     box-sizing: border-box;
                     font-size: 0.938rem;
+                    color: $main-txt;
                     img{
                         display: block;
                         margin: 0 auto 0.625rem;
@@ -479,6 +480,7 @@
                         width: 90%;
                         margin: 0 auto;
                         @include txtellipsisMulti($h:auto);
+                        color: $main-txt;
                     }
                     &:hover,&.on{
                         border: 2px solid $main-color;
