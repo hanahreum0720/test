@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="309" height="45" viewBox="0 0 309 45">
+    <g transform="translate(0 -.161)">
+        <rect data-name="사각형 2885" width="309" height="45" rx="6" transform="translate(0 .161)" style="fill:#1877f2"/>
+        <path data-name="패스 3591" d="M29.28 14.64A14.64 14.64 0 1 0 12.352 29.1V18.872H8.635V14.64h3.717v-3.226c0-3.669 2.186-5.7 5.53-5.7A22.513 22.513 0 0 1 21.159 6v3.6h-1.846a2.116 2.116 0 0 0-2.386 2.286v2.754h4.06l-.649 4.232h-3.411V29.1A14.643 14.643 0 0 0 29.28 14.64z" transform="translate(7.83 8.674)" style="fill:#fff"/>
+        <text data-name="Facebook 로그인" transform="translate(173 29.162)" style="font-size:15px;font-family:NotoSansCJKkr-Regular,Noto Sans CJK KR;fill:#fff"><tspan x="-56.123" y="0">Facebook </tspan><tspan y="0">로그인</tspan></text>
+    </g>
+</svg>

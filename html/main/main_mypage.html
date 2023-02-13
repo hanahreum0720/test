@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../image/favicon/favicon.png" type="image/ico">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script  type="text/javascript" src="../../js/common.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/daterangepicker.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.ui.monthpicker.js"></script>
+    <link type="text/css" href="../../css/lib/daterangepicker.css" rel="stylesheet" />
+    <script  type="text/javascript" src="../../js/ui.js"></script>
+    <title>1PAY</title>
+</head>
+<body class="user-sub mypage setting">
+    <header class="user-menu">
+        <div class="center">
+            <h1><a href="../main/main_index.html"><img src="../../image/logo_my1pay_bw.svg" alt="1PAY"></a></h1>  
+            <p> 내 손안의 1PAY</p>       
+            <button class="logout-btn">로그아웃</button>     
+            <button class="mob-menu-btn">모바일메뉴</button>
+        </div>
+        <div class="top-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a href="./main_coupon.html">쿠폰함</a></li>
+                    <li class="on"><a  href="./main_mypage_confirm.html">마이페이지</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a  class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="content center">            
+        <div class="sub-menu sp-title">
+            <div class="center">
+                <button class="mob-btn-back">뒤로가기</button>
+                <h2>마이페이지</h2>
+            </div>
+            <span class="sm-now">나의 프로필</span>
+            <ul class="sm-list">
+                <li class="on"><a href="./main_mypage.html#myprofile">나의 프로필</a></li>
+                <li><a href="./main_mypage.html#securitySetting">보안설정</a></li>
+                <li><a href="./main_mypage.html#serviceAgree">이용약관 동의 현황</a></li>
+                <li><a href="./main_coupon.html">쿠폰함</a></li>
+            </ul>
+        </div> 
+        <div class="sm-div">
+            <section name="myprofile" class="on">
+                <h3 class="my-sub-title">나의 프로필</h3>
+                <div class="box box-g">
+                    <div class="info-form">
+                        <table>
+                            <tr>
+                                <th colspan="2">닉네임</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!-- 경고문 표시 input-box에 클래스required 추가-->
+                                    <span class="input-box">
+                                        <input type="text" value="1PAY 포인트 관리자">
+                                        <button class="btn btn-b">등록</button>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">등록 이메일</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="input-box">
+                                        <input type="text" value="myemail@email.com" disabled>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">비밀번호</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="modify-box type01 ">
+                                        <div class="password-box">
+                                            <span class="input-box">
+                                                <input type="password" placeholder="현재 비밀번호">
+                                                <button class="pw-view">비밀번호 보기</button>
+                                            </span>
+                                        </div>
+                                        <div class="password-box type02">
+                                            <span class="input-box required">
+                                                <input type="password" placeholder="새 비밀번호">
+                                                <button class="pw-view">비밀번호 보기</button>
+                                            </span>
+                                        </div>
+                                        <div class="password-box type03">
+                                            <span class="input-box required">
+                                                <input type="password" placeholder="새 비밀번호 확인">
+                                                <button class="pw-view">비밀번호 보기</button>
+                                            </span>
+                                        </div>
+                                        <div class="btn-area">
+                                            <button class="btn btn-line-b">취소</button>
+                                            <button class="btn btn-b">변경</button>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">간편 로그인</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="box link-sns">
+                                        <ul>
+                                            <li class="naver">네이버로 로그인 
+                                                <button class="btn btn-line">연결해제</button>
+                                            </li>
+                                            <li class="kakao">카카오로 로그인 
+                                                <button class="btn btn-line">연결해제</button>
+                                            </li>
+                                            <li class="google">구글로 로그인 
+                                                <button class="btn btn-line on">계정연결</button>
+                                            </li>
+                                            <li class="facebook">페이스북으로 로그인 
+                                                <button class="btn btn-line on">계정연결</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section name="securitySetting">
+                <h3 class="my-sub-title">보안설정</h3>
+                <div class="box box-g">
+                    <div class="info-form">
+                        <table>
+                            <tr>
+                                <th colspan="2">
+                                    <span>결제 비밀번호</span>
+                                    <div class="checkbox-toggle type01">
+                                        <div class="toggle-box">
+                                            <span class="toggle-btn on" data-togglebox="toggle-box-01"></span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="box modify-box on" id="toggle-box-01">
+                                        <div class="password-box type02">
+                                            <span class="input-box required">
+                                                <input type="password" placeholder="결제 비밀번호">
+                                                <button class="pw-view">비밀번호 보기</button>
+                                            </span>
+                                        </div>
+                                        <div class="password-box type03">
+                                            <span class="input-box">
+                                                <input type="password" placeholder="결제 비밀번호 확인">
+                                                <button class="pw-view">비밀번호 보기</button>
+                                            </span>
+                                        </div>
+                                        <div class="btn-area">
+                                            <button class="btn btn-line-b">취소</button>
+                                            <button class="btn btn-b">등록/변경</button>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2">
+                                    <span>자동 로그인</span>
+                                    <div class="checkbox-toggle type01">
+                                        <div class="toggle-box">
+                                            <span class="toggle-btn on"></span>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+            <section name="serviceAgree">
+                <h3 class="my-sub-title">이용약관 동의 현황</h3>
+                <div class="box agree-check">
+                    <ul>
+                        <li>
+                            <b>이용약관</b>
+                            <a href="../common/policy_service.html" class="btn btn-line-g">보기</a>
+                        </li>
+                        <li>
+                            <b>프로모션 정보 수신 동의</b>
+                            <div class="checkbox-toggle type01">
+                                <div class="toggle-box">
+                                    <span class="toggle-btn on"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <b>개인정보 처리방침</b>
+                            <a href="../common/policy_privacy.html" class="btn btn-line-g">보기</a>
+                        </li>
+                        <li>
+                            <a href="./membership_withdrawal_step01.html" class="btn">회원 탈퇴</a>                          
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+        <div class="center">
+            <button class="top-btn">맨위로</button>
+        </div>
+    </div>
+    <footer>
+        <ul class="policy">
+            <li><a href="../common/policy_service.html">이용약관</a></li>
+            <li><a href="../common/policy_privacy.html">개인정보 처리방침</a></li>
+        </ul>
+        <ul>
+            <li>08389 서울시 구로구 디지털로 272, 5층 505호</li>
+            <li>한경훈, 이근옥</li>
+            <li>사업자번호 113-86-60934</li>
+        </ul>
+        Copyright(c) ENLIPLE All rights reserved.
+    </footer>
+    <script>
+        //서브메뉴 PC일땐 탭박스 mob일땐 스크롤이동   
+        let nowIndex = 0;
+        let nowTxt,scrollPoint,winWidth;
+        var boxTop = new Array();
+        $('.sm-div>section').each(function(index, item){
+            let margin = $('header').innerHeight() + $('.sub-menu').innerHeight();
+            let value = $(item).offset().top - margin;
+            boxTop.push(value);
+        });
+        let nowPage = function(nowIndex){
+            $('.sm-list li, .sm-div>section').removeClass('on');
+            $('.sm-list li').eq(nowIndex).addClass('on');
+            $(' .sm-div>section').eq(nowIndex).addClass('on');
+            nowTxt = $('.sm-list li').eq(nowIndex).find('a').text();
+            $('.sm-now').text(nowTxt);           
+        }
+        let myScroll = function(nowIndex){        
+            winWidth = $( window ).width();    
+            if( winWidth > 768) {  
+                scrollPoint = $('header').offset().top; 
+            }else{
+                scrollPoint = boxTop[nowIndex]; 
+            }
+            $('html, body').animate({
+                scrollTop: scrollPoint
+            }, 0);
+        }
+        $('.sm-list li:not(:last-child) a').on('click',function(e){
+            e.preventDefault();
+            nowIndex =  $(this).parent().index();
+            nowPage(nowIndex);       
+            $('.sm-now').removeClass('on');   
+            myScroll(nowIndex);
+        });
+        $(window).on('scroll',function(){
+            if($('body').hasClass('uni-mob') == true){
+                let scrollTop = $(window).scrollTop();
+                if( scrollTop < boxTop[1] - 1){
+                    nowIndex = 0; 
+                }else if(scrollTop > boxTop[1] - 1 && scrollTop < boxTop[2] - 1){
+                    nowIndex = 1; 
+                }else{
+                    nowIndex = 2; 
+                }
+                nowPage(nowIndex);
+            }
+        });
+        //화면넘어올때 탭on
+        if (location.hash == "#myprofile"){
+            nowIndex = 0;
+        }else if(location.hash == "#securitySetting"){
+            nowIndex = 1;
+        }else if(location.hash == "#serviceAgree"){
+            nowIndex = 2;
+        }
+        nowPage(nowIndex);
+        $(document).ready(function(){
+            myScroll(nowIndex);
+        });
+        $( window ).resize( function() {
+            myScroll(nowIndex);
+        } );
+
+        //수정박스
+        $('.modify-box.type01 .btn').on('click',function(){
+            $(this).parents('.modify-box').toggleClass('on');
+        });
+        //토글 data-toggle-content="toggle-box-01
+         $('.toggle-btn').on('click',function(){
+           if( $(this).hasClass('on') === true){
+                $(this).removeClass('on');
+                $('#'+$(this).data("togglebox")).addClass('disable');
+                $('#'+$(this).data("togglebox")).find('input').attr('disabled',true);
+           }else{
+                $(this).addClass('on');
+                $('#'+$(this).data("togglebox")).removeClass('disable');
+                $('#'+$(this).data("togglebox")).find('input').attr('disabled',false);
+            }
+        });
+
+        //비번보이기
+        $('.pw-view').on('click',function(){
+           if( $(this).hasClass('on') === true){
+                $(this).removeClass('on');
+                $(this).prev('input').attr('type','password');
+           }else{
+                $(this).addClass('on');
+                $(this).prev('input').attr('type','text');
+           }
+        });
+    </script>
+</body>
+</html>

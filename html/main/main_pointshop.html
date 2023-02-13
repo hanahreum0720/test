@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../image/favicon/favicon.png" type="image/ico">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script  type="text/javascript" src="../../js/common.js"></script>
+    <script  type="text/javascript" src="../../js/slick.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>1PAY</title>
+</head>
+</head>
+<body class="user-sub pointshop">
+    <header class="user-menu">
+        <div class="center">
+            <h1><a href="../main/main_index.html"><img src="../../image/logo_my1pay_bw.svg" alt="1PAY"></a></h1>  
+            <p  class="pop-open-btn"> 내 손안의 1PAY</p>            
+            <button class="logout-btn">로그아웃</button>
+            <button class="mob-menu-btn">모바일메뉴</button>
+        </div>
+        <div class="top-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li class="on"><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a href="./main_coupon.html">쿠폰함</a></li>
+                    <li><a  href="./main_mypage_confirm.html">마이페이지</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li class="on"><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a  class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="content"> 
+        <div class="sp-title">
+            <div class="center">
+                <button class="mob-btn-back">뒤로가기</button>
+                <h2>포인트샵
+                    <div class="search-box">
+                        <button class="sb-mob-close">닫기</button>
+                        <input type="text" placeholder="상품명 또는 브랜드를 입력해 주세요." class="txt-input">
+                        <a href="./main_pointshop_search.html" class="search">검색</a>
+                    </div>
+
+                </h2>
+            </div>
+        </div>    
+        <div class="pointshop-title">
+            <p>
+                <strong>1PAY 포인트 샵</strong>
+                1PAY이 준비한 다양한 브랜드와 상품을 만나보세요!
+            </p>
+            <div class="search-box">
+                <input type="text" placeholder="상품명 또는 브랜드를 입력해 주세요.">
+                <!-- <button class="search">검색</button> -->
+                <a href="./main_pointshop_search.html" class="search">검색</a>
+            </div>
+        </div>
+        <div class="center">
+            <div class="category-wrap">                
+                <div class="cw-list-wrap">
+                    <div>
+                        <ul class="category-list column4 clp-list">
+                                <li class="on">
+                                    <a href="#">
+                                        <ul class="clp-slide">
+                                            <li><img src="../../image/pointshop/img_c_01.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_01.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_02.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_03.png" alt=""></li>
+                                        </ul>
+                                        <span>전체</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul class="clp-slide">
+                                            <li><img src="../../image/pointshop/img_c_02.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_05.png" alt=""></li>
+                                        </ul>
+                                        <span>상품권/생활/도서</span>                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul class="clp-slide">
+                                            <li><img src="../../image/pointshop/img_logo_11.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_10.png" alt=""></li>
+                                        </ul>
+                                        <span>편의점/마트</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <ul class="clp-slide">
+                                            <li><img src="../../image/pointshop/img_logo_14.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_07.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_08.png" alt=""></li>
+                                            <li><img src="../../image/pointshop/img_logo_09.png" alt=""></li>
+                                        </ul>
+                                        <span>카페</span>                                    
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>
+                    <button class="pop-open-btn" data-popname="category-list-pop">카테고리열기</button>
+                </div>
+                <div class="category-wrap">
+                    <div class="category-slide-wrap">
+                        <ul class="category-slide" id="cs01">
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_01.png" alt=""><span>에뛰드하우스에뛰드하우스에뛰드하우스에뛰드하우스에뛰드하우스에뛰드하우스</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_02.png"alt=""><span>폴바셋</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_03.png"alt=""><span>크리스피크림</span></button></li>
+                            <li><button type="button" class="on"><img src="../../image/pointshop/img_logo_04.png"alt="" ><span>스타벅스</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_05.png"alt=""><span>빚은</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_06.png"alt=""><span>버거킹</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_07.png"alt=""><span>베스킨라빈스</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_08.png"alt=""><span>피자마루</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_09.png"alt=""><span>파리크라상</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_10.png"alt=""><span>뚜레쥬르</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_11.png"alt=""><span>GS25[금액권]</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_12.png"alt=""><span>굽네치킨</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_13.png"alt=""><span>롯데리아</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_14.png"alt=""><span>본죽</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_01.png"alt=""><span>에뛰드하우스</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_02.png"alt=""><span>폴바셋</span></button></li>
+                            <li><button type="button"><img src="../../image/pointshop/img_logo_03.png"alt=""><span>크리스피크림</span></button></li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+            <div class="condition-wrap type02">
+                <span class="total-count">총 <b>2,205</b>개</span>
+                <span class="cond-now">최신 등록순</span>
+                <ul>
+                    <li><button class="lc-btn on">최신 등록순</button></li>
+                    <li><button class="lc-btn">낮은 가격순</button></li>
+                    <li><button class="lc-btn">높은 가격순</button></li>
+                </ul>  
+            </div>
+            <ul class="product-list type01">
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box nodiscount">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_02.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]힘이 나는 세트" 카페 아메리카노 T 2잔
+                                +슈크림 가득 바움쿠헨+The 촉촉촉촉촉gks</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box nodiscount">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_02.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_02.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_02.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box nodiscount">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box nodiscount nodiscount">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_02.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="./main_pointshop_detail.html" class="product-box nodiscount">
+                        <div class="pb-img">
+                            <img src="../../image/pointshop/img_sample_01.jpg" alt="">
+                        </div>
+                        <div class="pb-txt">
+                            <span class="pb-part">스타벅스</span>
+                            <span class="pb-title">[스타벅스]아이스아메리카노</span>
+                            <span class="pb-percent">4%</span>
+                            <span class="pb-price">4,000P</span>
+                            <span class="pb-discount">4,500p</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="paging-wrap">
+                <button class="paging-move paging-previous">이전</button>
+                <button class="on">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button class="paging-move paging-next">다음</button>
+            </div>
+            
+        </div> 
+        </div>
+    </div>
+    
+    <div class="top-btn-wrap-new">
+        <button class="top-btn-new">맨위로</button>
+    </div>
+    <footer>
+        <ul class="policy">
+            <li><a href="../common/policy_service.html">이용약관</a></li>
+            <li><a href="../common/policy_privacy.html">개인정보 처리방침</a></li>
+        </ul>
+        <ul>
+            <li>08389 서울시 구로구 디지털로 272, 5층 505호</li>
+            <li>한경훈, 이근옥</li>
+            <li>사업자번호 113-86-60934</li>
+        </ul>
+        Copyright(c) ENLIPLE All rights reserved.
+    </footer>
+    
+        <!-- 개발참고 // -->
+    <!-- 팝업 샘플 html-->
+    <div class="pop-layer pop-type04" id="category-list-pop">
+        <div class="pop-content">
+            <h1 class="">카테고리 선택</h1>
+            <div class="box">
+                <ul class="clp-list">
+                    <li class="on">
+                        <a href="#">
+                            <ul class="clp-slide">
+                                <li><img src="../../image/pointshop/img_c_01.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_01.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_02.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_03.png" alt=""></li>
+                            </ul>
+                            <span>전체</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ul class="clp-slide">
+                                <li><img src="../../image/pointshop/img_c_02.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_05.png" alt=""></li>
+                            </ul>
+                            <span>상품권/생활/도서</span>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ul class="clp-slide">
+                                <li><img src="../../image/pointshop/img_logo_11.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_10.png" alt=""></li>
+                            </ul>
+                            <span>편의점/마트</span>
+                        
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ul class="clp-slide">
+                                <li><img src="../../image/pointshop/img_logo_14.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_07.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_08.png" alt=""></li>
+                                <li><img src="../../image/pointshop/img_logo_09.png" alt=""></li>
+                            </ul>
+                            <span>카페</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="pop-btn-area">
+                <button class="pop-close-btn">닫기</button>
+            </div>
+        </div>
+        <div class='pop-back'></div>
+    </div>
+    <!-- 팝업 -->    
+    <script>
+    $(function(){  
+        $('#cs01').slick({
+            rows: 2,
+            slidesToShow: 7,
+            slidesToScroll: 7,
+            infinite:false,
+            dots:false,
+            responsive: [{
+                        breakpoint: 1260,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 769,
+                        settings: {
+                            rows: 1,
+                            slidesToShow: 5,
+                            slidesToScroll: 5,
+                            arrows:false
+                        }
+                    }
+                ]
+        });
+       
+        $('.clp-list a').on('click',function(e){
+                e.preventDefault();
+                let liLength = $(this).parent().index();
+                $('.clp-list>li').removeClass('on');
+                $('.clp-list').each(function(){
+                    $(this).find('>li').eq(liLength).addClass('on');
+                })
+                $(this).parents('.pop-layer').removeClass('on');
+        });
+        $('.category-slide button').on('click',function(){
+            $('.category-slide button').removeClass('on');
+            $(this).addClass('on');
+        });
+        
+        $('.search').on('click',function(e){        
+            if($('body').hasClass('uni-mob') == true && $(this).parents('.sp-title').hasClass('on') == false){
+                e.preventDefault();
+                $(this).parents('.sp-title').addClass('on');
+
+            }
+        });
+        $('.sb-mob-close').on('click',function(){
+            $(this).parents('.sp-title').removeClass('on');
+        });
+
+        //카테고리 팝업 슬라이드
+        $('.clp-slide').each(function(i){
+            let clpnow = 0;
+            let clpsLi =  $(this).find('li');
+            setInterval(function(){   
+                if(clpnow <= clpsLi.length-2){
+                    clpnow++;                    
+                }else{
+                    clpnow = 0;
+                }               
+                clpsLi.eq(clpnow-2).css({'left':'100%'}); 
+                clpsLi.eq(clpnow-1).stop().animate({'left':'-100%'},500);
+                clpsLi.eq(clpnow).stop().animate({'left':'0%'},500);        
+            },3000*(i+1));
+        });
+        
+    });
+    </script>    
+</body>
+</html>

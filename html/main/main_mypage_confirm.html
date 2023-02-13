@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../image/favicon/favicon.png" type="image/ico">
+    <script type="text/javascript" src="../../js/jquery.min.js"></script>
+    <script  type="text/javascript" src="../../js/common.js"></script>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/daterangepicker.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery.ui.monthpicker.js"></script>
+    <link type="text/css" href="../../css/lib/daterangepicker.css" rel="stylesheet" />
+    <script  type="text/javascript" src="../../js/ui.js"></script>
+    <title>1PAY</title>
+</head>
+<body class="user-sub mypage confirm">
+    <header class="user-menu">
+        <div class="center">
+            <h1><a href="../main/main_index.html"><img src="../../image/logo_my1pay_bw.svg" alt="1PAY"></a></h1>  
+            <p> 내 손안의 1PAY</p>     
+            <button class="logout-btn">로그아웃</button>       
+            <button class="mob-menu-btn">모바일메뉴</button>
+        </div>
+        <div class="top-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a href="./main_coupon.html">쿠폰함</a></li>
+                    <li class="on"><a  href="./main_mypage_confirm.html">마이페이지</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-menu">
+            <div class="center">                
+                <ul>
+                    <li><a href="./main_index.html">메인</a></li>
+                    <li><a href="./main_graph.html">적립 그래프</a></li>
+                    <li><a href="./main_pointshop.html">포인트 샵</a></li>
+                    <li><a  class="alert" href="./main_point.html">포인트 모으기</a></li>
+                    <li><a  href="./main_service_center.html">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="content center">            
+        <div class="sp-title">
+            <div class="center">
+                <button class="mob-btn-back">뒤로가기</button>
+                <h2>마이페이지</h2>
+            </div>
+        </div> 
+        <div class="">
+            <h3>회원 정보 확인</h3>
+            <p class="box">
+                개인정보를 안전하게 보호하기 위하여 <span class="mob-br"></span>비밀번호를 한번 더 입력해 주세요.
+            </p>    
+            <div class="box box-g station-sub-top user-form">
+                <table>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td data-th="비밀번호">
+                            <span class="input-box"><input type="password" placeholder="비밀번호를 입력해 주세요."></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="btn-fixed-area">
+                <a href="./main_mypage.html" class="btn btn-main">확인</a>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <button class="top-btn">맨위로</button>
+    </div>
+    <footer>
+        <ul class="policy">
+            <li><a href="../common/policy_service.html">이용약관</a></li>
+            <li><a href="../common/policy_privacy.html">개인정보 처리방침</a></li>
+        </ul>
+        <ul>
+            <li>08389 서울시 구로구 디지털로 272, 5층 505호</li>
+            <li>한경훈, 이근옥</li>
+            <li>사업자번호 113-86-60934</li>
+        </ul>
+        Copyright(c) ENLIPLE All rights reserved.
+    </footer>
+    <script>
+        $(function(){
+            //서브메뉴    
+            $('.sm-list li a').on('click',function(e){
+                e.preventDefault();
+                $('.sm-list li').removeClass('on')
+                $(this).parent().addClass('on');
+                var index = $(this).parent().index();
+                $('.sm-div>section').css('display','none');
+                $('.sm-div>section').eq(index).css('display','block');
+            });
+            function mobC(){   
+                var windowWidth = $( window ).width(); 
+                if(windowWidth <= 768) {  
+                    $('.sm-list li a').unbind();
+                } 
+            }
+            $( window ).resize( function() {
+                mobC();
+            } );
+        });
+    </script>
+</body>
+</html>

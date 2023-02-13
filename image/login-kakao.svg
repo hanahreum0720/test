@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="48" viewBox="0 0 312 48">
+    <defs>
+        <filter id="vzdn8iqqda" x="0" y="0" width="312" height="48" filterUnits="userSpaceOnUse">
+            <feOffset dx="1" dy="1"/>
+            <feGaussianBlur stdDeviation=".5" result="blur"/>
+            <feFlood flood-color="#bdbdbd" flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#vzdn8iqqda)">
+        <rect data-name="사각형 2883" width="309" height="45" rx="12" transform="translate(.497 .5)" style="fill:#fee500"/>
+    </g>
+    <path data-name="패스 3586" d="M23.711 15.055c-4.851 0-8.784 3.109-8.784 6.944a6.785 6.785 0 0 0 4.167 5.908c-.184.686-.665 2.485-.762 2.87-.119.478.175.471.368.343.151-.1 2.407-1.634 3.38-2.3a11.121 11.121 0 0 0 1.63.12c4.851 0 8.784-3.109 8.784-6.944s-3.933-6.944-8.784-6.944"/>
+    <text data-name="카카오 로그인" transform="translate(170.5 29.5)" style="font-size:15px;font-family:NotoSansCJKkr-Regular,Noto Sans CJK KR;opacity:.852"><tspan x="-43.08" y="0">카카오 로그인</tspan></text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43">
+    <defs>
+        <filter id="kkxtte0wqa" x="0" y="0" width="43" height="43" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#kkxtte0wqa)">
+        <circle data-name="타원 50" cx="12.5" cy="12.5" r="12.5" transform="translate(9 6)" style="fill:#fff"/>
+    </g>
+    <g data-name="그룹 4101">
+        <path data-name="사각형 6" transform="rotate(90 8 20)" style="fill:none" d="M0 0h13v13H0z"/>
+        <path data-name="패스 1" d="m0 0 4.254 4.255L0 8.509" transform="rotate(90 4.336 21.391)" style="stroke:#ccc;stroke-linecap:round;stroke-width:3px;fill:none"/>
+    </g>
+</svg>

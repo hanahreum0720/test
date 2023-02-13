@@ -1,0 +1,45 @@
+@charset 'utf-8';
+
+.memb-step {
+    header {
+        &.user-menu {
+            >div {
+                &:not(:first-child) {
+                    display: none;
+                }
+
+                &.center {
+
+                    p,
+                    button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .memb-step {
+        header {
+            &.user-menu {
+                .center {
+                    .mob-menu-btn {
+                        display: none;
+                    }
+                }
+
+                .bottom-menu {
+                    display: none;
+                }
+            }
+        }
+
+        .content {
+            .btn-fixed-area {
+                bottom: 0
+            }
+        }
+    }
+}

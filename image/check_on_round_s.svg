@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="check_on" style="fill:#fff;stroke:#cb873a;stroke-width:2px">
+        <rect width="16" height="16" rx="5" style="stroke:none"/>
+        <rect x="1" y="1" width="14" height="14" rx="4" style="fill:none"/>
+    </g>
+    <path data-name="패스 319" d="M3.63 6.03 0 2.4l1.172-1.171L3.63 3.63 7.258 0l1.173 1.172z" transform="translate(3.784 4.985)" style="fill:#cb873a"/>
+</svg>
