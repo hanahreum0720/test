@@ -6382,6 +6382,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
   padding: 1.25rem 0;
   box-sizing: border-box;
   font-size: 1.25rem;
+  color: #292929;
 }
 .pointshop .category-wrap .category-list > li.on a, .pointshop .category-wrap .category-list > li.on button {
   background-color: #ffc600;
