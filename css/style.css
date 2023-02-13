@@ -2238,9 +2238,6 @@ select::-ms-expand {
     font-size: 12px !important;
   }
 }
-html.uni-chrome .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, html.uni-chrome .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong, body.uni-chrome .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, body.uni-chrome .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong {
-  color: #00f !important;
-}
 html.uni-safari, body.uni-safari {
   width: 100%;
   height: 100%;
@@ -2253,8 +2250,8 @@ html.uni-safari .contentWrap, body.uni-safari .contentWrap {
   min-height: -webkit-fill-available;
   -webkit-overflow-scrolling: touch;
 }
-html.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, html.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong, body.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a strong, body.uni-safari .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a strong {
-  color: #f00 !important;
+html.uni-safari .contentWrap footer, body.uni-safari .contentWrap footer {
+  margin-bottom: 4.25rem;
 }
 
 header {

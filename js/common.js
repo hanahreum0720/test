@@ -87,15 +87,6 @@ $(function () {
             behavior: 'smooth'
         });
     });
-    $( 'input').on('focus',function(){
-        if ($('body').hasClass('uni-mob')) {
-         $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').hide();  
-        }
-    }).on('blur',function(){
-        if ($('body').hasClass('uni-mob')) {
-            $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').show();  
-        }
-    });
     //탭박스
     $('.tab-list li > *').on('click', function (e) {
         e.preventDefault();
@@ -178,6 +169,17 @@ $(function () {
 
 
     });
+    
+    //모바일 키패드 on시 bottom fixed 요소 히든처리
+    $( 'input').on('focus',function(){
+        if ($('body').hasClass('uni-mob')) {
+         $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').hide();  
+        }
+    }).on('blur',function(){
+        if ($('body').hasClass('uni-mob')) {
+            $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').show();  
+        }
+    });
 
     // safari 브라우저        
     function isBrowserCheck(){
@@ -190,9 +192,6 @@ $(function () {
                 $("header,.content,footer").wrapAll("<div class='contentWrap'></div>");
             }
         }
-        
-
     }
     isBrowserCheck();
-
 });
