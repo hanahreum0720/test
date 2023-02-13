@@ -882,6 +882,7 @@ select::-ms-expand {
   vertical-align: middle;
   background-color: transparent;
   font-size: 0.813rem;
+  color: #292929;
 }
 .paging-wrap button.on {
   color: #292929;
@@ -4956,6 +4957,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
 .user-sub .graph .list-area .la-graph .lg-info > div select {
   border: none;
   font-size: 0.75rem;
+  color: #292929;
 }
 .user-sub .graph .list-area .la-graph .lg-tabbox {
   display: none;
@@ -5180,9 +5182,6 @@ footer ul:nth-of-type(2) li:nth-child(1) {
   }
 }
 @media only screen and (max-width: 768px) {
-  html.responsive {
-    font-size: 4.267vw;
-  }
   /*main 모바일*/
   .user-main {
     margin-bottom: 4.25rem;
