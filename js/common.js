@@ -172,16 +172,17 @@ $(function () {
     });
 
     //모바일 키패드 on시 bottom fixed 요소 히든처리
-    $( 'input').on('focus',function(){
-        if ($('body').hasClass('uni-mob')) {
-         $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').addClass('hide');  
-        }
-    }).on('blur',function(){
-        if ($('body').hasClass('uni-mob')) {
-            $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').removeClass('hide');  
-        }
-    });
-
+    var UserAgent = navigator.userAgent;
+    if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){//모바일 check    
+        var originalSize = jQuery(window).width() + jQuery(window).height();
+        jQuery(window).resize(function(){
+            if(jQuery(window).width() + jQuery(window).height() != originalSize) {
+                $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').addClass('hide');  
+            }else{
+                $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').removeClass('hide');  
+            }
+        });
+    }
     // safari 브라우저        
     function isBrowserCheck(){
         var agent = navigator.userAgent.toLowerCase();

@@ -2591,6 +2591,11 @@ html,body{
               margin-bottom: 0rem;
           }
         }
+        &.station-main {
+            .content .left-wrap{
+                padding-bottom: 120px;
+            }
+        }
     }
   } 
   .bottom-menu,.btn-fixed-area,.station-sub .btn-area{

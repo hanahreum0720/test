@@ -2264,6 +2264,9 @@ html.uni-safari.user-main .contentWrap .content, html.uni-safari.pointshop .cont
 html.uni-safari.login .contentWrap footer, body.uni-safari.login .contentWrap footer {
   margin-bottom: 0rem;
 }
+html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .content .left-wrap {
+  padding-bottom: 120px;
+}
 
 .bottom-menu.hide, .btn-fixed-area.hide, .station-sub .btn-area.hide {
   display: none;
