@@ -1831,6 +1831,7 @@
                     button {
                         flex: 1;
                         padding: 0.625rem 0;
+                        color: $main-txt;
 
                         &:nth-last-of-type(1) {
                             margin-right: 0;
@@ -1855,6 +1856,7 @@
                     select {
                         margin-bottom: 0;
                         border-radius: 10px;
+                        color: $main-txt;
                     }
 
                     .input {
