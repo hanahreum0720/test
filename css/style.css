@@ -2265,10 +2265,12 @@ html.uni-safari.login .contentWrap footer, body.uni-safari.login .contentWrap fo
   margin-bottom: 0rem;
 }
 html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .content .left-wrap {
-  padding-bottom: 120px !important;
+  max-height: 420px;
+  padding-bottom: 100px !important;
+  background-size: auto 250px, auto 300px, auto 100%, 100% 100%;
 }
 html.uni-safari.station-main .content .left-wrap p:nth-of-type(2) b, body.uni-safari.station-main .content .left-wrap p:nth-of-type(2) b {
-  color: #f00 !important;
+  color: #00f !important;
 }
 
 .bottom-menu.hide, .btn-fixed-area.hide, .station-sub .btn-area.hide {
