@@ -2561,7 +2561,9 @@ select {
     body {
         font-size: 12px !important;
     }
-
+    .graph-area .ga-top .ga-detail .ga-cal .wave + .calendar::before{
+        display: none !important;
+    }
 }
 html,body{
     &.uni-safari{    
@@ -2596,9 +2598,9 @@ html,body{
                 max-height: 420px;
                 padding-bottom: 100px !important;
                 background-size: auto 250px, auto 300px, auto 100%, 100% 100%;
-                p:nth-of-type(2) b{
-                    color: #00f !important;
-                }
+                // p:nth-of-type(2) b{
+                //     color: #00f !important;
+                // }
             }
         }
     }
