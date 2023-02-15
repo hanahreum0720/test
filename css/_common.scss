@@ -2593,7 +2593,10 @@ html,body{
         }
         &.station-main {
             .content .left-wrap{
-                padding-bottom: 120px;
+                padding-bottom: 120px !important;
+                p:nth-of-type(2) b{
+                    color: #f00 !important;
+                }
             }
         }
     }
