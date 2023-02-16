@@ -2564,6 +2564,10 @@ select {
     }
 }
 html,body{
+    &.uni-mob{
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
     &.uni-safari{    
         width:100%; height:100%;
         .contentWrap{
