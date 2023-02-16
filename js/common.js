@@ -10,7 +10,7 @@ $(function () {
         });
     }
 
-    function scrollAuto() {
+    function scrollAuto(scrollHeight) {
         $("body").css({
             "position": "relative",
             "top": 0
@@ -22,7 +22,7 @@ $(function () {
         if ($('body').hasClass('uni-mob')) {
             if ($('.top-menu').hasClass('on')) {
                 $('.top-menu,.logout-btn,.btn-fixed-area').removeClass('on');
-                scrollAuto();
+                scrollAuto(scrollHeight);
             } else {
                 $('.top-menu,.logout-btn,.btn-fixed-area').addClass('on');
                 scrollDim();
