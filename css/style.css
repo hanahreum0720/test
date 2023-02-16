@@ -2222,6 +2222,7 @@ select::-ms-expand {
   html,
   body {
     min-width: 280px;
+    font-size: 4.267vw;
   }
   input[type=text],
   select {
