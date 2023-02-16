@@ -747,6 +747,7 @@ select::-ms-expand {
   border: 1px solid #e5e5e5;
   border-radius: 10px;
   font-size: 0.875rem;
+  color: #292929;
 }
 .condition-search-wrap .cs-btn-area button.on {
   background-color: #ffc600;
