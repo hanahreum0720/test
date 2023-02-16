@@ -2275,10 +2275,6 @@ html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .
   display: none;
 }
 
-.user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a, .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a {
-  color: #0f0 !important;
-}
-
 header {
   position: relative;
   padding: 1.907rem 0;
@@ -2623,7 +2619,6 @@ footer ul:nth-of-type(2) li:nth-child(1) {
     right: 0;
     width: 72%;
     height: 100%;
-    padding-top: 1rem;
     background-color: #fff;
   }
   header.user-menu .top-menu.on ul li {
@@ -5208,10 +5203,6 @@ footer ul:nth-of-type(2) li:nth-child(1) {
   .user-main header .center {
     width: 100%;
     max-width: 95%;
-  }
-  .user-main header.user-menu .top-menu.on {
-    top: 4.4rem;
-    height: calc(100vh - 4.4rem);
   }
   .user-main .center {
     width: 100%;

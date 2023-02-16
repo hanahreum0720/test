@@ -50,6 +50,7 @@ $(function () {
     mobClass();
     $(window).on('resize', function () {
         mobClass();
+        var scrollHeight = $(window).scrollTop();
         scrollAuto();
         $('.top-menu,.logout-btn,.btn-fixed-area').removeClass('on');
         $('.condition-search-wrap').removeClass('on');   

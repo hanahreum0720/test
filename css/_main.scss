@@ -1210,15 +1210,6 @@
                 width: 100%;
                 max-width: 95%;
             }
-
-            &.user-menu {
-                .top-menu {
-                    &.on {
-                        top: 4.4rem;
-                        height: calc(100vh - 4.4rem);
-                    }
-                }
-            }
         }
         .center {
             width: 100%;
