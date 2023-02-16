@@ -213,6 +213,8 @@ body {
   }
 }
 body {
+  position: relative;
+  height: 100%;
   color: #292929;
   font-size: 16px;
   font-family: "NotoSansR", sans-serif;
@@ -2272,6 +2274,14 @@ html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .
 
 .bottom-menu.hide, .btn-fixed-area.hide, .station-sub .btn-area.hide {
   display: none;
+}
+
+.uni-mob {
+  height: calc(var(--vh, 1vh) * 100) !important;
+}
+
+.user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-detail > a, .user-main section:nth-of-type(1) > div:nth-of-type(1) .mc-item01 .user-point > div.up-all > a {
+  color: #f00 !important;
 }
 
 header {

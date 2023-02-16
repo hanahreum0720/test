@@ -182,6 +182,12 @@ $(function () {
                 $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').removeClass('hide');  
             }
         });
+        //높이확인
+        function setScreenSize() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setScreenSize();
     }
     // safari 브라우저        
     function isBrowserCheck(){
