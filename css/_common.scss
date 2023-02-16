@@ -2605,7 +2605,7 @@ html,body{
   } 
   .bottom-menu,.btn-fixed-area,.station-sub .btn-area{
     &.hide{
-        display: none;
+        position: inherit;
     }
   }
 
