@@ -213,8 +213,6 @@ body {
   }
 }
 body {
-  position: relative;
-  height: 100%;
   color: #292929;
   font-size: 16px;
   font-family: "NotoSansR", sans-serif;
@@ -2241,10 +2239,6 @@ select::-ms-expand {
   body {
     font-size: 12px !important;
   }
-}
-html.uni-mob, body.uni-mob {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 html.uni-safari, body.uni-safari {
   width: 100%;
