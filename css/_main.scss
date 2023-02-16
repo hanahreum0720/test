@@ -1471,9 +1471,10 @@
 
                     .graph-area {
                         height: auto;
+                        padding-top: 1rem;
                         box-shadow: none;
                         border: none;
-
+                        border-radius: 0;
                         .ga-top {
                             height: auto;
                             border: none;
@@ -1555,15 +1556,16 @@
                                         border-bottom: 1px solid $border-color;
 
                                         &::before {
-                                            top: 0.7rem;
-                                            left: 0.4rem;
+                                            top: 50%;
+                                            left: 0rem;
+                                            transform: translate(0,-50%);
                                         }
 
                                         input {
                                             display: inline-block;
                                             width: 100%;
                                             padding: 0.625rem 0;
-                                            margin-left: 0.5rem;
+                                            margin-left: 0.75rem;
                                             font-size: 0.75rem;
                                             border: none;
                                             text-align: center;
@@ -1732,8 +1734,10 @@
 
             .graph-area {
                 height: auto;
+                padding-top: 1rem;
+                box-shadow: none;
                 border: none;
-
+                border-radius: 0;
                 .ga-top {
                     margin-bottom: 0.5rem;
                     background-color: transparent;
@@ -1819,8 +1823,9 @@
                                 border-bottom: 1px solid $border-color;
 
                                 &::before {
-                                    top: 0.7rem;
-                                    left: 0.4rem;
+                                    top: 50%;
+                                    left: 0rem;
+                                    transform: translate(0,-50%);
                                 }
 
                                 input {
@@ -1993,18 +1998,19 @@
                             .calendar {
                                 min-width: 6.65rem;
                                 width: 30%;
-                                margin: 0 0.5rem 0 0.25rem;
+                                margin: 0 0.75rem 0 0.25rem;
                                 border-bottom: 1px solid $border-color;
 
                                 &::before {
-                                    top: 0.7rem;
-                                    left: 0.4rem;
+                                    top: 50%;
+                                    left: 0rem;
+                                    transform: translate(0,-50%);
                                 }
 
                                 input {
                                     width: 100%;
                                     padding: 0.625rem 0;
-                                    margin-left: 0.5rem;
+                                    margin-left: 0.75rem;
                                     font-size: 0.75rem;
                                     border: none;
                                     text-align: center;

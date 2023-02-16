@@ -749,6 +749,7 @@ select {
             max-width: 5.5rem;
             height: 100%;
             margin-left: 2rem;
+            vertical-align: middle;
             cursor: pointer;
 
             &::before {
@@ -778,7 +779,7 @@ select {
 
         .wave {
             display: inline-block;
-
+            vertical-align: middle;
             &+.calendar {
                 margin: 0 0.5rem 0 0;
 
@@ -2246,7 +2247,7 @@ select {
     .sb-mob-open {
         display: block;
         position: fixed;
-        top: 4.625rem;
+        top: 4.75rem;
         bottom: auto;
         right: 0.313rem;
         width: 1.25rem;
@@ -2560,9 +2561,6 @@ select {
     html,
     body {
         font-size: 12px !important;
-    }
-    .graph-area .ga-top .ga-detail .ga-cal .wave + .calendar::before{
-        display: none !important;
     }
 }
 html,body{
