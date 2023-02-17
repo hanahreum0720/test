@@ -181,9 +181,9 @@ $(function () {
         var originalSize = jQuery(window).height();
         jQuery(window).resize(function(){
             if(jQuery(window).height() != originalSize) {
-                $('.uni-mob .bottom-menu,.uni-mob .btn-fixed-area,.uni-mob .station-sub .btn-area').addClass('hide');  
+                $('.uni-mob .bottom-menu,.uni-mob .btn-fixed-area,.uni-mob.station-sub .btn-area,.uni-mob.qna-write .sub-menu').addClass('hide');  
             }else{
-                $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area').removeClass('hide');  
+                $('.bottom-menu,.btn-fixed-area,.station-sub .btn-area,.qna-write .sub-menu').removeClass('hide');  
             }
         });
     }

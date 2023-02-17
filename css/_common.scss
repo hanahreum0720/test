@@ -2608,4 +2608,20 @@ html,body{
         position: inherit;
     }
   }
+  .bottom-menu{
+    &.hide{
+        display: none;
+    }
+  }
+  .qna-write .sub-menu{
+    &.hide{
+        position: inherit;
+        &+.sm-div{
+            margin-top: 4rem;
+            .sb-mob-open{
+                position: absolute;
+            }
+        }
+    }
+  }
 

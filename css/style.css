@@ -2277,6 +2277,20 @@ html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .
   position: inherit;
 }
 
+.bottom-menu.hide {
+  display: none;
+}
+
+.qna-write .sub-menu.hide {
+  position: inherit;
+}
+.qna-write .sub-menu.hide + .sm-div {
+  margin-top: 4rem;
+}
+.qna-write .sub-menu.hide + .sm-div .sb-mob-open {
+  position: absolute;
+}
+
 header {
   position: relative;
   padding: 1.907rem 0;
@@ -3492,7 +3506,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     max-width: 100vw;
     padding: 0;
   }
