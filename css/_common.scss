@@ -2561,6 +2561,9 @@ select {
     body {
         font-size: 12px !important;
     }
+    .condition-search-wrap .cs-cal-area{
+        padding: 0.75rem 1.5rem 0.625rem;
+    }
 }
 html,body{
     &.uni-safari{    

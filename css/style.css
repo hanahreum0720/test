@@ -2241,6 +2241,9 @@ select::-ms-expand {
   body {
     font-size: 12px !important;
   }
+  .condition-search-wrap .cs-cal-area {
+    padding: 0.75rem 1.5rem 0.625rem;
+  }
 }
 html.uni-safari, body.uni-safari {
   width: 100%;
@@ -9392,7 +9395,6 @@ footer ul:nth-of-type(2) li:nth-child(1) {
     padding: 1.25rem 0rem !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    font-size: 1.25rem !important;
     background-color: #ffc600;
     color: #292929;
     text-align: center;
