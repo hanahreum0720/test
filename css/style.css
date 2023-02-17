@@ -770,7 +770,6 @@ select::-ms-expand {
   position: relative;
   display: inline-block;
   flex: 1;
-  max-width: 5.5rem;
   height: 100%;
   margin-left: 2rem;
   vertical-align: middle;
