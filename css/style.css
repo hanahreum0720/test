@@ -2296,7 +2296,7 @@ html.uni-safari.station-main .content .left-wrap, body.uni-safari.station-main .
 .service .condition-search-wrap.type03 .search.hide {
   position: initial;
   width: 95%;
-  margin: 0 auto !important;
+  margin: 0 auto 20rem !important;
 }
 
 header {
@@ -9310,6 +9310,7 @@ footer ul:nth-of-type(2) li:nth-child(1) {
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow-y: auto;
     display: none;
     padding: 0;
     margin: 0;
