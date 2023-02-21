@@ -18,7 +18,6 @@
         }
     }
 }
-
 /*main content*/
 .user-main {
     .content{
@@ -169,31 +168,42 @@
                         >div {
                             flex: 1;
                             height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            a{
+                                position: relative;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;   
+                                width: 100%;
+                                height: 100%;
 
+                            }
                             &.up-all {
                                 border-right: 1px solid $border-color;
                                 font-weight: 700;
                                 font-size: 1.25rem;
-
-                                a {
-                                    &::before {
-                                        @include virtualIcon($w:2rem, $h:2rem) {
-                                            margin: -2px 5px 0 0;
-                                            background-image: url(../image/main/icon_point.png);
-                                        }
-                                    }
-
-                                    strong {
-                                        display: none;
-                                    }
+                                a{
+                                    // &::before {
+                                    //     @include virtualIcon($w:2rem, $h:2rem) {
+                                    //         position: absolute;
+                                    //         top: 15%;
+                                    //         left: 50%;
+                                    //         transform: translateX(-50%);
+                                    //         background-image: url(../image/main/icon_point.png);
+                                    //     }
+                                    // }
+                                }
+                                strong {
+                                    display: block;
+                                    padding-top: 0.313rem;
+                                    font-size: 1rem;
+                                }
+                                span{
+                                    display: block;
+                                    padding-left: 0.313rem;
                                 }
                             }
 
                             &.up-detail {
-                                line-height: 2;
                                 font-size: 1rem;
                             }
                         }
@@ -369,7 +379,12 @@
                             position: relative;
                             padding: 1rem 0 0;
                             text-align: center;
-
+                            p{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 7rem;
+                            }
                             &:hover .txt {
                                 display: block;
                             }
@@ -639,9 +654,15 @@
                 }
 
                 .ga-graph {
-                    padding: 2rem 0;
+                    padding: 1rem 0;
                     text-align: center;
 
+                    p{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 7rem;
+                    }
                     &:hover .txt {
                         display: block;
                     }
@@ -1088,14 +1109,16 @@
 
                         .user-point {
                             align-items: center;
-
                             >div.up-all {
                                 padding: 0;
-
                                 a {
+                                    display: block;
                                     &::before {
                                         display: block;
                                         margin: 0 auto;
+                                    }
+                                    strong{
+                                        padding: 1.875rem 0 0.5rem;
                                     }
                                 }
                             }
@@ -1381,6 +1404,7 @@
                                     background-repeat: no-repeat;
                                     background-position: right 0.75rem top 0.75rem;
                                     display: flex;
+                                    align-items: normal;
                                     flex-direction: column;
                                     justify-content: space-between;
 
