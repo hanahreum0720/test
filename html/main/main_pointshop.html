@@ -79,9 +79,6 @@
                                     <a href="#">
                                         <ul class="clp-slide">
                                             <li><img src="../../image/pointshop/img_c_01.png" alt=""></li>
-                                            <li><img src="../../image/pointshop/img_logo_01.png" alt=""></li>
-                                            <li><img src="../../image/pointshop/img_logo_02.png" alt=""></li>
-                                            <li><img src="../../image/pointshop/img_logo_03.png" alt=""></li>
                                         </ul>
                                         <span>전체</span>
                                     </a>
@@ -351,9 +348,6 @@
                         <a href="#">
                             <ul class="clp-slide">
                                 <li><img src="../../image/pointshop/img_c_01.png" alt=""></li>
-                                <li><img src="../../image/pointshop/img_logo_01.png" alt=""></li>
-                                <li><img src="../../image/pointshop/img_logo_02.png" alt=""></li>
-                                <li><img src="../../image/pointshop/img_logo_03.png" alt=""></li>
                             </ul>
                             <span>전체</span>
                         </a>
@@ -451,6 +445,20 @@
         });
 
         //카테고리 팝업 슬라이드
+        // $('.clp-slide').each(function(i){
+        //     let clpnow = 0;
+        //     let clpsLi =  $(this).find('li');
+        //     setInterval(function(){   
+        //         if(clpnow <= clpsLi.length-2){
+        //             clpnow++;                    
+        //         }else{
+        //             clpnow = 0;
+        //         }               
+        //         clpsLi.eq(clpnow-2).css({'left':'100%'}); 
+        //         clpsLi.eq(clpnow-1).stop().animate({'left':'-100%'},500);
+        //         clpsLi.eq(clpnow).stop().animate({'left':'0%'},500);        
+        //     },3000*(i+1));
+        // });
         $('.clp-slide').each(function(i){
             let clpnow = 0;
             let clpsLi =  $(this).find('li');
@@ -463,9 +471,8 @@
                 clpsLi.eq(clpnow-2).css({'left':'100%'}); 
                 clpsLi.eq(clpnow-1).stop().animate({'left':'-100%'},500);
                 clpsLi.eq(clpnow).stop().animate({'left':'0%'},500);        
-            },3000*(i+1));
+            },3000);
         });
-        
     });
     </script>    
 </body>
