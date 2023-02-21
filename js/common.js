@@ -174,6 +174,16 @@ $(function () {
 
 
     });
+    //qna페이지 검색on시 스크롤 막기
+    
+    $('.sb-mob-open').on('click',function(){
+        $('.condition-search-wrap').addClass('on');
+        scrollDim();
+    });
+    $('.sb-mob-close').on('click',function(){
+        $('.condition-search-wrap').removeClass('on');                
+        scrollAuto(scrollHeight);
+    });
 
     //모바일 키패드 on시 bottom fixed 요소 히든처리
     var UserAgent = navigator.userAgent;
@@ -199,5 +209,5 @@ $(function () {
             }
         }
     }
-    isBrowserCheck();
+    //isBrowserCheck();
 });
