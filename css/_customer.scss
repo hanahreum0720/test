@@ -366,12 +366,6 @@
     position: relative;
     display: none;
 
-    >b {
-        position: absolute;
-        top: 135%;
-        left: 0;
-    }
-
     span {
         display: inline-block;
         color: $main-color;
@@ -383,14 +377,22 @@
     .box.box-g {
         display: none;
         padding: 3.75rem 1rem;
-        margin-bottom: 5.75rem;
+        margin-bottom: 3.75rem;
         border: none;
         line-height: 1.667;
         text-align: center;
         color: $gray-color;
         font-size: 1.125rem;
     }
-
+    b{
+        display: block;
+        margin-bottom: 1.25rem;
+        font-size: 0.938rem;
+        span{
+            font-size: 0.938rem;
+            vertical-align: top;
+        }
+    }
     &.on {
         display: block;
 
@@ -961,6 +963,18 @@
             }
         }
     }
+    &.center-list, &.faq{
+        .condition-search-wrap.type03 {
+            div:nth-of-type(3){
+                .input{
+                    input[type=text]{
+                        width: 33.4rem;
+                    }
+                }
+            }
+        }
+
+    }
 }
 
 .center-list,
@@ -1333,23 +1347,17 @@
     }
 
     .search-result-box {
-        &.none {
-            >b {
-                position: initial;
-                display: block;
-                margin: 1.25rem 0.938rem 0.875rem;
-            }
-
-            .box-g {}
-        }
-
-        &:not(.none)>b {
-            top: calc(100% + 1.625rem);
-            left: 0.938rem;
-        }
-
         .box.box-g {
-            margin-bottom: 3.5rem;
+            padding: 2.5rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+        b{
+            margin: 0 0 0.875rem 0.938rem;
+            font-size: 1rem;
+            span{
+                font-size: 1rem;
+                margin-left: 0.313rem;
+            }
         }
     }
 
@@ -1705,7 +1713,7 @@
         .sb-mob-close {
             position: absolute;
             top: 50%;
-            left: 1.313rem;
+            left: 1rem;
             transform: translateY(-50%);
             display: none;
             width: 0.75rem;
@@ -1772,17 +1780,17 @@
 
         .condition-search-wrap.type03 {
             position: fixed;
-            top: 0;
+            top: 3.75rem;
             left: 0;
             width: 100vw;
-            height: 100vh;
+            height: calc(100vh - 3.75rem);
             overflow-y: auto;
             display: none;
             padding: 0;
             margin: 0;
             border-radius: 0;
             background-color: #fff;
-            z-index: 6500;
+            z-index: 5000;
 
             .mob-title {
                 display: block;
@@ -1796,11 +1804,12 @@
                 span {
                     display: inline-block;
                     margin: 0 auto;
+                    font-weight: 700;
                 }
 
                 .sb-mob-close {
                     display: block;
-                    top:1.625rem;
+                    top:1.65rem;
                     bottom: auto;
                 }
             }

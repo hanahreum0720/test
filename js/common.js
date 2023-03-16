@@ -22,7 +22,11 @@ $(function () {
         if ($('body').hasClass('uni-mob')) {
             if ($('.top-menu').hasClass('on')) {
                 $('.top-menu,.logout-btn,.btn-fixed-area').removeClass('on');
-                scrollAuto(scrollHeight);
+                if($('.condition-search-wrap.type03').hasClass('on')==true){
+
+                }else{
+                    scrollAuto(scrollHeight);
+                }
             } else {
                 $('.top-menu,.logout-btn,.btn-fixed-area').addClass('on');
                 scrollDim();
@@ -66,8 +70,9 @@ $(function () {
     });
 
     //서브메뉴    
-    $('.sm-now').on('click', function () {
-        $(this).toggleClass('on');
+    $('.sm-open').on('click', function () {
+        $('.sm-now').toggleClass('on');
+        $('.sb-mob-open').toggleClass('hide');
     });
 
     //팝업
@@ -178,10 +183,12 @@ $(function () {
     
     $('.sb-mob-open').on('click',function(){
         $('.condition-search-wrap').addClass('on');
+        $('.bottom-menu, .btn-fixed-area').addClass('hide');
         scrollDim();
     });
     $('.sb-mob-close').on('click',function(){
-        $('.condition-search-wrap').removeClass('on');                
+        $('.condition-search-wrap').removeClass('on');     
+        $('.bottom-menu, .btn-fixed-area').removeClass('hide');           
         scrollAuto(scrollHeight);
     });
 

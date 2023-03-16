@@ -24,7 +24,7 @@
                 <h2>MY1PAY 정책</h2>
             </div>
             <div class="policy-paging">
-                <span>이용약관</span>
+                <span>이용약관<span class="pp-open"></span></span>
                 <ul>
                     <li class="on"><a href="./policy_service.html">이용약관</a></li>
                     <li><a href="./policy_privacy.html">개인정보 처리방침</a></li>
@@ -1294,8 +1294,8 @@
     </div>
     <script>
         $(document).ready(function(){
-            $('.policy-paging span').on('click',function(){
-                $(this).toggleClass('on');
+            $('.pp-open').on('click', function () {
+                $('.policy-paging span').toggleClass('on');
             });
             $(window).resize(function(){             
                 if($(window).width() < 768){
