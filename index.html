@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script  type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>BIG stock</title>
+</head>
+<body>
+<div class="bodyWrap main">
+<header class="top">
+<div class="center">
+    <h1><a href="./index.html">BIG stock</a></h1>
+    <button type="button" class="mobMenuOpen">메뉴열기</button>
+    <button type="button" class="mobMenuClose">메뉴닫기</button>
+    <ul class="gnb_menu">
+        <li>
+            <span>서비스 안내</span>
+            <ul>
+                <li>
+                    <a href="./html/info_service.html">서비스 이용안내</a>
+                </li>
+                <li>
+                    <a href="./html/info_concept.html">주식 개념 잡기</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span>서비스 이용</span>
+            <ul>
+                <li>
+                    <a href="./html/membership_join.html">서비스 가입</a>
+                </li>
+                <li>
+                    <a href="./html/membership_unsubscribe.html">서비스 해지</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="./html/stock_info.html">주식 정보</a>
+        </li>
+        <li>
+            <a href="./html/service_center.html">고객센터</a>
+        </li>
+    </ul>
+</div>
+</header>
+<div class="content">
+    <div class="topBtnWrap"><button type="button" class="topBtn">scrol to top</button></div>
+    <div id="PopSerciveJoin" class="popLayer PopSerciveJoin">
+        <div class="popDim"></div>
+        <div class="psjWrap">
+            <h2>BIG STOCK 이용하기</h2>
+            <div class="certificationFrom">
+                <ul>
+                    <li>
+                        <button type="button" class="btn btn_line_b on">SKT</button>
+                        <button type="button" class="btn btn_line_b">KT</button>
+                        <button type="button" class="btn btn_line_b">LGU+</button>
+                    </li>
+                    <li>
+                        <div class="inputBox">
+                            <select name="" id="">
+                                <option value="010" selected>010</option>
+                            </select>
+                            <input type="number">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="inputBox">
+                            <input type="number" placeholder="123456"> 
+                            <span class="count">2:59</span>
+                        </div>
+                        <button type="button" class="btn btn_line_main">인증요청</button>
+                    </li>
+                </ul>
+                <div class="checkWrap">
+                    <input type="checkbox" name="check02" id="check02_01" class="chkAll" value="01">
+                    <label for="check02_01">전체동의</label>
+
+                    <input type="checkbox" name="check03" id="check03_01" class="chk" value="01">
+                    <label for="check03_01">이용약관 <a href="./html/tos.html">자세히보기</a> </label>                
+                    <input type="checkbox" name="check03" id="check03_02" class="chk" value="02">
+                    <label for="check03_02">개인정보수집/이용 <a href="./html/policy.html">자세히보기</a> </label>                
+                    <input type="checkbox" name="check03" id="check03_03" class="chk" value="03">
+                    <label for="check03_03">개인정보제3자제공<a href="./html/policy.html">자세히보기</a> </label>                
+                    <input type="checkbox" name="check03" id="check03_04" class="chk" value="04">
+                    <label for="check03_04">SKT 개인정보제3자제공<a href="./html/policy.html">자세히보기</a> </label>
+                </div>
+                <div class="bottomFixedWrap btnWrap">
+                    <button type="button" class="btn btn_main">BIG STOCK 유료 가입하기</button>
+                </div>
+                <p>
+                    <span>매월 부가세 포함 2,200원</span>
+                    본 서비스는 SKT, KT, LGU+ 통신 요금에 부가세 포함 매월 1,000원 부과됩니다. 본 서비스는 서비스 가입 이후부터 분석 정보가 제공되어 서비스가 개시되는 상품으로 청약 철회가 불가능합니다. (전자상거래 등에서의 소비자 보호에 관한 법률 제17조 2항 5호에 따라 디지털 콘텐츠의 제공이 개시된 경우 청약 철회를 제공하지 않습니다.)
+                </p>
+            </div>  
+        </div>              
+    </div>
+    <section class="mainSec01">
+    <div class="center">
+        <p class="txtBox">
+            <span>빅데이터 AI</span>의 정확한<br>
+            <span>주식 트렌드</span> 분석 서비스
+        </p>
+        <div class="serviceBtnWrap">
+            <a href="#" class="btn btn_bg_w">프리미엄 주식 서비스 받아보기</a>
+            <button type="button" class="btn btn_bg_w popOpenBtn" data-popname="PopSerciveJoin">프리미엄 주식 서비스 받아보기</button>
+        </div>
+    </div>
+    </section>
+    <section class="mainSec02">
+    <div class="center">
+        <ul>
+            <li>실시간 주식 트렌드<br>분석을 문자로!</li>
+            <li>빅데이터 AI의<br>매매 시그널 가이드 제공</li>
+            <li>개인 투자 레벨별<br>맞춤 서비스 제공</li>
+        </ul>
+    </div>
+    </section>
+    <section class="mainSec03">
+    <div class="center">
+        <ul>
+            <li>
+                <div class="txtBox">
+                    <p>
+                        <span>주관적인</span> 판단의 리딩!<br>
+                        100% 믿으실 수<br>
+                        있으신가요?
+                    </p>
+                    <p>
+                        BIG STOCK은 주식 관련 기사만이 아닌<br>
+                        1000여개 언론사의 빅데이터를 AI가 요약하여<br>
+                        최신 트렌드 리포트를 제공합니다.
+                    </p>
+                </div>
+                <div class="imgBox">
+                    <span>AI 분석</span>
+                </div>
+            </li>
+            <li>
+                <div class="txtBox">
+                    <p>
+                        시장트렌드 요약은<br>
+                        저희가 할게요!<br>
+                        <span>선택에만 집중</span>하세요
+                    </p>
+                    <p>
+                        투자 실패 이유는 방대한 정보 중,<br>
+                        필요한 정보만 캐치하기 어렵기 때문!<br>
+                        빅데이터가 분석한 신뢰도 높은 정보를 받아보세요.
+                    </p>
+                </div>
+                <div class="imgBox">
+                    <span>선택</span>
+                </div>
+            </li>
+            <li>
+                <div class="txtBox">
+                    <p>
+                        가입은 <span>신속</span>,<br>
+                        <span>객관적인</span> 정보,<br>
+                        불편함은 <span>최소로</span>
+                    </p>
+                    <p>
+                        꼭 필요한 개인정보로만 빠른 가입<br>
+                        AI가 요약해주는 객관적인 정보<br>
+                        매일 문자로 전송받아 간편하게
+                    </p>
+                </div>
+                <div class="imgBox">
+                    <span>신속/간편</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </section>
+    <section class="mainSec04">
+    <div class="center">
+        <strong>나이, 성별, 경력 상관없는<br><span>성공후기</span></strong>
+        <div class="caseSlide">
+            <div class="slideitem item01">
+                <div>
+                <p>
+                    <span>자영업 / 박OO씨 40대 여성</span>
+                    작은 가게를 하나 운영 중인데, 요즘 어려운 시기라<i class="pc_br"></i>
+                    매출도 안나와서 생활이 어려웠는데, BIG stock 리딩<i class="pc_br"></i>
+                    덕분에 수익금으로 재미 보고 있습니다!!<i class="pc_br"></i>
+                    웃음만 납니다^^
+                </p>
+                </div>
+            </div>
+            <div class="slideitem item02">
+                <div>
+                <p>
+                    <span>자영업 / 김OO씨 50대 남성</span>
+                    인터넷 사용이 어려운 나이여서 그런지 주식 정보<i class="pc_br"></i>
+                    이런 걸 어떻게 얻나 잘 몰랐는데요, BIG stock에서<i class="pc_br"></i>
+                    매일 보내주는 문자로 정보를 받아 투자하니 손자들<i class="pc_br"></i>
+                    맛난거 사줄만큼 매일 벌고 있습니다~
+                </p>
+                </div>
+            </div>
+            <div class="slideitem item03">
+                <div>
+                <p>
+                    <span>직장인 / 곽OO씨 20대 남성</span>
+                    주식을 직장 주임님께 배워서 시작했다가...<i class="pc_br"></i>
+                    '나는 주식에 재능이 없구나' 했는데 아니었어요.<i class="pc_br"></i>
+                    정확한 정보만 보고 판단할 수 있다면, 전혀 어렵지 않더라구요~<i class="pc_br"></i>
+                    BIG stock을 알고나서 상승곡선 탔습니다!
+                </p>
+                </div>
+            </div>
+            <div class="slideitem item04">
+                <div>
+                <p>
+                    <span>학생 / 이OO씨 20대 여성</span>
+                    요즘엔 친구들과 밥먹고 커피 마실 때보다<i class="pc_br"></i>
+                    통장 열어볼 때가 더 행복해요~^^ㅎㅎ<i class="pc_br"></i>
+                    주식 어렵게만 생각했었는데, 정보만 알면 쉽더라구요~<i class="pc_br"></i>
+                    필요 정보만 쏙쏙 알려줘서 주투자 성공 했어요.
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+</div>
+<footer>
+<div class="center">
+    <h1>BIG stock</h1>
+    <ul>
+        <li><a href="./html/tos.html">이용약관</a></li>
+        <li><a href="./html/policy.html">개인정보처리방침</a></li>
+    </ul>
+    <p>
+        <span>고객센터 070-4672-2303</span>
+        (평일 10:00~19:00 / 주말,공휴일 휴무)
+    </p>
+    <ul>
+        <li>(주) 인라이플   대표이사 : 한경훈, 이근옥</li>
+        <li>사업자등록번호 : 113-86-60934</li>
+        <li>주소: 서울특별시 구로구 구로동 디지털로 272 한신아이티타워 501호~504호</li>
+        <li>TEL : 070-4672-2303</li>
+        <li>FAX : 02-865-6845</li>
+        <li>E-MAIL : enliple@enliple.com</li>
+        <li>Copyright ⓒ ENLIPLE All rights reserved.</li>
+    </ul>
+</div>
+</footer>
+</div>
+<script>
+    $(document).ready(function(){
+        let slickOption = {
+            slidesToShow:1,
+            slidesToScroll: 1,
+            mobileFirst: true,
+            arrows: false,
+            dots: true,
+            autoplay:true,
+            infinite:true,
+            centerMode: true,
+            responsive: [
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow:2, 
+                        slidesToScroll: 2,    
+                        centerMode: false                                      
+                    }
+                },{
+                    breakpoint: 768,
+                    settings: 'unslick'
+                }
+            ]
+        };
+        $('.caseSlide').slick(slickOption);
+        let winWidth = $(window).width();
+        if(winWidth < 768){
+            $('header').removeClass('top'); 
+        }
+        $(window).resize(function(){
+            if(winWidth < 768){
+                winWidth = $(window).width();
+                $('header').removeClass('top'); 
+                $('.caseSlide').not('.slick-initialized').slick(slickOption);
+            }else{
+                $('.popLayer').removeClass('on');
+            }
+        });
+        $(window).scroll(function(){
+            let nowScroll = $(window).scrollTop();
+            if (nowScroll > 0 && winWidth>768){
+                $('header').addClass('top');
+                $('.serviceBtnWrap').removeClass('on');  
+            }else{
+                $('header').removeClass('top');      
+                $('.serviceBtnWrap').addClass('on'); 
+            }
+        });
+    });
+</script>
+</body>
+</html>

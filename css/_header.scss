@@ -1,0 +1,306 @@
+header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #fff;
+    @include transition();
+    z-index: 5000;
+    .center{
+        @include flex();
+        height: 8rem;
+        &::before{
+            @include virtualIcon($w:100vw,$h:0){
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: block;
+                background-color: $bg-color;
+            }
+            @include transition();
+        }
+        h1{
+            position: relative;
+            width: 15.5rem;
+            height: 2.6rem;
+            a{
+                display: block;
+                width: 100%;
+                height:100%;
+                @include txthide();
+                background-image: url(../image/logo_b.svg);       
+                @include bgimg();
+            }
+        }
+        .gnb_menu{
+            width: 70%;
+            max-width:62.2rem; 
+            @include flex();
+            text-align: center;
+            height: 100%;
+            a,span{
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: $main-txt;
+                font-size: 1.8rem;
+                @include fontWeightM();
+            }
+            >li{
+                position: relative;
+                line-height: 8rem;
+                span{
+                    cursor: default;
+                }
+                ul{
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 150%;
+                    height: 0;
+                    padding: 1rem 0 0;
+                    overflow: hidden;
+                    @include transition();
+                    li{
+                        line-height: 3;
+                        a{
+                            color: $subgray-color;
+                            font-size: 1.6rem;
+                            &:hover{
+                                color: $sub-color2;
+                                @include fontWeightB();
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+        &.on{
+            &::before{
+                height: 22.3rem;
+            }
+            h1{
+                a{
+                  background-image: url(../image/logo_g.svg) !important;
+                }
+            }
+            .gnb_menu{
+                color: $sub-color2;
+                >li{
+                    >a,>span{
+                        color: $sub-color2 !important;
+                        @include fontWeightB();
+                    }
+                    ul{
+                        height: auto;
+                    }
+
+                }
+            }
+        }
+    }    
+    &.top{
+        background-color: transparent;
+        border-bottom: none;
+        .center{
+            h1{
+                a{
+                  background-image: url(../image/logo.svg);  
+                }     
+            }
+            .gnb_menu{
+                >li{
+                    >a,>span{
+                        color: $main-bg-txt;
+                    }
+                }
+            }
+        }
+    }
+}
+.content{
+    min-height: calc(100vh - 29.4rem);
+}
+footer{
+    padding: 5rem 0 6rem;
+    background-color: $bg-color;
+    font-size: 1.4rem;
+    color: $subgray-color;
+    @include fontWeightM();
+    line-height: 1.7;
+    overflow: hidden;
+    h1{
+        float: right;
+        width: 15.5rem;
+        height: 2.6rem;
+        @include txthide();
+        background-image: url(../image/logo_g.svg);       
+        @include bgimg();
+    }
+    ul{
+        li{
+            display: inline-block;
+            &::before{
+                @include virtualIcon($w:1px,$h:1.2rem){
+                    background-color: #ccd6e9;
+                    margin: -2px 1rem 0;         
+                }
+            }
+            &:first-child{
+                &::before{
+                    display: none;
+                }
+            }
+        }
+        &:nth-of-type(1){
+            li{
+                a{
+                    color: $sub-color2;
+                    font-size: 1.6rem;
+                    @include fontWeightB();
+
+                }
+            }
+        }
+        &:nth-of-type(2){
+            li{
+                &:nth-child(3),&:last-child{
+                    display: block;
+                    &::before{
+                        display: none;
+                    }
+                }
+                &:nth-child(4){
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    p{
+        margin:0.3rem 0 3rem;
+        span{
+            color: $sub-color2;
+            font-size: 1.6rem;
+            @include fontWeightB();
+        }
+    }
+}
+.mobMenuOpen,.mobMenuClose{
+   display: none;
+}
+
+@media only screen and (max-width: 768px) {    
+    header{
+        border-bottom: 1px solid #efefef;
+        .center{
+            &::before{
+                width: 0;
+                height: 100vh;
+                transition: none;
+            }
+            .gnb_menu{
+                display: none;
+            }
+            &.on{
+                &::before{
+                    width: 100%;
+                    height: 100vh;
+                }
+                .gnb_menu{
+                    position: absolute;
+                    top: 11rem;
+                    left: 0%;
+                    display: block;
+                    text-align: left;
+                    >li{
+                        line-height: 3;
+                        ul{
+                            position: initial;
+                            left: 0;
+                            transform: translateX(0);
+                            height: 0;
+                            padding:0 0 0 1rem;
+                            @include transition();
+                        }
+                        &.on{
+                            ul{
+                                height: auto;
+                            }
+                        }
+                    }
+                    
+                    span,a{
+                        &.now{
+                            color: $main-color !important;
+                        }
+                    }
+                }
+
+            }
+        }    
+        .mobMenuOpen,.mobMenuClose{
+            width: 2.444rem;
+            height: 2.444rem;
+            @include txthide();
+            background-size: 100%;
+        }
+        .mobMenuOpen{
+            display: block;
+            background-image: url(../image/icon_allmenu.svg);
+        }
+        .mobMenuClose{
+            position: relative;
+            background-image: url(../image/icon_x.svg);
+            &.on{
+                display: block;
+            }
+        }
+        &.top{
+            .mobMenuOpen{
+                background-image: url(../image/icon_allmenu_w.svg);
+            }
+        }
+    }
+    .content{
+        min-height: calc(100vh - 40.1rem);
+    }
+    footer{
+        padding: 3.333rem 0 4.444rem;
+        font-size: 1.444rem;
+        h1{
+            float: none;
+            margin: 0 0 2.778rem;
+        }
+        ul{
+            &:nth-of-type(1){
+                li{
+                    a{
+                        font-size: 1.778rem;
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                li{
+                    &::before{
+                        display: none;
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+        p{
+            margin:1rem 0 2.778rem;
+            span{
+                display: block;
+                font-size: 1.778rem;
+            }
+        }
+    }
+}
