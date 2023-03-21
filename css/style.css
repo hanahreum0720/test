@@ -227,6 +227,10 @@ html, body, input, select, textarea, button, a, textarea {
   font-family: "SpoqaR";
 }
 
+body {
+  touch-action: pan-x pan-y;
+}
+
 input {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
@@ -2093,6 +2097,9 @@ footer p span {
   .pagingWrap > div button {
     font-size: 1.889rem;
   }
+  .formTable {
+    word-break: break-all;
+  }
   .formTable .inputBox.checkWrap {
     display: block;
   }
@@ -2213,6 +2220,7 @@ footer p span {
   .sub.info.service .infoSec01 {
     margin-top: 0;
     background-image: url(../image/bg_info_sec01_m.png);
+    background-size: cover;
   }
   .sub.info.service .infoSec01 .txtBox p:nth-child(1) {
     margin-bottom: 2.222rem;
