@@ -1726,6 +1726,7 @@ footer p span {
 }
 .formTable .inputBox:not(.checkWrap) textarea {
   width: 95%;
+  max-width: 77vw;
   height: 12rem;
   padding: 1rem 0;
   resize: none;

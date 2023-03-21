@@ -285,8 +285,8 @@
             $('header').removeClass('top'); 
         }
         $(window).resize(function(){
+            winWidth = $(window).width();
             if(winWidth < 768){
-                winWidth = $(window).width();
                 $('header').removeClass('top'); 
                 $('.caseSlide').not('.slick-initialized').slick(slickOption);
             }else{
@@ -295,9 +295,13 @@
         });
         $(window).scroll(function(){
             let nowScroll = $(window).scrollTop();
-            if (nowScroll == 0 && winWidth>768){
-                $('header').addClass('top');
+            console.log(nowScroll);
+            if (nowScroll == 0){
+                if(winWidth > 768){
+                    $('header').addClass('top');
+                }
                 $('.serviceBtnWrap').removeClass('on');  
+            console.log('dsadads');
             }else{
                 $('header').removeClass('top');      
                 $('.serviceBtnWrap').addClass('on'); 
