@@ -295,7 +295,7 @@
         });
         $(window).scroll(function(){
             let nowScroll = $(window).scrollTop();
-            if (nowScroll > 0 && winWidth>768){
+            if (nowScroll == 0 && winWidth>768){
                 $('header').addClass('top');
                 $('.serviceBtnWrap').removeClass('on');  
             }else{
