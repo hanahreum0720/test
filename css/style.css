@@ -2098,7 +2098,7 @@ footer p span {
     font-size: 1.889rem;
   }
   .formTable {
-    word-break: break-all;
+    max-width: 90vw;
   }
   .formTable .inputBox.checkWrap {
     display: block;
