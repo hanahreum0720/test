@@ -1708,6 +1708,12 @@ footer p span {
   max-width: 46rem;
   margin: 0 auto;
   text-align: left;
+  table-layout: fixed;
+  max-width: 90vw;
+}
+.formTable input {
+  width: 90%;
+  max-width: 87vw;
 }
 .formTable input[type=checkbox] + label::before {
   width: 2.4rem;
@@ -1731,7 +1737,7 @@ footer p span {
 }
 .formTable .inputBox:not(.checkWrap) textarea {
   width: 95%;
-  max-width: 77vw;
+  max-width: 87vw;
   height: 12rem;
   padding: 1rem 0;
   resize: none;
@@ -2097,10 +2103,6 @@ footer p span {
   }
   .pagingWrap > div button {
     font-size: 1.889rem;
-  }
-  .formTable {
-    table-layout: fixed;
-    max-width: 90vw;
   }
   .formTable .inputBox.checkWrap {
     display: block;
