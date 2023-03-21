@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-    <g data-name="checkbox_on" style="stroke:#ffc600;fill:#fff2d5">
-        <rect width="16" height="16" rx="5" style="stroke:none"/>
-        <rect x=".5" y=".5" width="15" height="15" rx="4.5" style="fill:none"/>
-    </g>
-    <g data-name="checkbox_on">
-        <path data-name="패스 165" d="m11050.4 1171.72 4.378 4.538 7.878-7.261" transform="translate(-11048.528 -1165.258)" style="stroke-width:2px;fill:none;stroke:#ffc600"/>
-    </g>
-</svg>

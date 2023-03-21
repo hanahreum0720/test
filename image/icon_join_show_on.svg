@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-    <path data-name="사각형 28" style="fill:none" d="M0 0h14v14H0z"/>
-    <g data-name="그룹 12" transform="translate(.696 3.052)">
-        <path data-name="패스 11" d="M664.562 418.968a7.484 7.484 0 0 0-12.984 0 7.484 7.484 0 0 0 12.984 0zm-6.493 2.941a2.94 2.94 0 1 1 2.921-2.941 2.931 2.931 0 0 1-2.921 2.941z" transform="translate(-651.577 -415.208)" style="fill:#ffc600"/>
-        <circle data-name="타원 1" cx="1.866" cy="1.866" r="1.866" transform="translate(4.627 1.895)" style="fill:#ffc600"/>
-    </g>
-</svg>
