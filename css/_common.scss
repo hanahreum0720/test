@@ -162,6 +162,9 @@ html,body,input,select,textarea,button,a,textarea{
     color: $main-txt;
     @include mainfont();
 }
+body{
+    touch-action: pan-x pan-y;
+}
 input{
     padding: 0.5rem 1rem;
     font-size: 1.5rem;
@@ -199,6 +202,7 @@ select {
     appearance: none;
     min-width:15rem;
     padding: 0.6rem 3.1rem 0.6rem 1.4rem;
+    background-color: transparent;
     background-image: url('../image/icon_select.svg');
     background-position: right 1rem center;
     background-repeat: no-repeat;
@@ -406,10 +410,13 @@ button{
                 top: 50%;
                 right: 0;
                 transform: translateY(-50%);
-                display: none;
+                display: block;
+                width: 85%;
+                height: 100%;
                 font-size: 1.2rem;
                 text-decoration: underline;
                 color: $gray-color;
+                @include txthide();
             }
         }
         .chkAll+label{
@@ -556,7 +563,9 @@ button{
             line-height: 1.5;
             label{
                 a{
-                    display: block;
+                    width: auto;
+                    text-indent: 0;
+                    font-size: 1.222rem;
                 }
             }
             .chkAll + label{

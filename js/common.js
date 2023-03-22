@@ -181,12 +181,4 @@ $(function(){
     });
     
 
-    //얼럿버튼
-    $('.btn-alert.disabled').on('click',function(e){
-        e.preventDefault();
-        let notice = $(this).data("notice");
-        alert(notice);
-    });
-    
-
 });

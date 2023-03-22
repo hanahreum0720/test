@@ -507,10 +507,16 @@ button:focus {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  display: none;
+  display: block;
+  width: 85%;
+  height: 100%;
   font-size: 1.2rem;
   text-decoration: underline;
   color: #aeaeae;
+  text-indent: -5000000000000000px;
+  overflow: hidden;
+  font-size: 0px;
+  text-align: left;
 }
 .certificationFrom .checkWrap .chkAll + label {
   display: block;
@@ -658,7 +664,9 @@ button:focus {
     line-height: 1.5;
   }
   .certificationFrom .checkWrap label a {
-    display: block;
+    width: auto;
+    text-indent: 0;
+    font-size: 1.222rem;
   }
   .certificationFrom .checkWrap .chkAll + label {
     margin-bottom: 1.5rem;
@@ -990,7 +998,8 @@ footer p span {
 }
 .main .mainSec01 {
   position: relative;
-  height: 109.6rem;
+  height: 100vh;
+  max-height: 109.6rem;
   background-image: url(../image/bg_main_sec01.png);
   background-size: cover;
 }
@@ -1347,7 +1356,8 @@ footer p span {
     bottom: 9.5rem;
   }
   .main .mainSec01 {
-    height: 74rem;
+    height: calc(100vh - 8rem);
+    max-height: 74rem;
     margin-top: 8rem;
     background-image: url(../image/bg_main_sec01_m.png);
     background-size: 100%;
@@ -1454,7 +1464,6 @@ footer p span {
     text-align: center;
     margin: 0 auto;
     clear: both;
-    width: 6.667rem;
   }
   .main .mainSec04 .caseSlide .slick-dots li {
     display: inline-block;
@@ -1709,7 +1718,6 @@ footer p span {
   margin: 0 auto;
   text-align: left;
   table-layout: fixed;
-  max-width: 90vw;
 }
 .formTable input {
   width: 90%;
@@ -1776,6 +1784,7 @@ footer p span {
   font-weight: normal;
 }
 .formTable tr:nth-child(1) th {
+  padding-top: 0;
   font-size: 1.8rem;
   font-family: "SpoqaB";
   font-weight: normal;
@@ -1964,7 +1973,7 @@ footer p span {
   padding-bottom: 0;
 }
 .sub.info.concept .tabWrap > div {
-  padding: 9.6rem 0 10rem;
+  padding: 7.6rem 0 10rem;
 }
 .sub.info.concept .tabWrap > div ul {
   display: grid;
@@ -2005,15 +2014,18 @@ footer p span {
 .sub.info.concept .tabWrap > div ul li .txtBox span {
   color: #aeaeae;
 }
+.sub.membership .certificationFrom > p {
+  font-size: 1.3rem;
+}
 .sub.membership.unsubscribe .certificationFrom {
   margin-top: 5rem;
 }
 .sub.membership.unsubscribe .certificationFrom > ul > li {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 .sub.service_center .tabList li {
   width: 22rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 6rem;
 }
 .sub.service_center .formTable tr:nth-last-child(2) .inputBox {
   margin-bottom: 3rem;
@@ -2104,6 +2116,9 @@ footer p span {
   .pagingWrap > div button {
     font-size: 1.889rem;
   }
+  .formTable {
+    max-width: 90vw;
+  }
   .formTable .inputBox.checkWrap {
     display: block;
   }
@@ -2128,7 +2143,7 @@ footer p span {
     padding: 0.666rem 1.111rem;
   }
   .formTable tr th {
-    padding: 3.889rem 0 1.111rem;
+    padding: 3.889rem 0 1.111rem !important;
     font-family: "SpoqaB";
     font-weight: normal;
     font-size: 1.778rem;
@@ -2195,8 +2210,11 @@ footer p span {
   .sub .certificationFrom p {
     color: #aeaeae;
   }
+  .sub.membership .certificationFrom > p {
+    font-size: 1.222rem;
+  }
   .sub.membership.unsubscribe .certificationFrom {
-    margin-top: 1.667rem;
+    margin-top: 0rem;
   }
   .sub.membership.unsubscribe .certificationFrom > ul > li {
     margin-bottom: 0.9rem;
@@ -2478,7 +2496,6 @@ footer p span {
   text-align: center;
   margin: 0 auto;
   clear: both;
-  width: 6.667rem;
 }
 .promotion .proSlide01 .slick-dots li, .promotion .proSlide02 .slick-dots li {
   display: inline-block;

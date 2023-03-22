@@ -7,9 +7,9 @@
     }
     .mainSec01{
         position: relative;
-        //height: 100vh;
-        //max-height:109.6rem;
-        height:109.6rem;
+        height: 100vh;
+        max-height:109.6rem;
+        //height:109.6rem;
         background-image: url(../image/bg_main_sec01.png);       
         background-size: cover;
         .center{
@@ -334,7 +334,8 @@
             }
         }
         .mainSec01{
-            height: 74rem;
+            height: calc(100vh - 8rem);
+            max-height: 74rem;
             margin-top: 8rem;
             background-image: url(../image/bg_main_sec01_m.png);   
             background-size: 100%;
@@ -359,9 +360,11 @@
                 li{
                     margin: 0 0 4.444rem;
                     font-size: 2rem;
+                    line-height: 1.5;
                     &::before{
                         width: 12.778rem;
                         height: 12.778rem;
+                        margin-bottom: 1.5rem;
                         background-size: 85%;
                     }
                 }
@@ -449,7 +452,6 @@
                     text-align: center;
                     margin: 0 auto;
                     clear: both;
-                    width: 6.667rem;
                     li{
                         display: inline-block;
                         width: 6px;

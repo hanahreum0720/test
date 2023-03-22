@@ -176,6 +176,11 @@
     max-width: 46rem;
     margin: 0 auto;
     text-align: left;
+    table-layout : fixed;
+    input{
+        width: 90%;
+        max-width: 87vw;
+    }
     input[type=checkbox] + label::before{
         width: 2.4rem;
         height:2.4rem;
@@ -195,7 +200,7 @@
             }
             textarea{
                 width: 95%;
-                max-width: 77vw;
+                max-width: 87vw;
                 height: 12rem;
                 padding: 1rem 0;
                 resize: none;
@@ -236,6 +241,7 @@
         }
         &:nth-child(1){
             th{
+                padding-top: 0;
                 font-size: 1.8rem;
                 @include fontWeightB();
             }
@@ -438,7 +444,7 @@
             }
             .tabWrap{
                 >div{
-                    padding: 9.6rem  0 10rem;
+                    padding: 7.6rem  0 10rem;
                     ul{
                         display: grid;
                         grid-template-columns:repeat(auto-fill, minmax(36rem, 1fr));
@@ -476,11 +482,16 @@
         }
     }
     &.membership{
+        .certificationFrom{
+            >p{
+                font-size: 1.3rem;
+            }
+        }  
         &.unsubscribe{
             .certificationFrom{
                 margin-top:5rem;
                 >ul>li{
-                    margin-bottom: 2.5rem;
+                    margin-bottom: 1rem;
                 }
             }            
         }
@@ -489,7 +500,7 @@
         .tabList{
             li{
                 width: 22rem;
-                margin-bottom: 2.5rem;
+                margin-bottom: 6rem;
             }
         }
         .formTable{
@@ -608,6 +619,7 @@
         }
     }
     .formTable{
+        max-width: 90vw;
         .inputBox{
             &.checkWrap{
                 display: block;
@@ -632,7 +644,7 @@
         }
         tr{
             th{
-                padding: 3.889rem 0 1.111rem;
+                padding: 3.889rem 0 1.111rem !important;
                 @include fontWeightB();
                 font-size: 1.778rem;
             }
@@ -712,9 +724,14 @@
             }
         }
         &.membership{
+            .certificationFrom{
+                >p{
+                    font-size: 1.222rem;
+                }
+            }  
             &.unsubscribe{
                 .certificationFrom{
-                    margin-top:1.667rem;
+                    margin-top:0rem;
                     >ul>li{
                         margin-bottom:0.9rem;
                     }
@@ -751,7 +768,8 @@
                 }
                 .infoSec01{
                     margin-top: 0;
-                    background-image: url(../image/bg_info_sec01_m.png);  
+                    background-image: url(../image/bg_info_sec01_m.png); 
+                    background-size: cover; 
                     .txtBox{       
                         p{
                             &:nth-child(1){
