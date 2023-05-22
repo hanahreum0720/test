@@ -1,306 +1,143 @@
 header{
     position: fixed;
     top: 0;
-    width: 100vw;
-    background-color: #fff;
-    @include transition();
-    z-index: 5000;
-    .center{
+    left: 0;
+    width: 100%;
+    padding-top: 8rem;
+    //mix-blend-mode: difference;
+    transition: 0.6s;
+    z-index: 4000;
+    @include aniFadeIn($n:headerFade,$s:0.8s,$t:translateY(0%));
+    .center{  
         @include flex();
-        height: 8rem;
-        &::before{
-            @include virtualIcon($w:100vw,$h:0){
-                position: fixed;
-                top: 0;
-                left: 0;
-                display: block;
-                background-color: $bg-color;
-            }
-            @include transition();
-        }
+        align-items: center;
+        @include centerAlign();      
         h1{
-            position: relative;
-            width: 15.5rem;
-            height: 2.6rem;
             a{
-                display: block;
-                width: 100%;
-                height:100%;
-                @include txthide();
-                background-image: url(../image/logo_b.svg);       
-                @include bgimg();
+                @include bgLogo();
             }
         }
-        .gnb_menu{
-            width: 70%;
-            max-width:62.2rem; 
-            @include flex();
-            text-align: center;
-            height: 100%;
-            a,span{
-                display: block;
-                width: 100%;
-                height: 100%;
-                color: $main-txt;
-                font-size: 1.8rem;
-                @include fontWeightM();
-            }
-            >li{
-                position: relative;
-                line-height: 8rem;
-                span{
-                    cursor: default;
+        .mobMenuBtn{
+            position: relative;
+            display: block;
+            width: 2.4rem;
+            height: 2rem;
+            @include txthide();
+            z-index: 5000;
+            cursor: pointer;
+            &::before,&::after{
+                position: absolute;
+                top: 5%;
+                left: 0;
+                @include virtualIcon($w:100%,$h:0.4rem){
+                    background-color: $main-txt;
                 }
-                ul{
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 150%;
-                    height: 0;
-                    padding: 1rem 0 0;
-                    overflow: hidden;
-                    @include transition();
-                    li{
-                        line-height: 3;
-                        a{
-                            color: $subgray-color;
-                            font-size: 1.6rem;
-                            &:hover{
-                                color: $sub-color2;
-                                @include fontWeightB();
-                            }
-                        }
-                    }
+                transition: 0.3s;
+            }
+            &::after{
+                top: auto;
+                bottom: 5%;
+            }
+            &.on{
+                &::before,&::after{
+                    background-color: #fff !important;
+                }
+                &::before{                
+                    top: 40%;
+                    transform:rotate(45deg);
+                }
+                &::after{
+                    bottom: 0%;
+                    transform: translateY(-200%) rotate(-45deg);
+                }
+                &+.subMenu{
+                    right: 0;
                 }
             }
-    
         }
-        &.on{
-            &::before{
-                height: 22.3rem;
-            }
-            h1{
+        .subMenu{
+            position: fixed;
+            right: -100%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 72rem;
+            height: 100vh;
+            padding-left: 12rem;
+            background-color: $main-color;
+            transition: all 1.2s;
+            z-index: 4500;
+            li{
                 a{
-                  background-image: url(../image/logo_g.svg) !important;
-                }
-            }
-            .gnb_menu{
-                color: $sub-color2;
-                >li{
-                    >a,>span{
-                        color: $sub-color2 !important;
-                        @include fontWeightB();
-                    }
-                    ul{
-                        height: auto;
-                    }
-
-                }
-            }
-        }
-    }    
-    &.top{
-        background-color: transparent;
-        border-bottom: none;
-        .center{
-            h1{
-                a{
-                  background-image: url(../image/logo.svg);  
-                }     
-            }
-            .gnb_menu{
-                >li{
-                    >a,>span{
-                        color: $main-bg-txt;
+                    color: $main-bg-txt;
+                    font-size: 7.2rem;
+                    line-height: 1.8;
+                    @include fontWeightE();
+                    &:hover{
+                        color: $main-txt;
                     }
                 }
             }
         }
     }
-}
-.content{
-    min-height: calc(100vh - 29.4rem);
+    &.white{
+        .center{
+            h1{
+                a{
+                    background-image: url('../images/logo_w.svg');
+                }
+            }
+            .mobMenuBtn{
+                &::before,&::after{
+                    background-color: #fff;
+                }
+
+            }
+        }
+    }
 }
 footer{
-    padding: 5rem 0 6rem;
-    background-color: $bg-color;
-    font-size: 1.4rem;
-    color: $subgray-color;
-    @include fontWeightM();
-    line-height: 1.7;
-    overflow: hidden;
-    h1{
-        float: right;
-        width: 15.5rem;
-        height: 2.6rem;
-        @include txthide();
-        background-image: url(../image/logo_g.svg);       
-        @include bgimg();
-    }
-    ul{
-        li{
-            display: inline-block;
-            &::before{
-                @include virtualIcon($w:1px,$h:1.2rem){
-                    background-color: #ccd6e9;
-                    margin: -2px 1rem 0;         
-                }
-            }
-            &:first-child{
-                &::before{
-                    display: none;
-                }
-            }
-        }
-        &:nth-of-type(1){
-            li{
-                a{
-                    color: $sub-color2;
-                    font-size: 1.6rem;
-                    @include fontWeightB();
-
-                }
-            }
-        }
-        &:nth-of-type(2){
-            li{
-                &:nth-child(3),&:last-child{
-                    display: block;
-                    &::before{
-                        display: none;
-                    }
-                }
-                &:nth-child(4){
-                    &::before{
-                        display: none;
-                    }
-                }
-            }
-        }
-    }
-    p{
-        margin:0.3rem 0 3rem;
-        span{
-            color: $sub-color2;
-            font-size: 1.6rem;
-            @include fontWeightB();
-        }
-    }
-}
-.mobMenuOpen,.mobMenuClose{
-   display: none;
-}
-
-@media only screen and (max-width: 768px) {    
-    header{
-        border-bottom: 1px solid #efefef;
-        .center{
-            &::before{
-                width: 0;
-                height: 100vh;
-                transition: none;
-            }
-            .gnb_menu{
-                display: none;
-            }
-            &.on{
-                &::before{
-                    width: 100%;
-                    height: 100vh;
-                }
-                .gnb_menu{
-                    position: absolute;
-                    top: 11rem;
-                    left: 0%;
-                    display: block;
-                    text-align: left;
-                    >li{
-                        line-height: 3;
-                        ul{
-                            position: initial;
-                            left: 0;
-                            transform: translateX(0);
-                            height: 0;
-                            padding:0 0 0 1rem;
-                            @include transition();
-                        }
-                        &.on{
-                            ul{
-                                height: auto;
-                            }
-                        }
-                    }
-                    
-                    span,a{
-                        &.now{
-                            color: $main-color !important;
-                        }
-                    }
-                }
-
-            }
-        }    
-        .mobMenuOpen,.mobMenuClose{
-            width: 2.444rem;
-            height: 2.444rem;
-            @include txthide();
-            background-size: 100%;
-        }
-        .mobMenuOpen{
-            display: block;
-            background-image: url(../image/icon_allmenu.svg);
-        }
-        .mobMenuClose{
-            position: relative;
-            background-image: url(../image/icon_x.svg);
-            &.on{
-                display: block;
-            }
-        }
-        &.top{
-            .mobMenuOpen{
-                background-image: url(../image/icon_allmenu_w.svg);
-            }
-        }
-    }
-    .content{
-        min-height: calc(100vh - 40.1rem);
-    }
-    footer{
-        padding: 3.333rem 0 4.444rem;
-        font-size: 1.444rem;
-        h1{
-            float: none;
-            margin: 0 0 2.778rem;
+    height: auto !important;
+    background-color: #fff;
+    .center{
+        position: relative;
+        display: flex;
+        gap:8rem;
+        padding: 8rem 0;
+        .footerLogo{
+            @include bgLogo($w:12.3rem, $h:2.3rem,$bgimg:url('../images/logo_footer.svg'));
         }
         ul{
-            &:nth-of-type(1){
-                li{
-                    a{
-                        font-size: 1.778rem;
-                    }
-                }
-            }
-            &:nth-of-type(2){
-                li{
-                    &::before{
-                        display: none;
-                    }
-                    &:nth-child(5){
-                        &::before{
-                            display: inline-block;
-                        }
-                    }
+            li{
+                font-size: 1.6rem;
+                line-height: 1.5;
+                strong{
+                    display: block;
+                    margin-bottom: 1.2rem;
+                    @include fontWeightE();
                 }
             }
         }
-        p{
-            margin:1rem 0 2.778rem;
-            span{
-                display: block;
-                font-size: 1.778rem;
-            }
+        .topBtn{
+            position: absolute;
+            bottom: 1rem;
+            right: 0;
+            width: 8rem;
+            height: 8rem;
+            background-color: $main-txt;
+            background-image: url('../images/btn_top.svg');
+            @include bgimg($s:40%);
+            @include txthide();
+
         }
+    }
+    .copyright{
+        padding:4rem 0;
+        border-top: 1px solid $border-color;
+        @include fontWeightL();
+        font-size: 1.6rem;
+        text-align: center;
     }
 }

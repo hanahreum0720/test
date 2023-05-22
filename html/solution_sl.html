@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Enliple AI Lab</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+<div class='container sub solution sl'>
+    <header>
+        <div class="center">                
+            <h1><a href="../index.html">Enliple AI Lab</a></h1>
+            <button type="button" class="mobMenuBtn">모바일메뉴</button>
+            <ul class="subMenu">
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./solution_sl.html">Solution</a></li>
+                <li><a href="./career.html">Career</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class='subTitleArea on'>
+        <div class="scrollBox">
+            <div class="center">
+                <h2>Solution</h2>
+                <ul>
+                    <li class="on"><a href="./solution_sl.html">Shopping Lens</a></li>
+                    <li><a href="./solution_ctg.html">Category</a></li>
+                    <li><a href="./solution_ipt.html">i-PT</a></li>
+                    <li><a href="./solution_ift.html">i- Fitting</a></li>
+                    <li><a href="./solution_other.html">Other Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>        
+    <div class='pageWrap'>
+        <section class='page sub00'><div class="scrollBox"></div></section>        
+        <section class='page sub01'>
+            <div class="balckBG"><span></span><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="scrollBox progressBarBox animateFadeBox">
+                <span class="progressBar"><span><i></i></span></span>
+                <div class="center animateFadeWrap">
+                    <ul class="animateFadeList imgList">
+                        <li class="start now">
+                            <div class="fadeCont">
+                                유사 상품 추천 기술 <span class="txt_sub">쇼핑렌즈</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                쇼핑 렌즈 서비스는 소비자가 선택한<br>
+                                상품의 패턴, 컬러 및 모양과<br>
+                                유사한 상품을 추천하여,<br>
+                                소비자의 관심 구매를 유도하는<br>
+                                서비스 입니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                쇼핑렌즈를 통해 소비자는<br>
+                                쇼핑에 드는 시간을 줄이며,<br>
+                                좀 더 원하는 상품을 구매할 것입니다.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                AI가 이미지에서 상품을<br>
+                                자동 분석                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                패턴을 통한<br>
+                                검색 필터링 제공
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                컬러를 통한<br>
+                                검색 필터링 제공
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                AI가 해당 상품과 유사한<br>
+                                스타일의 상품을 검색
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                <span class="solutionLogo">shopping Lens.</span>
+                                <button class="popOpenBtn playBtn" data-popname="popSolution01">시연영상</button>                                
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fadeCont">
+                                <span>NEXT SOLUTION</span>
+                                <a href="../html/solution_ctg.html">Category</a>
+                            </div>
+                        </li>
+                    </ul>                    
+
+                </div>
+            </div>
+        </section>
+        <footer class='page footer'> 
+            <div class="scrollBox">
+                <div class="center">
+                    <p class="footerLogo">ENLIPLE</p>
+                    <ul>
+                        <li><strong>Address</strong>서울특별시 구로구 구로동 디지털로 272 한신아이티타워 501호~504호</li>
+                        <li><strong>Contact</strong>T. 070-4672-2303<br>E. enliple@enliple.com</li>
+                    </ul>
+                    <button type="button" class="topBtn">맨위로</button>
+                </div>
+                <div class="copyright">
+                    Copyright(c) ENLIPLE All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>        
+</div>
+<div class="popLayer" id="popSolution01">
+    <button type="button" class="popCloseBtn">팝업 닫기</button>
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on('wheel touchmove',function(){
+            if($('.sub00').hasClass('now') == true){   
+                $('.subTitleArea').addClass('on');
+            }else{
+                $('.subTitleArea').removeClass('on');            
+            }
+            if($('.sub01').hasClass('now') == true){   
+                $('header').addClass('white');
+                $('.sub01 .balckBG').addClass('on');    
+            }else{
+                $('header').removeClass('white');      
+                $('.sub01 .balckBG').removeClass('on');         
+            }
+        });        
+    });
+</script>
+</body>
+</html>

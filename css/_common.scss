@@ -1,58 +1,31 @@
 //공통
-$main-txt: #000000;
+$main-color : #4bd254;
+$sub-color : #30c98d;
+$gray-color: #fcfcff;
+$darkgray-color: #777;
+$bg-color : #eef2f5;
+$border-color :#e5e8eb;
+$main-txt: #111;
 $red-txt : #f51a1a;
-$blue-txt : #0659ff;
+$blue-txt : #2a6cef;
 $main-bg-txt : #fff;
-$main-color : #0659ff;
-$point-color: #2d91ff;
-$sub-color : #0010a5;
-$sub-color2 : #192d82;
-$gray-color: #aeaeae;
-$subgray-color : #5a69a7;
-$darkgray-color: #8f8f8f;
-$darkgray-color2: #707070;
-$bg-color : #eaeef6;
-$bglight-color : #f2f6ff;
-$border-color :#d8d8d8;
-$border-color2 :#efefef;
-$main-radius : 45px;
+
+::selection{background-color: $main-color;color: #fff;}
 
 @mixin mainfont{
-    font-family: "SpoqaR";
+    font-family: "Pretendard-Regular";
 }
 @mixin fontWeightL{
-    font-family:"SpoqaL";
-    font-weight: normal;
+    font-family: 'Pretendard-light';
 }
 @mixin fontWeightM{
-    font-family:"SpoqaM";
-    font-weight: normal;
+    font-family: 'Pretendard-medium';
+}
+@mixin fontWeightE{
+    font-family: 'Pretendard-extrabold';
 }
 @mixin fontWeightB{
-    font-family:"SpoqaB";
-    font-weight: normal;
-}
-@mixin gradient{    
-  background: -webkit-linear-gradient(
-    110deg,
-    $main-color 47%,
-    $sub-color 100%
-  );
-  background: -moz-linear-gradient(
-    110deg,
-    $main-color 47%,
-    $sub-color 100%
-  );
-  background: -o-linear-gradient(
-    110deg,
-    $main-color 47%,
-    $sub-color 100%
-  );
-  background: linear-gradient(
-    110deg,
-    $main-color 47%,
-    $sub-color 100%
-  );
+    font-family: 'Pretendard-black';
 }
 @mixin txthide {
     text-indent: -5000000000000000px;
@@ -60,14 +33,12 @@ $main-radius : 45px;
     font-size: 0px;
     text-align: left;
 }
-
 @mixin txtellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
     overflow: hidden;
 }
-
 @mixin txtellipsisMulti($h:2.4rem, $lh:1.2rem, $l:2) {
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -79,10 +50,13 @@ $main-radius : 45px;
     line-height: $lh;
     height: $h;
 }
-@mixin float{
-    >*{
-        float: left;
-    }
+@mixin lineTxt(){    
+    -webkit-text-stroke: 1px $main-txt;
+    -webkit-text-fill-color: transparent;
+}
+@mixin lineTxtOn(){    
+    -webkit-text-stroke: 0px $main-txt;
+    -webkit-text-fill-color: $main-txt;
 }
 @mixin clear() {
     &::after {
@@ -91,11 +65,60 @@ $main-radius : 45px;
         clear: both;
     }
 }
-@mixin customScroll($barcolor:$border-color,$bgrcolor:transparent){
+@mixin centerAlign(){
+    max-width: 144rem;
+    margin: 0 auto;
+}
+@mixin centerPosition($t:50%,$l:50%,$tx:-50%,$ty:-50%){
+    position: absolute;
+    top: $t;
+    left: $l;
+    transform: translateX($tx) translateY($ty);
+}
+@mixin stickyPosition($t:calc(50% - 40vh + 11rem)){
+    position: sticky;
+    top: $t;
+    height: 80vh;
+}
+@mixin flex{
+    display: flex;
+    justify-content: space-between;
+    @content;
+}
+@mixin flexCenter{
+    display: flex;
+    align-items: center;
+    @content;
+}
+@mixin bgimg($s:100%) {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: $s;
+}
+
+@mixin bgLogo($w:16.8rem, $h:3.1rem,$bgimg:url('../images/logo_b.svg')) {
+    display: block;
+    width: $w;
+    height: $h;
+    background-image: $bgimg;
+    @include bgimg();
+    @include txthide();
+}
+
+@mixin virtualIcon($w:1rem, $h:1rem) {
+    content: '';
+    display: inline-block;
+    width: $w;
+    height: $h;
+    vertical-align: middle;
+    @include bgimg();
+    @content;
+}
+@mixin customScroll($w:5px,$barcolor:$border-color,$bgrcolor:transparent){
     overflow: hidden;
     overflow-y: auto;
     &::-webkit-scrollbar {
-        width: 5px;
+        width: $w;
         height: 5px;
     }
     &::-webkit-scrollbar-thumb {
@@ -107,499 +130,435 @@ $main-radius : 45px;
         border-radius: 5px;
     }
 }
-
-@mixin flex{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @content;
+//animation
+@keyframes ani-line {
+    0% {
+        height: 0;
+    }
+    100% {
+        height:100%;
+    }
 }
-
-@mixin tablecell {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    @content;
-    >* {
-        display: table-cell !important;
+@keyframes ani-height {
+    0% {
+        height: 100%;
+    }
+    100% {
+        height:0%;
+    }
+}
+@keyframes ani-textfill {
+    0% {
+        -webkit-text-stroke: 1px $main-txt;
+        -webkit-text-fill-color: transparent;
+    }
+    100% {
+        -webkit-text-stroke: 0px $main-txt;
+        -webkit-text-fill-color: $main-txt;
+    }
+}
+@keyframes ani-textindent {
+    0% {
+        text-indent: -100%;
+    }
+    100% {
+        text-indent: 0%;
+    }
+}
+@keyframes ani-textindent2 {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes ani-opacity {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes ani-rotate {
+    0% {
+        transform:rotate(0deg);
+    }
+    100% {
+        transform:rotate(360deg);
+    }
+}
+@keyframes ani-career02 {
+    0% {
+        bottom: 15%;
+        left: 0;
+    }
+    40%{
+        bottom: 65%;
+        left: 65%;
+    }
+    45%{
+        bottom: 65%;
+        left: 65%;
+    }
+    70%{
+        bottom: 15%;
+        left: 75%;
+    }
+    75%{
+        bottom: 15%;
+        left: 75%;
+    }
+    100% {
+        bottom: 18%;
+        left: 35%;
     }
 }
 
-@mixin bgimg {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
+@keyframes ani-career03_01 {
+    0% {
+        left: 0;
+    }    
+    35% {
+        left: 8rem;
+    }
+    60% {
+        left: 8rem;
+    }
+    100% {
+        left: 0;
+    }    
+}
+@keyframes ani-career03_02 {
+    0% {
+        left: 8rem;
+    }    
+    35% {
+        left: 0;
+    }
+    60% {
+        left: 0;
+    }
+    100% {
+        left: 8rem;
+    }    
 }
 
-@mixin virtualIcon($w:1rem, $h:1rem) {
-    content: '';
-    display: inline-block;
-    width: $w;
-    height: $h;
-    vertical-align: middle;
-    @content;
+@mixin fadeCont($ty:100%){    
+    transform: translateY($ty);
+    opacity: 0;
 }
-@mixin transition(){
-    transition: all 0.3s;
+@mixin aniFadeIn ($n,$s:1.5s,$d:0s,$t:translateY(50%),$t2:translateY(0%)) {
+    @keyframes #{$n} {
+        0% {
+            transform : $t;
+            opacity: 0;
+        }
+        100% {
+            transform : $t2;
+            opacity: 1;
+        }
+    }
+    animation: #{$n} $s ease-in-out $d forwards;
 }
-@mixin mainBtn(){
-    width: 100%;
-    max-width: 54rem;
-    margin: 0 auto;
-    border-radius: $main-radius;
-    @include fontWeightB();
+@mixin aniFadeOut ($n,$s:1.5s,$d:0s,$t:translateY(0%),$t2:translateY(-50%)) {
+    @keyframes #{$n} {
+        0% {
+            transform : $t;
+            opacity: 1;
+        }
+        100% {
+            transform : $t2;
+            opacity: 0;
+        }
+    }
+    animation: #{$n} $s ease-in-out $d forwards;
+}
+@keyframes ani-fadeinout {
+    0% {
+        transform : translateY(50%);
+        opacity: 0;
+    }
+    30% {
+        transform : translateY(0%);
+        opacity: 1;
+    }
+    70%{
+        transform : translateY(0%);
+        opacity: 1;
+    }
+    100%{
+        transform : translateY(-50%);
+        opacity: 0;
+    }
+}
 
+@mixin anitop ($n,$s:1.5s,$d:0s,$t:0%,$t2:20%) {
+    @keyframes #{$n} {
+        0% {
+            top : $t;
+        }
+        100% {
+            top : $t2;
+        }
+    }
+    animation: #{$n} $s ease-in-out $d forwards;
 }
-@mixin floatBtn(){
-    max-width: 90%;
-    background-color: #fff;
-    border:1px solid $sub-color;
-    color:  $sub-color;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+                              
+@keyframes cursor {
+    0% { border-right: 2px solid transparent; }
+    50% { border-right: 2px solid #fff; }
+    100% { border-right: 2px solid transparent; }
+}
 
-}
-html,body,input,select,textarea,button,a,textarea{
+body,input,select,textarea,button,a{
     color: $main-txt;
     @include mainfont();
 }
 body{
     touch-action: pan-x pan-y;
 }
-input{
-    padding: 0.5rem 1rem;
-    font-size: 1.5rem;
-    &::placeholder{
-        font-size: 1.5rem;
-        color: $gray-color;
-    }
-}
-input[type="checkbox"]{
-    display: none;
-    &+label {
-        @include fontWeightM();
-        cursor: pointer;
-        &::before {
-            @include virtualIcon($w:1.8rem, $h:1.8rem) {
-                margin: -3px 0.5rem 0 0;
-                background-image: url("../image/checkbox_off.svg");
-                box-sizing: border-box;
-                background-size: 100%;
-                border-radius: 4px;
-                overflow: hidden;
-            }
-        }
-    }
-    &:checked+label {
-        &::before {
-            background-color: $main-color;
-            background-image: url("../image/checkbox_on.svg");
-        }
-    }
-}
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    min-width:15rem;
-    padding: 0.6rem 3.1rem 0.6rem 1.4rem;
-    background-color: transparent;
-    background-image: url('../image/icon_select.svg');
-    background-position: right 1rem center;
-    background-repeat: no-repeat;
-    border-radius: 1rem;
-    border: 1px solid $border-color;
-    font-size: 1.4rem;
-    cursor: pointer;
-    &::-ms-expand {
-        display: none;
-    }
-}
-textarea{
-    border: none;
-    &::placeholder{
-        font-size: 1.5rem;
-        color: $gray-color;
-    }
-    &:focus{
-        outline: none;
-    }
-}
-button{
-    &:focus{
-        outline: none;
-    }
-}
-.center {
-    position: relative;
-    width: 90%;
-    max-width: 120rem;
-    margin: 0 auto;
-    clear: both;
-}
 .red {
     color: #f00 !important;
 }
 .txt_red {
-    color: $red-txt !important;
+    color: $red-txt;
 }
 .txt_blue {
-    color: $blue-txt !important;
+    color: $blue-txt;
+}
+.txt_sub {
+    color: $sub-color;
 }
 .btn{
-    display: inline-block;
-    padding: 1rem 1rem;
-    border-radius: 8px;
-    font-size: 1.5rem;
-    text-align: center;
-    border: 1px solid transparent;
-    &.btn_main{
-        background-color: $main-color;
-        color: #fff;
-    }
-    &.btn_sub{
-        background-color: $sub-color2;
-        color: #fff;
-    }
-    &.btn_line_main{
-        border:1px solid $sub-color;
-        color:  $sub-color;
-        @include fontWeightB();
-    }
-    &.btn_line_b{
-        border:1px solid  $border-color;
-        color: $main-txt;
-        background-color: #fff;
-    }
-    &.btn_bg_w{
-        background-color:#fff;
-    }
-    &.btn_square{
-        border-radius: 0;
-    }
-    &.disabled {
-        border: solid 1px $darkgray-color !important;
-        background: $darkgray-color !important;
-        color: #fff !important;
+    display: inline-block;    
+    padding: 0.8rem 0rem;
+    border-radius: 3.2rem;
+    @include fontWeightB();
+    background-color: #fff;
+    color: $main-txt;
+}
+.container{ 
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    .pageWrap{
+        width: 100%;
+        height: 100vh;
+        transition-duration: 1.2s;
+            .page{                
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                overflow: hidden;
+                .scrollBox{
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;               
+                    @include customScroll($w:0px);
+                }
+                .center{
+                    @include centerAlign();
+                }
+        }    
     }
 }
-.loadingBlock {
-    position: fixed;
+
+.balckBG{
+    position: absolute;
     top: 0;
     left: 0;
-    display: block;
+    display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 10100;
-}
-.pc_br{
-    display: block;
-}
-.topBtnWrap{
-    position: sticky;
-    top: 100vh;
-    max-width: 120rem;
-    margin: 0 auto;
-    z-index: 3000;
-    .topBtn{
-        position: absolute;
-        bottom: 3rem;
-        right: 3rem;
-        display: none;
-        width: 7.4rem;
-        height: 7.4rem;
-        background-color: #fff;
-        border: 2px solid $sub-color;
-        background-image: url(../image/icon_v.svg);
-        background-position: center;
-        border-radius: 50%;  
-        box-shadow: 0 0 15px 0 rgba(65, 71, 119, 0.1);
-        @include txthide();
+    z-index: -1;
+    span{
+        position: absolute;        
+        width: 100%;
+        height: 100%;
+        background-color: #0a0a0a;      
     }
-}
-.serviceBtnWrap{
-    position: absolute;
-    bottom: 15rem;
-    width: 100%;
-    max-width: 54rem;
-    a,button{
-        padding: 3rem 0;
-        font-size: 2.8rem;
-        @include mainBtn();
-    }
-}
-.inputBox{
-    position: relative;
-    box-sizing: border-box;
-    &::after{
+    i{
         position: absolute;
-        bottom: -3rem;
+        top: 0;
         left: 0;
-        display: none;
-        content: attr(data-info);
-        color: $point-color;
-        font-size: 1.5rem;
-    }
-    &.info{
-        margin-bottom: 3rem;
-        &:not(.checkWrap){
-            border: 2px solid $point-color !important;
+        width: 25%;
+        height: 0%;
+        border-left:1px solid #333;
+        overflow: hidden;
+        &:nth-of-type(1){
+            height: 100%;
+            width: 12.5%;
         }
-        &::after{
+        &:last-child{
+            width: 12.5%;
+        }
+        &:nth-child(odd){
+            top: auto;
+            bottom: 0;
+        }
+        @for $i from 2 to 6{
+            &:nth-of-type(#{$i}){
+                left: calc(25% * ($i - 1) - 12.5%);
+            }
+        }
+    }
+    &.on{
+        i:not(:nth-of-type(1)){
+            animation: ani-line 1.2s ease-in-out forwards;
+        }
+    }
+    &.active{
+        background-color: #fff;
+        span{
+            animation: ani-height 0.8s ease-in-out forwards;
+        }
+        i{
+            top: 0 !important;
+            bottom: auto !important;
+            height: 100%;
+            background-color: #0a0a0a;
+            animation: ani-height 0.8s ease-in-out forwards;
+            @for $i from 1 to 6{
+                &:nth-of-type(#{$i}){
+                    animation-delay: 0.5s - (0.1 * $i) ;
+                }
+            }
+        }
+
+    }
+}
+.progressBarBox{
+    position: relative;
+    height: 100%;
+    .progressBar{
+        position: sticky;
+        top: calc(50% - 16rem + 9rem);
+        left: calc(100% - 26rem);
+        display: inline-block;
+        width: 1rem;
+        z-index: 500;
+        &::before{
+            position: absolute;
+            left: 0;
+            bottom: calc(120% + 2rem);
             display: block;
+            width: 18rem;
+            content: attr(data-progressname);
+            @include fontWeightB();
+            transform: translate(-48.5%,  -50%) rotate(90deg);
+            text-align: right;
+        }
+        span{
+            position: relative;
+            display: block;
+            height: 32rem;
+            width: 0.1rem;
+            background-color: #ccc;
+        }
+        i{
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 0%;
+            background-color: #373737;
         }
     }
 }
-.certificationFrom{
-    >ul>li{
-        @include flex();
-        gap: 0.9rem;
-        margin-bottom: 0.9rem;
-        button{
-            flex: 1;
-            height: 4rem;
-            @include fontWeightM();
-            &.on{
-                border:1px solid $sub-color;
-                color:  $sub-color;
-                @include fontWeightB();
-            }
-        }
-        select,input{
-            padding: 0;
-            border: none;
-            @include fontWeightM();
-        }
-        select{
-            min-width: 6.5rem;
-        }
-        input{
-            width: 60%;
-        }
-        .inputBox{
-            @include flex();
-            width: 100%;
-            padding: 1.05rem 2rem;
-            border: 1px solid $border-color;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .count{
-            color: $sub-color;
-            font-size: 1.2rem;
-            @include fontWeightM();
-        }
-        &:nth-child(3){
-            .inputBox{
-                flex:2;
-            }
-            button{
-                font-size: 1.2rem;
-            }
-        }
-    }
-    .checkWrap{
-        margin: 2rem 0 0.8rem;
-        word-break: keep-all;
-        label{
-            position: relative;
-            display: inline-block;
-            margin: 0 1.8rem 1rem 0;
-            a{
-                position: absolute;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%);
-                display: block;
-                width: 85%;
-                height: 100%;
-                font-size: 1.2rem;
-                text-decoration: underline;
-                color: $gray-color;
-                @include txthide();
-            }
-        }
-        .chkAll+label{
-            display: block;
-            font-size: 1.4rem;
-            @include fontWeightB();
-        }
-        .chk+label{
-            font-size: 1.2rem;
 
+.animateFadeList{
+    position: relative;
+    overflow: hidden;
+    >li{
+        position: absolute;
+        top: 0%;
+        left: 0;
+        z-index: 1;
+        &.now{
+            z-index: 10;
         }
     }
-    .btnWrap{
-        display: flex;
-        gap:1rem;
-        >*{
-            flex: 1;
+    .fadeCont{
+       @include fadeCont();
+    }
+    .wheelup{
+        &.active{
+            @include aniFadeOut($n:main02-02,$s:0.8s,$t:translateY(0%),$t2:translateY(50%));
         }
-        a,button{
-            height: 5rem;
-            line-height: 1.5;
-            vertical-align: middle;
-            font-size: 1.4rem;
-            @include mainBtn();
+        &.next{
+            @include aniFadeIn($n:main02-01,$s:0.8s,$d:0.5s,$t:translateY(-50%),$t2:translateY(0%)); 
         }
     }
-    >p{
-        padding: 2rem 0 ;
-        color: $gray-color;
-        font-size: 1rem;
-        text-align: center;
-        line-height: 1.3;
-        span{
-            display: block;
-            margin: 0 0 0.5rem;
-            color:$sub-color2;
-            font-size: 1.2rem;
-            @include fontWeightB();
+    .wheeldown{
+        &.prev{
+            @include aniFadeOut($n:main02-04,$s:0.8s);
+        }
+        &.active{
+            @include aniFadeIn($n:main02-03,$s:0.8s,$d:0.5s);
+        }
+    }
+}
+
+.animateCircleScroll{
+    @include stickyPosition();
+    transition: all 0.8s ease-in-out;
+}
+
+.playBtn{
+    display: inline-block;
+    font-size: 4.8rem;
+    color: #fff;
+    @include fontWeightE();
+    vertical-align: middle;
+    &::after{
+        @include virtualIcon($w:4.8rem,$h:4.8rem){
+            margin:-0.5rem 0 0 2.5rem;
+            background-image: url('../images/btn_common_play.svg');  
+            vertical-align: middle; 
+         }
+    }
+    &:hover{
+        &::after{
+            background-image: url('../images/btn_common_play_hover.svg');
         }
     }
 }
 .popLayer{
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%,-50%);    
     display: none;
+    width: 70vw;
+    height: 60vh;
+    background-color: #000;
+    z-index: 2000;
     &.on{
-      display: block !important;
-    } 
-    .popDim{
-        position:fixed;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0,0,0,0.6);
-        top: 0;
-        left: 0;
-        z-index: 8000;
-    }  
-}
-@media only screen and (max-width: 1210px) {
-}
-@media only screen and (max-width: 768px) {      
-    .topBtnWrap{
-        .topBtn{
-            right: 1rem;
-            width: 5rem;
-            height: 5rem;
-            background-size: 110%;
-            border-width: 1px;
-        }
-    }  
-    .serviceBtnWrap{
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 100%;
-        z-index: 3000;
-        a,button{
-            width: 100%;
-            max-width: 100%;
-            padding: 1.8rem 0;
-            font-size: 1.778rem;
-            @include fontWeightB();
-        }
-        &.on{
-            position: fixed;
-            bottom: 2rem;
-            a,button{
-                @include  floatBtn();
-            }
-        }
-    }
-    .bottomFixedWrap{ 
-        // position: sticky;
-        // top: 0;
-        position: fixed;
-        bottom: 2rem;
-        left: 5%;
-        display: flex;   
-        width: 90%; 
-        z-index: 1000;
-        >button,>a{
-            flex: 1;
-            height: auto !important;
-            padding: 1.888rem 0 !important;
-            box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
-            font-size: 1.778rem !important;
-        }
-        &.hide{
-            position: absolute !important;
-            bottom: 0rem !important;
-        }
-    }
-    .pc_br{
-        display: none;
-    }
-    .mo_br{
         display: block;
     }
-    .certificationFrom{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 0 0 10rem;
-        >ul>li{
-            button,select,input,input::placeholder{
-                font-size: 1.778rem;
-            }
-            input{
-                width: 75%;
-            }
-            button{
-                height: 4.667rem;
-                border-width:1px !important;
-            }            
-            &:nth-child(3){
-                button {
-                    font-size: 1.556rem !important;
-                }
-            }
-            .count{
-                font-size: 1.556rem;
+    .popCloseBtn{
+        position: absolute;
+        top: -5rem;
+        right: 0;
+        width: 4rem;
+        height: 4rem;
+        @include txthide();
+        cursor: pointer;
+        &::before,&::after{
+            position: absolute;  
+            top: 40%;
+            left: 0;
+            @include virtualIcon($w:100%,$h:0.2rem){
+                background-color:#fff;
             }
         }
-        .checkWrap{
-            order: 3;
-            line-height: 1.5;
-            label{
-                a{
-                    width: auto;
-                    text-indent: 0;
-                    font-size: 1.222rem;
-                }
-            }
-            .chkAll + label{
-                margin-bottom: 1.5rem;
-                font-size: 1.778rem;
-                &::before{
-                    margin-right: 1rem;
-                }
-            }
-            .chk + label{
-                display: block;
-                margin: 0 0 2.222rem 0;
-                @include fontWeightM();
-                font-size: 1.556rem;
-                &::before{
-                    margin-right: 1rem;
-                }
-            }
+        &::before{              
+            transform:rotate(45deg);
         }
-        >p{
-            order: 2;
-            font-size: 1.222rem;
+        &::after{
+            transform: rotate(-45deg);
         }
-        .btnWrap{
-            button,a{
-                flex: 1;
-                height: auto !important;
-                padding: 1.888rem 0 !important;
-                box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
-                font-size: 1.778rem !important;
-            }
-        }
-
-
     }
 }
 
@@ -611,8 +570,8 @@ button{
         font-size: 2.5vw;
     }
 }
-@media only screen and (max-width: 279px) {
+@media only screen and (max-width: 280px) {
     html,body{
-        font-size: 10px;
+        font-size: 12px;
     }
 }
