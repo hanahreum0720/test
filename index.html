@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./img/favicon.ico">
+    <link rel="shortcut icon" href="./images/favicon.png">
     <title>Enliple AI Lab</title>
     <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src="./js/jquery.min.js"></script>
@@ -80,12 +80,12 @@
         <section class='page main03' style="position:relative">
             <div class="scrollBox progressBarBox" id="canvasScrollBox">
                 <span class="progressBar" data-progressname="Solution"><span><i></i></span></span>
-                <div>                    
+                <div class="center">                    
                      <canvas id="mainPartVideo" ></canvas>
                      <div class="btnWrap">
                         <ul>
                             <li>Computer Vision</li>
-                            <li>Natural language proces</li>
+                            <li>Natural language processing</li>
                         </ul>
                         <ul>
                             <li><a href="./html/solution_ctg.html">Category</a></li>
@@ -131,7 +131,8 @@
 </div>
 <script>
     $(document).ready(function(){
-        $(window).on('wheel touchmove',function(){
+        $('.main01').trigger('click');
+        $(window).on('wheel touchend',function(){
             if($('.main01').hasClass('now') == true || $('.main04').hasClass('now') == true ){   
                 $('header').addClass('white');
             }else{
@@ -197,7 +198,7 @@
                 audio[i].mute = true;
                 audio[i].play();
                 audio[i].mute = false;
-            }, (i + 1) * 1000);
+            }, (i + 1) * 1200);
         }
     })
     $('.main02 .animateTxtFill li').eq(1).find('input[type="checkbox"]').on('change',function(){
@@ -223,11 +224,13 @@
         $(this).toggleClass('off');
         if($(this).hasClass('off') == true){
             for(var i = 0; i<11;i++){
-                audio[i].mute = false;
+                audio[i].mute = true;
+                console.log('aaa')
             } 
         }else{
             for(var i = 0; i<11;i++){
-                audio[i].mute = true;
+                audio[i].mute = false;
+                console.log('bbb')
             } 
         }
     });

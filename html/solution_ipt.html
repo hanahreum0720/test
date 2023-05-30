@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.png">
     <title>Enliple AI Lab</title>
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -54,6 +54,7 @@
                         </li>
                         <li>
                             <div class="fadeCont">
+                                <input type="checkbox">
                                 텍스트를 입력하면
                                 <p class="atWrap">" <span class="animateTyping">안녕하세요 저는 AI 아나운서 입니다. </span> "</p>
                             </div>
@@ -109,7 +110,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        $(window).on('wheel touchmove',function(){
+        $(window).on('wheel touchend',function(){
             if($('.sub00').hasClass('now') == true){   
                 $('.subTitleArea').addClass('on');
             }else{
@@ -118,16 +119,19 @@
             if($('.sub01').hasClass('now') == true){   
                 $('header').addClass('white');
                 $('.sub01 .balckBG').addClass('on');   
-                typingAni( ".animateTyping",100,3500);
             }else{
                 $('header').removeClass('white');      
                 $('.sub01 .balckBG').removeClass('on');         
             }
+            if($('.sub01 .animateFadeList li').eq(1).hasClass('now') == true){
+                if( $('.sub01 .animateFadeList li').eq(1).find('input[type="checkbox"]').prop("checked") == false){
+                    $('.sub01 .animateFadeList li').eq(1).find('input[type="checkbox"]').prop('checked',true).trigger("change");                    
+                }
+            }
         });        
     });
-    
     async function typingAni (name,speed,delay) { 
-        let txtWrap = document.querySelector(name);
+         let txtWrap = document.querySelector('.animateTyping');
         let txtArray = new Array();
         let txt = txtWrap.innerText;
         txtWrap.innerText = '';
@@ -143,7 +147,10 @@
     function wait(ms) {
         return new Promise(resolve => setTimeout(resolve, ms))
     }
-    //typingAni( ".animateTyping",100,2500);
+    //typingAni( ".animateTyping",100,2500);    
+    $('.sub01 .animateFadeList li').eq(1).find('input[type="checkbox"]').on('change',function(){
+        typingAni( ".animateTyping",100,1000);
+    })
 </script>
 </body>
 </html>

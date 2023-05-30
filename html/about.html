@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.png">
     <title>Enliple AI Lab</title>
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -41,15 +41,14 @@
             <div class="balckBG"><span></span><i></i><i></i><i></i><i></i><i></i></div>
             <div class="scrollBox">
                 <div class="center">
-                    <div class="circleAni"><i></i></div>
                     <p>
-                        인라이플 인공지능 연구소 AI와<br>
-                        비지니스가 접목하는 지점에서,<br>
-                        기술이 사람을 대체하는 것이 아니라
-                    </p>      
+                        인라이플 인공지능 <i class="mob_br"></i>연구소 AI와<i class="pc_br"></i>
+                        비지니스가 <i class="mob_br"></i>접목하는 지점에서,<br>
+                        기술이 사람을 <i class="mob_br"></i>대체하는 것이 아니라
+                    </p>    
+                    <div class="circleAni"><i></i></div>  
                     <p>
-                        사람의 역량을 최대한<br>
-                        발현되도록 도움주는 방향을 제시합니다.
+                        사람의 역량을 <i class="mob_br"></i>최대한 <i class="pc_br"></i>발현되도록 <i class="mob_br"></i>도움주는 방향을 <i class="mob_br"></i>제시합니다.
                     </p>
                 </div>
             </div>
@@ -59,20 +58,22 @@
                 <div class="center">
                     <h3>History</h3>
                     <div class="tabWrap">
-                        <ul class="tabList">
-                            <li class="on"><button type="button">2022.</button></li>
-                            <li><button type="button">2021.</button></li>
-                            <li><button type="button">2020.</button></li>
-                            <li><button type="button">2019.</button></li>
-                            <li><button type="button">2018.</button></li>
-                        </ul>
+                        <div class="tabListWrap">
+                            <ul class="tabList">
+                                <li class="on"><button type="button">2022.</button></li>
+                                <li><button type="button">2021.</button></li>
+                                <li><button type="button">2020.</button></li>
+                                <li><button type="button">2019.</button></li>
+                                <li><button type="button">2018.</button></li>
+                            </ul>
+                        </div>
                         <div class="tabBoxWrap">
                             <div class="tabBox on">
                                 <ul>
                                     <li>
                                         <strong>1Q</strong>
                                         <ul>
-                                            <li>상품 Multi-modal 검색엔진 개발</li>
+                                            <li>· 상품 Multi-modal 검색엔진 개발</li>
                                         </ul>
                                     </li>
                                     <li>
@@ -220,17 +221,17 @@
         <section class='page sub03'>
             <div class="balckBG"><span></span><i></i><i></i><i></i><i></i><i></i></div>
             <div class="scrollBox animateCircleBox">
-                <div class="center">
-                    <div class="animateCircleScroll">
+                <div class="center mobSlideWrap">
+                    <div class="animateCircleScroll ">
                         <p>
                             인공지능을 활용한<br>
-                            언어 모델 연구, 융합연구, 응용 연구,<br>
-                            데이터 분석 및 인프라 연구를 중점적으로<br>
-                            연구 및 개발하고 있습니다.
+                            언어 모델 연구, <i class="mob_br"></i>융합연구, 응용 연구,<br><i class="mob_br"></i>
+                            데이터 분석 및 <i class="mob_br"></i>인프라 연구를 중점적으로<br>
+                            연구 및 개발하고 <i class="mob_br"></i>있습니다.
                         </p>
                         <span class="aniCircle"><i></i></span>
-                        <ul class="animateCircleList" data-height="50">
-                            <li>
+                        <ul class="animateCircleList mobSlide" data-height="50">
+                            <li class="now">
                                 <strong>융합<br>연구</strong>
                                 이미지를 인식하고<br>
                                 여러 채널의 정보와 융합하여<br>
@@ -287,7 +288,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        $(window).on('wheel touchmove',function(){
+        $(window).on('wheel touchend',function(){
             if($('.sub00').hasClass('now') == true){   
                 $('.subTitleArea').addClass('on');
             }else{
@@ -299,6 +300,9 @@
             }else{
                 $('header').removeClass('white');      
                 $('.sub01 .balckBG, .sub03 .balckBG').removeClass('on');         
+            }
+            if($('.sub03').hasClass('now') == false && $('.sub02').hasClass('now') == true){   
+                $('.animateCircleScroll').css('transform','translateY(0rem)');
             }
         });        
     });

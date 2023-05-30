@@ -254,6 +254,7 @@
                                                 @include virtualIcon($w:2.3rem,$h:1.5rem){
                                                     background-image: url('../images/img_common_arrow_r.svg');   
                                                 }
+                                                @include bgimg();
                                             }
                                             &::before{
                                                 top: 4rem;
@@ -289,6 +290,9 @@
             .sub01{
                 .animateFadeList{
                     >li{   
+                        input[type='checkbox']{
+                            display: none;
+                        }
                         .fadeCont{
                             &::after{ 
                                 @include virtualIcon($w:50rem,$h:20rem){
@@ -322,23 +326,31 @@
                             }
                         } 
                         &:nth-child(3){
+                            top: 40%;
                             .fadeCont{
                                 width: 100%;
+                                margin-bottom: 8rem;
                                 &::before{
                                     position: absolute;
-                                    top: 8rem;
-                                    left: 20%;
-                                    @include virtualIcon($w:50rem,$h:20rem){
+                                    top: calc(100% + 8rem);
+                                    left: 38%;
+                                    transform: translateX(-50%);
+                                    @include virtualIcon($w:53.5rem,$h:21.2rem){
                                         display: block;
-                                        max-height: 100%;
-                                        margin-top: 9rem;
                                         @include bgimg($s:auto 100%);
                                         background-image: url('../images/solution/img_sub_ipt_obj_02_01.png'); 
                                     }
                                 }
                                 &::after{
-                                    margin:7.2rem 0 0 60rem;;
+                                    position: absolute;
+                                    top: calc(100% - 1rem);
+                                    left: 61%;
+                                    transform: translateX(-50%);
+                                    width: 56.6rem;
+                                    height: 21.3rem;
+                                    max-height: none;
                                     background-image: url('../images/solution/img_sub_ipt_obj_02_02.png');   
+                                    @include bgimg($s:auto 100%);
                                 }
                             }
                         }
@@ -423,7 +435,6 @@
                                             background-size: auto 100%;
                                         }
                                     }
-
                                 }
                                 &:not(:nth-child(1)){
                                     font-size: 4.8rem;
@@ -431,6 +442,7 @@
                                         @include centerPosition($l:-36%,$tx:0);
                                         @include virtualIcon($w:3.9rem,$h:3.1rem){
                                             background-image: url('../images/img_common_arrow_r.svg');      
+                                            @include bgimg();
                                         }
                                     }
                                 }
@@ -566,6 +578,7 @@
                 animation-delay: 0.5s !important;                
             }
             h3{
+                margin-bottom: 6.4rem;
                 font-size: 20rem;
                 @include lineTxt();
                 @include fontWeightB();
@@ -574,7 +587,6 @@
             .tabList{
                 @include flexCenter();
                 gap:11.7rem;
-                margin: 6.4rem 0 5.6rem;
                 li{
                     button{
                         font-size: 4.8rem;
@@ -589,6 +601,9 @@
                         }
                     }
                 }
+            }
+            .tabBoxWrap{
+                margin-top: 5.6rem;
             }
             .tabBox{
                 display: none;
@@ -697,9 +712,9 @@
                     }
                 }
             }   
-            ul{   
+            .animateCircleList{   
                 margin: 28rem 0 28rem 36rem;   
-                li{
+                >li{
                     margin-bottom: 12rem;
                     font-size: 2.4rem;
                     line-height: 1.5;
@@ -738,39 +753,30 @@
         }
         .sub01{
             color: #fff;
-            .scrollBox{
-                >div{
-                    position: relative;
-                    &:nth-child(2){
-                        height: 3200px;
-                        @include fadeCont();
+            .center{                
+                height: 3000px;
+            }
+            .animateCircleScroll{
+                div{
+                    padding: 0 0 17rem;
+                    font-size: 5.6rem;
+                    @include fontWeightB();
+                    line-height: 1.5;
+                }
+                .aniCirclePrevDiv{
+                    padding-top: 25vh;
+                    transform: translateY(25%);
+                    filter: brightness(0);
+                    transition: all 2s;
+                    &.on{
+                        transform: translateY(0%);
+                        filter: brightness(1);
+                    }
+                    &.no{
+                        transform: translateY(-25%);
+                        filter: brightness(0);
                     }
                 }
-            }
-            .aniFadeBox{
-                @include centerPosition($l:0%,$ty:0%);
-                @include fadeCont($ty:25%);                 
-            }
-            &.on{
-                .aniFadeBox{
-                    &.box01{
-                        top: 50%;
-                        animation: ani-fadeinout 2.5s ease-in-out 0.8s forwards;                            
-                    }
-                }
-                .scrollBox{
-                    >div{
-                        &:nth-child(2){
-                            @include aniFadeIn($n:career-01,$s:1.5s,$d:2.5s,$t2:translateY(5%)); 
-                        }
-                    }
-                }
-            }
-            p{
-                margin: 0 0 17rem;
-                font-size: 5.6rem;
-                @include fontWeightB();
-                line-height: 1.5;
             }
             ul{
                 li{
@@ -778,9 +784,12 @@
                     @include fontWeightE();
                     line-height: 1.5;
                     @for $i from 1 to 4{
-                        &:nth-of-type(#{$i+1}){                            
+                        &:nth-of-type(#{$i+2}){                            
                             margin-left: #{$i*48}rem;
                         }
+                    }
+                    div{
+                        @include fadeCont($ty:25%); 
                     }
                     .aniCircle02{
                         position: relative;
@@ -802,7 +811,12 @@
                             background-image: url('../images/sub/img_sub_career_obj_04_01.png');  
                         }
                     }
-                    &:nth-child(1){
+                    &:nth-child(1){                        
+                        &.on div{
+                            @include aniFadeIn($n:career-02,$s:1s,$d:0s,$t:translateY(25%),$t2:translateY(0%)); 
+                        }
+                    }
+                    &:nth-child(2){
                         &.on{
                             .aniCircle02::before{
                                 bottom:calc(100% - 7.2rem);
@@ -816,7 +830,7 @@
                             }
                         }
                     }
-                    &:nth-child(2){
+                    &:nth-child(3){
                         .aniCircle02{
                             &::before{
                                 bottom: 15%;
@@ -837,14 +851,14 @@
                             }
                         }
                     }
-                    &:nth-child(3){
+                    &:nth-child(4){
                         .aniCircle02{
                             &::before,&::after{
                                 width: 12rem;
                                 height: 12rem; 
                             }
                             &::before{
-                                left: 8rem;
+                                left: 50%;
                             }
                         }
                         &.on{
@@ -868,7 +882,6 @@
             .center{
                 @include centerPosition($t:calc(50% + 4rem));
                 @include flex();
-                gap: 29rem;
                 width: 100%;
                 strong{
                     @include fontWeightB();
@@ -876,11 +889,12 @@
                     line-height: 1.25;
                 }
                 >ul{
-                    flex: 1;
+                    margin-left: 22rem;
                     >li{
                         @include flex();
                         gap:7rem;
                         margin-bottom: 8rem;
+                        line-height: 1.5;
                         &:last-child{
                             margin-bottom: 0;
                         }
@@ -978,17 +992,673 @@
             }
         }
         
+    }
+
+}
 
 
-
+@media only screen and (max-width: 768px){
+    .subTitleArea{
+        .center{
+            top: 30%;
+            @include centerMob();
+            h2,p{
+                font-size: 4rem;
+            }
+            h2{
+                padding-top: 15rem;
+            }
+            ul{
+                li{
+                    display: block;
+                    margin: 0 0 2.4rem 4.2rem;
+                    a{
+                        font-size: 2.4rem;
+                    }
+                    &.on{
+                        &::after{
+                            top: -0.5rem;
+                            left: -0.5rem;
+                            width: 0.5rem;
+                            height:0.5rem;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 
+    .sub{
+        &.solution{
+            .sub01{
+                .animateFadeList{
+                    top: 20%;
+                    width: 100%;
+                    height: calc(100vh - 5rem);
+                    >li{
+                        flex-direction: column;
+                        gap: 4rem;
+                        font-size: 2.4rem;
+                        text-align: center;
+                        &:nth-child(1){
+                            text-align: center;
+                            font-size: 3.2rem;
+                        }   
+                        &:last-child{
+                            span{
+                                font-size: 1.6rem;
+                            }
+                            a{
+                                font-size:3.2rem;
+                                &::after{
+                                    @include virtualIcon($w:2.3rem,$h:2.3rem){
+                                        margin-left: 0.8rem;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        background-image: url('../images/btn_arrow_b.svg');              
+                                        @include bgimg($s:60%,$p:center top 45%);
+                                    }
+                                }
+                            }
+                        }    
+                    }
+                }
+                .imgList{
+                    >li{
+                        &::before{
+                            width: 28rem;
+                            height: 28rem;
+                        }
+                    }
+                }
+            }
+            &.sl{
+                .sub01{
+                    .imgList{
+                        >li{
+                            &:nth-child(1){
+                                &::before{
+                                    width: 7.4rem;
+                                    height: 7.4rem;
+                                }
+                            }
+                            &:nth-child(2){
+                                &.now::before{
+                                    opacity: 0;
+                                    @include aniFadeIn($n:solution-02-02,$s:0.8s,$d:0.5s,$t:translateY(0%),$t2:translateY(0%));
+                                }
+                            }
+                            .solutionLogo{
+                                width: 22.7rem;
+                                height: 3.8rem;
+                                margin: 0 auto;
+                            }
+                            &:not(:nth-child(1),:nth-last-child(1),:nth-last-child(2)){
+                                top: 20%;
+                                transform: translateY(0);
+                            }
+                        }
+                    }
+                }                
+            }
+            &.ctg{
+                .sub01{
+                    .imgList{
+                        >li{
+                            gap: 4rem;
+                            &::before{
+                                width: 29rem;
+                                height: 13rem;
+                                margin: 0 auto;
+                            }  
+                            &:nth-child(1){
+                                &::before{
+                                    background-size: 70% auto;
+                                }
+                            } 
+                            &:nth-child(4){
+                                top: 15% !important;
+                                transform: translateY(0);
+                                >div{
+                                    &:nth-of-type(1){
+                                        width: 100%;
+                                        margin: 0 auto 0rem;
+                                        font-size: 1.6rem;
+                                        span{
+                                            &:nth-of-type(2){
+                                                width: 100%;
+                                                max-width: 29.5rem;
+                                                height: 20rem;
+                                                margin: 0 auto;
+                                                &::before,&::after{
+                                                    width: 1.5rem;
+                                                    height: 2rem;
+                                                }
+                                                &::before{
+                                                    top: 1rem;
+                                                }
+                                                &::after{
+                                                    bottom: 1rem;
+                                                }
+
+                                            }
+
+                                        }
+                                    }
+
+                                }
+
+                            }  
+                        }
+                    }
+                }                
+            }
+            &.ipt{
+                .sub01{
+                    .animateFadeList{
+                        >li{
+                            &:nth-child(1){
+                                .fadeCont::after{
+                                    @include centerPositionMob();
+                                    width: 14.4rem;
+                                    height: 8rem;
+                                    margin: 4rem auto 0;
+                                    
+                                }
+                            } 
+                            &:not(:nth-child(1)){         
+                                font-size: 2.4rem;
+                            }
+                            &:nth-child(2){
+                                font-size: 1.6rem;
+                                p{
+                                    margin-top: 1.6rem;
+                                    font-size: 2rem;
+                                }
+                            } 
+                            &:nth-child(3){
+                                .fadeCont{
+                                    &::before{
+                                        top: calc(100% + 4rem);
+                                        left: 33%;
+                                        width: 20rem;
+                                        height: 8rem;
+                                    }
+                                    &::after{
+                                        top: calc(100% - 5rem);
+                                        width: 22rem;
+                                        height: 8rem;
+                                    }
+                                }
+                            }
+                            &:nth-child(4){
+                                .fadeCont::after{
+                                    width: 15.2rem; 
+                                    height: 15.2rem; 
+                                    margin: 4rem auto 0;
+                                }
+                            }
+                        }
+                    }                    
+                }                
+            }
+            &.ift{
+                .sub01{
+                    .imgList{
+                        >li{
+                            gap: 4rem;
+                            &::before{
+                                width: 15.3rem;
+                                height: 20rem;
+                            }    
+                            &:nth-child(3){
+                                &::before{
+                                    order: 0;
+                                    width: 100%;
+                                    max-width: 33rem;
+                                    height: 9.5rem;
+                                }
+                            }     
+                        }
+                    }                    
+                }                
+            }
+            &.other{
+                .sub01{
+                    .animateFadeList{
+                        .fadeCont{
+                            ul{
+                                display: block;
+                                width: 100%;
+                                li{
+                                    font-size: 2.4rem;
+                                    &:nth-child(1){
+                                        font-size: 1.8rem;
+                                        span{
+                                            font-size: 1.8rem;
+                                        }
+                                        &::before{
+                                            width: 11rem;
+                                            height: 11rem;
+                                        }
+                                    }
+                                    &:not(:nth-child(1)){
+                                        font-size: 2.4rem;
+                                        &::before{
+                                            @include centerPositionMob();
+                                            display: block;
+                                            width: 2rem;
+                                            height: 2rem;
+                                            margin: 3.5rem auto;
+                                            transform: rotate(90deg);
+                                        }
+                                    }
+                                    .btn{
+                                        width: 12.7rem;
+                                        font-size: 1.6rem;
+                                    }
+                                }   
+                            }
+                        }  
+                    }                    
+                }                
+            }
 
 
 
 
+        }
 
+        &.about{
+            .subTitleArea{
+                p{
+                    &::before,&::after{
+                        top: calc(100% + 7.6rem);
+                        width: 16.2rem;
+                        height: 16.2rem;
+                        right: auto;
+                        left: 0;
+                    }
+                    &::after{
+                        left: 13.4rem;
+                    }
+                }
+            }
+            .sub01,.sub02{
+                &.on{
+                    .center{
+                        @include aniFadeIn($n:about-01-02,$s:1s,$d:1.2s,$t:translate(0%,20%),$t2:translate(0%,0%)); 
+                    }
+                }
+            }
+            .sub01,.sub03{
+                .center{
+                    @include centerPositionMob();
+                    width: 100%;
+                    padding-left: 4rem;
+                    p{
+                        padding: 0 0 2rem 0;
+                        margin-left: 0;
+                        font-size: 3.2rem;
+                        letter-spacing: -1px;
+                    }
+                }
 
+            }
+            .sub01{
+                .center{
+                    padding: 25rem 0 15rem 4rem;
+                    p{
+                        &:nth-of-type(2){
+                            padding: 6rem 0 0;
+                        }
+                    }
+                    
+                    .circleAni{
+                        position: relative;
+                        height: auto;
+                        max-height: 100%;
+                        width: 16.3rem;
+                        height: 16.3rem;
+                        &::before,&::after,i{
+                            width: 16.3rem;
+                            height: 16.3rem;
+                        }
+                        &::after{
+                            top: 13rem;
+                        }
+                        i{
+                            top: 26rem;
+                        }
+                    }
+                }
+                &.on{
+                    .center{
+                        .circleAni{
+                            &::before{
+                                @include anitop($n:about-05-02,$d:3.5s);
+                            }
+                            &::after{
+                                @include anitop($n:about-04-02,$d:3.5s,$t:13rem);
+                            }
+                            i{
+                                @include anitop($n:about-03-02,$d:3.5s,$t:26rem);
+                            }
+                        }
+                    }
+                }
+            }
+            .sub02{
+                .center{
+                    @include centerPositionMob();
+                    padding:15rem 0;       
+                }
+                h3{
+                    @include centerMob();
+                    margin: 0 auto 2.4rem;
+                    font-size: 8rem;
+                }
+                .tabListWrap{
+                    padding: 1rem 0 0;
+                    margin-left: 4rem;
+                    @include customScroll($h:3rem,$barcolor:#fff);
+                    overflow-x: auto;
+                }
+                .tabList{
+                    display: table;
+                    table-layout: fixed;
+                    width: 150%;
+                    li{
+                        display: table-cell;
+                        button{
+                            padding: 0;
+                            margin-right: 0;
+                            font-size: 2.4rem;
+                        }
+                    }
+                }
+                .tabBoxWrap{
+                    @include centerMob();
+                    padding: 6rem 0 0;
+                    margin: 0 auto  0;
+                }
+                .tabBox{
+                    >ul{
+                        display: block;
+                        >li{
+                            margin: 0 0 4rem;
+                            font-size: 1.6rem;
+                            >strong{
+                                margin: 0 0 2.4rem;
+                                font-size: 2.4rem;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .sub03{   
+                .center{
+                    height: 1000px;
+                }     
+                .aniCircle{
+                    top: 58rem;
+                    left: 0;
+                    &::before,&::after,i{
+                        width: 10.2rem;
+                        height: 10.2rem;
+                    }
+                    &.circle02{
+                        top: 48rem;
+                        left: 0rem;
+                        &::before{
+                            left: -2.5rem
+                        }
+                        i{
+                            top: 10rem;
+                        }
+                    }
+                    &.circle03{
+                        top: 43rem;
+                        &::before{
+                            top: 0rem;;
+                            left: 0rem
+                        }
+                        i{
+                            top: 15rem;
+                            left: 0rem
+                        }
+                    }
+                    &.circle04{
+                        top: 53rem;
+                        &::before{
+                            left: -2.5rem
+                        }
+                        i{
+                            top: 5rem;
+                            left: 2rem;
+                        }
+                    }
+                }
+                .animateCircleList{
+                    margin: 50rem 0 0;
+                    >li{
+                        margin: 0  0 4rem!important;
+                        font-size: 2rem;
+                        background-color: #0a0a0a;
+                        strong{
+                            margin: 0 0 2.4rem;
+                            font-size: 4rem;
+                        }
+                    }
+                }
+                .mobSlideIndexWrap{
+                    width: calc(100% - 4rem);
+                }
 
+            }
+        }
+
+        
+        &.career{
+            .subTitleArea{
+                p{
+                    &::after{
+                        top: calc(100% + 4.8rem);
+                        width: 19rem;
+                        height: 19rem;
+                        right: auto;
+                        left: 0;
+                    }
+                }
+            }
+            .sub01{
+                overflow: hidden;
+                .center{
+                    @include centerPositionMob();
+                    width: 100%;
+                    height: 500vh;
+                }
+                .animateCircleScroll{
+                    div{
+                        padding: 0 0 20rem 0rem;
+                        margin-left: 0;
+                        font-size: 3.2rem;
+                        letter-spacing: -1px;
+                    }
+                    .aniCirclePrevDiv{
+                        padding-left: 4rem;
+                    }
+                }
+                ul{
+                    padding: 0 0 0em 4rem;
+                    li{
+                        font-size: 2.4rem;
+                        .aniCircle02{
+                            width: 10rem;
+                            height: 10rem;
+                            margin-bottom: 2.4rem;
+                            &::before,&::after,i::before,i::after{
+                                width: 4rem;   
+                                height: 4rem;
+                            }
+                        }
+                        &:nth-child(n+2){
+                            padding-bottom: 18rem;
+                        }
+                        &:nth-child(2){
+                            &.on{
+                                .aniCircle02::before{
+                                    bottom:calc(100% - 4rem);
+                                }
+                                .aniCircle02::after{
+                                    bottom:calc(100% - 4rem);
+                                    left: calc(100% - 4rem);
+                                }
+                                i::before{
+                                    left: calc(100% - 4rem);
+                                }
+                            }
+                        }
+                        &:nth-child(3){
+                            margin-left: 18rem;
+                            .aniCircle02{
+                                &::before{
+                                    bottom: 15%;
+                                    width: 2.5rem;
+                                    height: 2.5rem;
+                                    z-index: 1;
+                                }
+                                &::after{
+                                    bottom: calc(50% - 3rem);
+                                    left: 4.5rem;
+                                    width: 6.6rem;
+                                    height: 6.6rem;    
+                                }
+                            }
+                        }
+                        &:nth-child(4){
+                            margin-left: 35rem;
+                            padding-bottom: 0;
+                            .aniCircle02{
+                                &::before,&::after{
+                                    width: 6.9rem;
+                                    height: 6.9rem; 
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+            .sub02,.sub03{
+                .center{
+                    @include centerPositionMob();
+                    display: block;
+                    @include centerMob();
+                    padding: 13rem 0 8rem;
+                    strong{
+                        display: block;
+                        font-size: 3.2rem;
+                        line-height: 1.5;
+                        margin: 0 0 4rem;
+                    }
+                    >ul{
+                        margin-left: 0;
+                        li{
+                            display: block;
+                            >strong{
+                                font-size: 2.4rem;
+                            }
+                            ul{
+                                li{
+                                    line-height: 1.5;
+                                    span{
+                                        display: block;
+                                        margin: 0 0 0.5rem;
+                                    }
+                                }
+                            }
+                            &.prev{
+                                color: rgba($color: $main-txt, $alpha: 0.5);
+                            }
+                            &.now{
+                                color: rgba($color: $main-txt, $alpha: 1.0);
+                            }
+                            &.next{
+                                color: rgba($color: $main-txt, $alpha: 0.5);
+                            }
+                        }
+                    }
+                    .mobSlide{
+                        li{                            
+                            background-color: #fff;
+                        }
+
+                    }
+                }
+            }
+            .sub03{
+                .mobSlide{
+                    min-height: 57rem;
+                }
+            }
+            .sub04{
+                .center{
+                    display: block;
+                    div{
+                        &:nth-of-type(1){
+                            margin-bottom: 8rem;
+                            p{
+                              font-size: 2.4rem;
+                            }
+                            ul{
+                                font-size: 1.6rem;
+                            }
+                        }
+                        &:nth-of-type(2){
+                            ul{
+                                li{
+                                    margin-top: 3.2rem;
+                                    text-align: center;
+                                    .btn{
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media only screen and (max-width: 600px){
+    .sub{
+        &.about{
+            .sub03{
+                .animateCircleList{
+                    margin: 36rem 0 0;
+                }
+            }
+        }
+        &.career{
+            .sub01{
+                ul{
+                    li{
+                        &:nth-child(3){
+                            margin-left: 14.7rem;
+                        }
+                        &:nth-child(4){
+                            margin-left: 0rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

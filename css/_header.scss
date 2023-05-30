@@ -141,3 +141,65 @@ footer{
         text-align: center;
     }
 }
+
+
+
+
+
+
+@media only screen and (max-width: 768px){
+    header{
+        padding-top: 3.2rem;
+        .center{
+            width: calc(100% - 4.8rem);
+            h1{
+                a{
+                    width: 10.3rem;
+                }
+            }            
+            .mobMenuBtn{
+                width: 1.6rem;
+                height: 1.5rem;
+                &::before,&::after{
+                    height: 0.3rem;
+                }
+            }
+            .subMenu{
+                @include centerMob($w:8.4rem);
+                padding-left: 8.2rem;
+                &::after{
+                    @include virtualIcon($w:8.4rem,$h:100vh){
+                        background-color: #000;
+                        opacity: 0.8;
+                        position: absolute;
+                        top: 0;
+                        right: 100%;
+                    }
+                }
+                li{
+                    a{
+                        font-size: 3.2rem;
+                        line-height: 2.8;
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        overflow: visible !important;
+        .scrollBox{
+            overflow: visible !important;
+        }
+        .center{
+            padding: 0;
+            .footerLogo,ul{
+                display: none;
+            }
+            .topBtn{
+                width: 4.8rem;
+                height: 4.8rem;
+                border: 1px solid #fff;
+            }
+        }
+    }
+}

@@ -217,115 +217,136 @@
                 @include aniFadeIn($n:main03-02,$t:translateX(10%),$t2:translateX(0%));
             }
         }
-        .scrollBox{
-            >div{
-                height: 3000px;
-            }
+        .center{
+            position:relative;
+            height: 3000px;
+            max-width: 128rem !important;
         }
         canvas{
             @include stickyPosition($t:calc(30% - 11rem));
-            left: 15%;
             width: 100%;
-            max-width: 128rem;
-            height: 100%;
             max-height: 80rem;
         }
         .btnWrap{
-            @include stickyPosition($t:15%);
+            @include stickyPosition($t:calc(30% - 11rem));
             max-height: 80rem;
             ul{
-                &:nth-child(1){                
-                    li{
-                        font-size: 4rem;
-                        @include fontWeightB();
-                        @include txthide();
-                        &::nth-child(1){
-                            color: #00dcd6;
+                display: none;
+                li{
+                    &::before{
+                        @include virtualIcon($w:2.4rem,$h:2.4rem){
+                            margin:-0.8rem 0 0;
+                            background-image: url('../images/main/img_main_bg_obj_10.png');     
+                            @include bgimg();                           
                         }
-                        &::nth-child(1){
+                    }
+                }
+                &:nth-child(1){       
+                    position: relative;  
+                    padding-bottom: 37rem;
+                    background-image: url('../images/main/img_main_ai.png');        
+                    @include bgimg($s:26.7rem,$p:center bottom);
+                    li{
+                        position: absolute;
+                        width: 11rem;
+                        font-size: 2rem;
+                        line-height: 1.5;
+                        @include fontWeightB();
+                        &::before{
+                            position: absolute;
+                            bottom: 0;
+                            width: 3.2rem;
+                            height: 3.2rem;
+                        }
+                        &:nth-child(1){
+                            top:20%;
+                            color: #00dcd6;
+                            text-align: right;
+                            &::before{
+                                left: 105%;
+                            }
+                        }
+                        &:nth-child(2){
+                            right: 0;
                             color: #7744a4;
+                            &::before{
+                                right: 105%;
+                                background-image: url('../images/main/img_main_bg_obj_14.png');     
+                            }
                         }
                     }
                 }
                 &:nth-child(2){
-                    display: none;
                     opacity: 0;
                     li{
                         position: absolute;
                         a{
                             display: inline-block;
-                            padding: 5rem 0;
+                            padding:0 1rem;
                             font-size: 3.2rem;
                             @include fontWeightB();
                             color: #00dcd6;
-                            &::before{
-                                @include virtualIcon($w:2.4rem,$h:2.4rem){
-                                    margin-right: 0.8rem;
-                                    background-image: url('../images/main/img_main_bg_obj_10.png');     
-                                    @include bgimg();                           
-                                }
-                            }
                             &::after{
-                                @include virtualIcon($w:2.8rem,$h:2.8rem){
+                                @include virtualIcon($w:1.7rem,$h:1.7rem){
                                     margin-left: 0.8rem;
                                     border-radius: 50%;
                                     background-color: #00dcd6;
                                     background-image: url('../images/btn_arrow.svg');              
-                                    @include bgimg($s:50%);               
+                                    @include bgimg($s:60%);               
                                 }
                             }
                         }
                         &:nth-child(1){
-                            top: 14.5%;
-                            left: 31.8%;
+                            top: 20%;
+                            left: 25.8%;
                         }
                         &:nth-child(2){
-                            top: 26%;
-                            left: 13.9%;
+                            top: 32%;
+                            left:0%;
+                            &::before{
+                                background-image: url('../images/main/img_main_bg_obj_11.png');     
+                            }
                             a{
                                 color: #82e140;
-                                &::before{
-                                    background-image: url('../images/main/img_main_bg_obj_11.png');     
-                                }
                                 &::after{
                                     background-color: #82e140;
                                 }
                             }
                         }
                         &:nth-child(3){
-                            top: 59%;
-                            left: 20.1%;
+                            top: 63%;
+                            left: 9%;
+                            &::before{
+                                background-image: url('../images/main/img_main_bg_obj_12.png');     
+                            }
                             a{
                                 color: #59e2c6;
-                                &::before{
-                                    background-image: url('../images/main/img_main_bg_obj_12.png');     
-                                }
                                 &::after{
                                     background-color: #59e2c6;
                                 }
                             }
                         }
                         &:nth-child(4){
-                            top: 80%;
+                            top: 84%;
                             left: 46%;
+                            &::before{
+                                background-image: url('../images/main/img_main_bg_obj_13.png');     
+                            }
                             a{
                                 color: #4ec4dd;
-                                &::before{
-                                    background-image: url('../images/main/img_main_bg_obj_13.png');     
-                                }
                                 &::after{
                                     background-color: #4ec4dd;
                                 }
                             }
                         }
                         &:nth-child(5){
-                            top: 60%;
-                            left: 62.3%;
+                            top: 65%;
+                            left: 73%;
+                            &::before{
+                                background-image: url('../images/main/img_main_bg_obj_14.png');     
+                            }
                             a{
                                 color: #8d5fb0;
-                                &::before{
-                                    background-image: url('../images/main/img_main_bg_obj_14.png');     
-                                }
                                 &::after{
                                     background-color: #8d5fb0;
                                 }
@@ -346,7 +367,8 @@
     
     .main04{
         .center{
-            @include centerPosition($l:12.5%,$tx:0);
+            @include centerPosition();
+            width: 100%;
             color: #fff;
             @include fontWeightB();
             @include clear();
@@ -415,4 +437,171 @@
         }
     }
 
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .main{
+        .main01{
+            &::before{
+                top: 0.5rem;
+                left: auto;
+                right:-15rem;
+            }
+            .balckBG{
+                span{
+                    &::after{
+                        bottom: -21rem;
+                        right: 27.5rem;
+                        background-image: url('../images/main/img_main_bg_obj_02.png');      
+                        @include aniFadeIn($n:main01-02);
+                    }
+                }
+                i{
+                    &:nth-of-type(1){
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .scrollBox{
+                p{     
+                    @include centerPositionMob();
+                    top: 20%;      
+                    &::after{
+                        display: none;
+                    }        
+                    span{
+                        padding: 1rem 0 1rem 1.5rem;
+                        font-size: 5.5rem;
+                        line-height: 1.5;
+                        letter-spacing: -1.5px;
+                        &:nth-of-type(2){
+                            padding-left: 1.5rem;                            
+                            &::before{
+                                width: 2.3rem;
+                                left: -5%;
+                            }
+                        }
+                        &:nth-of-type(3){
+                            width: 71%;
+                        }
+                    }
+                }
+            }
+        }
+        .main02{
+            .center{
+                >div{
+                    &:nth-of-type(1){
+                        display: none;
+                    }
+                    &:nth-of-type(2){
+                        top: 20%;
+                        padding-top: 40vh;
+                        background-image: url('../images/main/img_main_bg_area02.gif');
+                        background-size: 23.7rem;
+                        background-position: center top;    
+                        .animateTxtFill{
+                            li{
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 100%;
+                                font-size: 2.8rem;
+                                text-align: center;
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+        .main03{
+            &.on{
+                &::before,&::after{
+                    display: none;
+                }
+                .btnWrap{
+                    @include aniFadeIn($n:main01-06);
+                }
+            }
+            .center{
+                height: auto;
+                padding: 10rem 0;
+            }
+            canvas{
+                display: none;
+            }
+            .btnWrap{
+                position: inherit;
+                height: auto;
+                max-height: auto;
+                @include fadeCont();
+                ul{
+                    display: block !important;
+                    width: 90%;
+                    margin: 0 auto;
+                    opacity: 1 !important;
+                    
+                    &:nth-child(2){
+                        width: 70%;
+                        li{
+                            position: inherit;
+                            margin-top: 2.4rem;
+                            a{
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+
+        .main04{
+            .center{
+                @include centerPositionMob();
+                @include centerMob();
+                padding: 13.6rem 0;
+                h2{
+                    float: none;
+                    margin: 0 0 6.4rem;
+                    font-size: 4rem;
+                }
+                ul{
+                    float: none;
+                    display: block;
+                    width: 100%;
+                    li{
+                        margin-bottom: 4.6rem;
+                        span{
+                          @include mainfont();
+                        }
+                        a{
+                            font-size: 2rem;
+                            @include fontWeightE();
+                        }
+                    }
+                }
+            }
+            &.on{
+                .center{
+                    h2,ul li span,ul li a,ul li::before{  
+                        animation-delay: 0.3s;
+                    }
+                }
+            }
+        }
+
+
+
+    }
 }

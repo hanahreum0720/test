@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.png">
     <title>Enliple AI Lab</title>
     <link rel="stylesheet" href="../css/style.css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -72,8 +72,8 @@
                             </div>
                             <div class="fadeCont">
                                 해당 모델을 통해,<br>
-                                카테고리 분류를<br>
-                                빠르고 정확하게<br>
+                                카테고리 분류를<i class="pc_br"></i>
+                                빠르고 <i class="mob_br"></i>정확하게<i class="pc_br"></i>
                                 수행 할 수 있습니다.
                             </div>
                         </li>
@@ -116,7 +116,7 @@
 </div>
 <script>
     $(document).ready(function(){
-        $(window).on('wheel touchmove',function(){
+        $(window).on('wheel touchend',function(){
             if($('.sub00').hasClass('now') == true){   
                 $('.subTitleArea').addClass('on');
             }else{

@@ -65,15 +65,24 @@ $main-bg-txt : #fff;
         clear: both;
     }
 }
-@mixin centerAlign(){
-    max-width: 144rem;
+@mixin centerAlign($mw:144rem){
+    max-width: $mw;
     margin: 0 auto;
+}
+@mixin centerMob($w:8rem){
+    width: calc(100% - $w);
 }
 @mixin centerPosition($t:50%,$l:50%,$tx:-50%,$ty:-50%){
     position: absolute;
     top: $t;
     left: $l;
     transform: translateX($tx) translateY($ty);
+}
+@mixin centerPositionMob(){
+    position: inherit;
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
 }
 @mixin stickyPosition($t:calc(50% - 40vh + 11rem)){
     position: sticky;
@@ -90,8 +99,8 @@ $main-bg-txt : #fff;
     align-items: center;
     @content;
 }
-@mixin bgimg($s:100%) {
-    background-position: center;
+@mixin bgimg($s:100%,$p:center) {
+    background-position: $p;
     background-repeat: no-repeat;
     background-size: $s;
 }
@@ -114,12 +123,12 @@ $main-bg-txt : #fff;
     @include bgimg();
     @content;
 }
-@mixin customScroll($w:5px,$barcolor:$border-color,$bgrcolor:transparent){
+@mixin customScroll($w:5px,$h:5px,$barcolor:$border-color,$bgrcolor:transparent){
     overflow: hidden;
     overflow-y: auto;
     &::-webkit-scrollbar {
         width: $w;
-        height: 5px;
+        height: $h;
     }
     &::-webkit-scrollbar-thumb {
         background-color: $barcolor;
@@ -221,10 +230,10 @@ $main-bg-txt : #fff;
         left: 0;
     }    
     35% {
-        left: 8rem;
+        left: 50%;
     }
     60% {
-        left: 8rem;
+        left: 50%;
     }
     100% {
         left: 0;
@@ -232,7 +241,7 @@ $main-bg-txt : #fff;
 }
 @keyframes ani-career03_02 {
     0% {
-        left: 8rem;
+        left: 50%;
     }    
     35% {
         left: 0;
@@ -241,7 +250,7 @@ $main-bg-txt : #fff;
         left: 0;
     }
     100% {
-        left: 8rem;
+        left: 50%;
     }    
 }
 
@@ -338,6 +347,31 @@ body{
     @include fontWeightB();
     background-color: #fff;
     color: $main-txt;
+}
+.playBtn{
+    display: inline-block;
+    font-size: 4.8rem;
+    color: #fff;
+    @include fontWeightE();
+    vertical-align: middle;
+    &::after{
+        @include virtualIcon($w:4.8rem,$h:4.8rem){
+            margin:-0.5rem 0 0 2.5rem;
+            background-image: url('../images/btn_common_play.svg');  
+            vertical-align: middle; 
+         }
+    }
+    &:hover{
+        &::after{
+            background-image: url('../images/btn_common_play_hover.svg');
+        }
+    }
+}
+.pc_br{
+    display: block;
+}
+.mob_br{
+    display: none;
 }
 .container{ 
     position: relative;
@@ -505,25 +539,7 @@ body{
     transition: all 0.8s ease-in-out;
 }
 
-.playBtn{
-    display: inline-block;
-    font-size: 4.8rem;
-    color: #fff;
-    @include fontWeightE();
-    vertical-align: middle;
-    &::after{
-        @include virtualIcon($w:4.8rem,$h:4.8rem){
-            margin:-0.5rem 0 0 2.5rem;
-            background-image: url('../images/btn_common_play.svg');  
-            vertical-align: middle; 
-         }
-    }
-    &:hover{
-        &::after{
-            background-image: url('../images/btn_common_play_hover.svg');
-        }
-    }
-}
+
 .popLayer{
     position: fixed;
     top: 50vh;
@@ -562,16 +578,118 @@ body{
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (min-width: 1920px){
     html,body{
+        font-size: 10px;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    html,body{
+        font-size: 1.5vw;
+    }
+    .center{
+        @include centerMob($w:3rem);
+    }
+    .balckBG{
+        i{
+            border-left: none;
+        }
+    }
+    .progressBarBox .progressBar{
+        display: none;
+    }
+    .playBtn{
+        display: block;
+        margin: 2rem auto 0;
+        font-size: 2.4rem;
+        &::after{
+            width: 3.2rem;
+            height: 3.2rem;
+            margin-left: 0.8rem;
+        }
+    }
+    .animateFadeList{
+        .wheelup{
+            &.active{
+                @include aniFadeOut($n:main04-02,$s:0.8s,$t:translateX(0%),$t2:translateX(50%));
+            }
+            &.next{
+                @include aniFadeIn($n:main04-01,$s:0.8s,$d:0.5s,$t:translateX(-50%),$t2:translateX(0%)); 
+            }
+        }
+        .wheeldown{
+            &.prev{
+                @include aniFadeOut($n:main04-04,$s:0.8s,$t:translateX(0%),$t2:translateX(-50%));
+            }
+            &.active{
+                @include aniFadeIn($n:main04-03,$s:0.8s,$d:0.5s,$t:translateX(50%),$t2:translateX(0%));
+            }
+        }
+    }
+    .mobSlideWrap{
+        .mobSlide{
+            position: relative;
+            min-height: 50rem;
+            >li{
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 100%;
+                height: 100%;
+                transition: all 0.8s;
+                z-index: 1;
+                cursor:grab;
+                &.prev{
+                    left: -100%;
+                }
+                &.now{
+                    left: 0;
+                    z-index: 2;
+                }
+                &.next{
+                    left: 100%;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+    .mobSlideIndexWrap{
+        position: sticky;
+        top: 95%;
+        display: flex;
+        justify-content: center;
+        gap: 0.8rem;
+        >li{
+            width: 0.8rem;
+            height: 0.8rem;
+            margin: 0 !important;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            &.now{
+                background-color: $sub-color;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    html,body{
+        font-size: 2.666666vw;
         //font-size: 4.267vw;
         //480기준 10px 1rem font-size: 2.08333vw;
         //360기준
-        font-size: 2.5vw;
+        //font-size: 2.5vw;
+    }
+    .pc_br{
+        display: none;
+    }
+    .mob_br{
+        display: block;
     }
 }
 @media only screen and (max-width: 280px) {
     html,body{
-        font-size: 12px;
+        font-size: 10px;
     }
 }
