@@ -3311,7 +3311,9 @@ footer .copyright {
     font-size: 4rem;
   }
   .sub.about .sub03 .mobSlideIndexWrap {
+    top: 100%;
     width: calc(100% - 4rem);
+    margin: 0 0 3rem;
   }
   .sub.career .subTitleArea p::after {
     top: calc(100% + 4.8rem);

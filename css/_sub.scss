@@ -1455,7 +1455,9 @@
                     }
                 }
                 .mobSlideIndexWrap{
+                    top: 100%;
                     width: calc(100% - 4rem);
+                    margin: 0 0 3rem;
                 }
 
             }
