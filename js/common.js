@@ -324,8 +324,8 @@ $(document).ready(function(){
                 $(this).removeClass('now').addClass('prev');
                 $(this).next().removeClass('next').addClass('now');
                 $(this).siblings().eq(mobSlideNow+1).addClass('next');
-                $(this).parents().find('.mobSlideIndexWrap').find('li').removeClass('now');
-                $(this).parents().find('.mobSlideIndexWrap').find('li').eq(mobSlideNow+1).addClass('now');
+                $(this).parents('.mobSlideWrap').find('.mobSlideIndexWrap').find('li').removeClass('now');
+                $(this).parents('.mobSlideWrap').find('.mobSlideIndexWrap').find('li').eq(mobSlideNow+1).addClass('now');
                 $('.mobSlideWrap .aniCircle').removeClass('circle00 circle01 circle02 circle03 circle04');
                 $('.mobSlideWrap .aniCircle').addClass('circle0'+ (mobSlideNow+2) +'');
             }
@@ -334,8 +334,8 @@ $(document).ready(function(){
                 $(this).prev().removeClass('prev').addClass('now');
                 $(this).removeClass('now').addClass('next');
                 $(this).next().removeClass('next')
-                $(this).parents().find('.mobSlideIndexWrap').find('li').removeClass('now');
-                $(this).parents().find('.mobSlideIndexWrap').find('li').eq(mobSlideNow-1).addClass('now');
+                $(this).parents('.mobSlideWrap').find('.mobSlideIndexWrap').find('li').removeClass('now');
+                $(this).parents('.mobSlideWrap').find('.mobSlideIndexWrap').find('li').eq(mobSlideNow-1).addClass('now');
                 $('.mobSlideWrap .aniCircle').removeClass('circle00 circle01 circle02 circle03 circle04');
                 $('.mobSlideWrap .aniCircle').addClass('circle0'+ mobSlideNow +'');
             }
