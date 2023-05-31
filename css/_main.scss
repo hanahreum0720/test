@@ -496,7 +496,7 @@
         }
         .main02{
             .center{
-                height: 3000px;
+                height: 100vh;
                 >div{
                     &:nth-of-type(1){
                         display: none;
@@ -508,7 +508,8 @@
                         background-size: 23.7rem;
                         background-position: center top;    
                         .animateTxtFill{
-                            height: 23vh;
+                            height: 25vh;
+                            min-height: 18rem;
                             li{
                                 left: 50%;
                                 transform: translateX(-50%);
@@ -535,7 +536,7 @@
                 }
             }
             .center{
-                height: auto;
+                height: 100vh;
                 padding: 10rem 0;
             }
             canvas{
@@ -550,6 +551,7 @@
                     display: block !important;
                     width: 90%;
                     margin: 0 auto;
+                    padding-bottom: 5rem;
                     opacity: 1 !important;
                     
                     &:nth-child(2){

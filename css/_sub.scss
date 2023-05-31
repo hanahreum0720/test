@@ -1401,7 +1401,7 @@
             
             .sub03{   
                 .center{
-                    height: 1000px;
+                    height: 200vh;
                 }     
                 .aniCircle{
                     top: 58rem;
@@ -1455,9 +1455,12 @@
                     }
                 }
                 .mobSlideIndexWrap{
-                    top: 100%;
+                    display: none;
                     width: calc(100% - 4rem);
                     margin: 0 0 3rem;
+                    &.on{
+                        display: flex;
+                    }
                 }
 
             }

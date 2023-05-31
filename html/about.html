@@ -229,7 +229,7 @@
                             데이터 분석 및 <i class="mob_br"></i>인프라 연구를 중점적으로<br>
                             연구 및 개발하고 <i class="mob_br"></i>있습니다.
                         </p>
-                        <span class="aniCircle"><i></i></span>
+                        <span class="aniCircle circle00"><i></i></span>
                         <ul class="animateCircleList mobSlide" data-height="50">
                             <li class="now">
                                 <strong>융합<br>연구</strong>
@@ -300,6 +300,12 @@
             }
             if($('.sub03').hasClass('now') == false && $('.sub02').hasClass('now') == true){   
                 $('.animateCircleScroll').css('transform','translateY(0rem)');
+            }
+            if($('.aniCircle').hasClass('circle00') == false){   
+                $('.mobSlideIndexWrap').addClass('on');
+            }else{
+                $('.mobSlideIndexWrap').removeClass('on');
+
             }
         });        
     });
