@@ -86,6 +86,12 @@ $(document).ready(function(){
             down();
         }
     });
+    window.addEventListener('resize',function(){
+        windowHeight = window.innerHeight;   
+        footerHeight = $('.page.footer').innerHeight();
+        //windowHeight =  $(".page").eq(current).innerHeight();  
+        wheel();  
+    })
     
     
     let percentage = 0;
@@ -246,12 +252,6 @@ $(document).ready(function(){
         
     }else{ //PC 
         console.log('pc js');   
-        window.addEventListener('resize',function(){
-            windowHeight = window.innerHeight;   
-            footerHeight = $('.page.footer').innerHeight();
-            //windowHeight =  $(".page").eq(current).innerHeight();  
-            wheel();  
-        })
         $('.animateFadeBox').on('scroll',function(){       
             fadeScrollNow = $(this).scrollTop();  
             indexEq = fadeIndex-1;         
