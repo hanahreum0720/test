@@ -219,10 +219,10 @@ $(document).ready(function(){
         $('.animateFadeBox a, .animateFadeBox .popOpenBtn ').on('touchend',function(e){
             e.stopImmediatePropagation();
         });
-        $('.animateFadeList').on('touchstart',function(e){
+        $('.animateFadeList>li').on('touchstart',function(e){
             startX = e.originalEvent.changedTouches[0].screenX;
         });
-        $('.animateFadeList').on('touchend',function(e){
+        $('.animateFadeList>li').on('touchend',function(e){
             endX=e.originalEvent.changedTouches[0].screenX;  
             touchX = endX - startX;
             indexEq = fadeIndex-1;
