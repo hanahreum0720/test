@@ -63,12 +63,6 @@ $(document).ready(function(){
         $(".page").removeClass('now');
         $(".page").eq(current).addClass('now on');
     }     
-    window.addEventListener('resize',function(){
-        windowHeight = window.innerHeight;   
-        footerHeight = $('.page.footer').innerHeight();
-        //windowHeight =  $(".page").eq(current).innerHeight();  
-        wheel();  
-    })
     function up(){   
         if( current > 0 && $(".page").eq(current).children('.scrollBox').scrollTop() == 0 && animation == true){
             current--; 
@@ -252,6 +246,12 @@ $(document).ready(function(){
         
     }else{ //PC 
         console.log('pc js');   
+        window.addEventListener('resize',function(){
+            windowHeight = window.innerHeight;   
+            footerHeight = $('.page.footer').innerHeight();
+            //windowHeight =  $(".page").eq(current).innerHeight();  
+            wheel();  
+        })
         $('.animateFadeBox').on('scroll',function(){       
             fadeScrollNow = $(this).scrollTop();  
             indexEq = fadeIndex-1;         

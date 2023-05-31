@@ -1717,7 +1717,7 @@ footer .copyright {
     height: 3000px;
   }
   .main .main02 .center > div:nth-of-type(1) {
-    z-index: 5000;
+    display: none;
   }
   .main .main02 .center > div:nth-of-type(2) {
     top: 20%;
