@@ -118,10 +118,19 @@ $(document).ready(function(){
         });
     }
     function circleFunction(circleScrollNow){        
+        
         if(circleScrollNow > circleScroll){
-            if(circleIndex < circleLength && animation02 == true){
-                ani02();
-                circleIndex += 1;
+            if($('.container').hasClass('is-mob') == true && $('.animateCircleList').hasClass('mobSlide') == true){
+                if(circleIndex < 2 && animation02 == true){
+                    console.log('dfajkjdfkj')
+                    ani02();
+                    circleIndex += 1;
+                }
+            }else{
+                if(circleIndex < circleLength && animation02 == true){
+                    ani02();
+                    circleIndex += 1;
+                }
             }
         }else{
             if(circleIndex > 0 && animation02 == true){
