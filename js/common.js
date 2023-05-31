@@ -20,8 +20,11 @@ $(document).ready(function(){
         wheel();
     });
     
-    $('.mobMenuBtn').on('click',function(){
+    $('.mobMenuBtn').on('click',function(e){
         $(this).toggleClass('on');
+    });
+    $('.mobMenuBtn').on('touchend',function(e){
+        e.stopImmediatePropagation();
     });
     
     $('.popOpenBtn').click(function(){
@@ -285,7 +288,7 @@ $(document).ready(function(){
     $('.mobSlideWrap .mobSlideIndexWrap li').on('click',function(e){
         e.stopImmediatePropagation();
         let indexEq = $(this).index();
-        let mbli = $(this).parents().find('.mobSlide').find('>li');
+        let mbli = $(this).parents('.mobSlideWrap').find('.mobSlide').find('>li');
         mbli.removeClass('prev now next')
         mbli.eq(indexEq-1).addClass('prev');
         mbli.eq(indexEq).addClass('now');

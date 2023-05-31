@@ -1707,6 +1707,9 @@ footer .copyright {
     background-size: 23.7rem;
     background-position: center top;
   }
+  .main .main02 .center > div:nth-of-type(2) .animateTxtFill {
+    height: 23vh;
+  }
   .main .main02 .center > div:nth-of-type(2) .animateTxtFill li {
     left: 50%;
     transform: translateX(-50%);

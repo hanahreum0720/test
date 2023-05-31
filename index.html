@@ -89,10 +89,10 @@
                         </ul>
                         <ul>
                             <li><a href="./html/solution_ctg.html">Category</a></li>
-                            <li><a href="./html/solution_ctg.html">Shopping Lens</a></li>
-                            <li><a href="./html/solution_ctg.html">i-PT</a></li>
-                            <li><a href="./html/solution_ctg.html">i- Fitting</a></li>
-                            <li><a href="./html/solution_ctg.html">Other Service</a></li>
+                            <li><a href="./html/solution_sl.html">Shopping Lens</a></li>
+                            <li><a href="./html/solution_ipt.html">i-PT</a></li>
+                            <li><a href="./html/solution_ift.html">i- Fitting</a></li>
+                            <li><a href="./html/solution_other.html">Other Service</a></li>
                         </ul>
                      </div>
                 </div>
@@ -224,12 +224,12 @@
         $(this).toggleClass('off');
         if($(this).hasClass('off') == true){
             for(var i = 0; i<11;i++){
-                audio[i].mute = true;
+                audio[i].volume = 0;
                 console.log('aaa')
             } 
         }else{
             for(var i = 0; i<11;i++){
-                audio[i].mute = false;
+                audio[i].volume = 0.1;
                 console.log('bbb')
             } 
         }
