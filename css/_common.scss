@@ -547,11 +547,18 @@ body{
     transform: translate(-50%,-50%);    
     display: none;
     width: 70vw;
-    height: 60vh;
-    background-color: #000;
-    z-index: 2000;
+    
+    padding: 3.2rem 3.2rem 40%;
+    background-color: #fff;
+    border-radius: 2rem;
+    z-index: 5000;
     &.on{
         display: block;
+    }
+    video{
+        @include centerPosition();
+        width: calc(100% - 6.4rem);
+        height: calc(100% - 6.4rem);
     }
     .popCloseBtn{
         position: absolute;
@@ -670,6 +677,13 @@ body{
             &.now{
                 background-color: $sub-color;
             }
+        }
+    }
+    .popLayer{
+        width: 95vw;
+        padding-bottom: 60%;
+        video{
+            width: calc(100% - 2rem);
         }
     }
 }

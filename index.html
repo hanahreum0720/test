@@ -240,9 +240,9 @@
     
     const canvas = document.getElementById("mainPartVideo");
     const context = canvas.getContext("2d");
-    const frameCount = 340;
+    const frameCount = 317;
     const currentFrame = index => (
-    `./images/mainpartvideo/${index.toString().padStart(4, '0')}.jpg`
+    `./images/mainpartvideo/img_${index.toString().padStart(3, '0')}.jpg`
     )
     const preloadImages = () => {
         for (let i = 1; i < frameCount; i++) {
