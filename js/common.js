@@ -121,7 +121,7 @@ $(document).ready(function(){
         
         if(circleScrollNow > circleScroll){
             if($('.container').hasClass('is-mob') == true && $('.animateCircleList').hasClass('mobSlide') == true){
-                if(circleIndex < 2 && animation02 == true){
+                if(circleIndex < 1 && animation02 == true){
                     console.log('dfajkjdfkj')
                     ani02();
                     circleIndex += 1;
