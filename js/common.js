@@ -226,7 +226,6 @@ $(document).ready(function(){
             e.stopImmediatePropagation();
         });
         $('.animateFadeList').on('touchstart',function(e){
-            animation = false;
             startX = e.originalEvent.changedTouches[0].screenX;
         });
         $('.animateFadeList').on('touchend',function(e){
@@ -249,7 +248,6 @@ $(document).ready(function(){
             }
             $('.animateFadeWrap .mobSlideIndexWrap li').removeClass('now');
             $('.animateFadeWrap .mobSlideIndexWrap li').eq(indexEq).addClass('now');
-            animation = true;
         });
         
     }else{ //PC 
