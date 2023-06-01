@@ -985,6 +985,7 @@ header.white .center .mobMenuBtn::before, header.white .center .mobMenuBtn::afte
 
 footer {
   height: auto !important;
+  min-height: 0 !important;
   background-color: #fff;
 }
 footer .center {
