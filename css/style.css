@@ -857,11 +857,6 @@ body {
     display: block;
   }
 }
-@media only screen and (max-width: 280px) {
-  html, body {
-    font-size: 10px;
-  }
-}
 header {
   position: fixed;
   top: 0;
@@ -3001,7 +2996,7 @@ footer .copyright {
     margin: 0 auto;
   }
   .sub.solution.sl .sub01 .imgList > li:not(:nth-child(1), :nth-last-child(1), :nth-last-child(2)) {
-    top: 20%;
+    top: 10%;
     transform: translateY(0);
   }
   .sub.solution.ctg .sub01 .imgList > li {

@@ -1095,7 +1095,7 @@
                                 margin: 0 auto;
                             }
                             &:not(:nth-child(1),:nth-last-child(1),:nth-last-child(2)){
-                                top: 20%;
+                                top: 10%;
                                 transform: translateY(0);
                             }
                         }
