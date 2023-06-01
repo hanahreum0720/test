@@ -238,6 +238,7 @@ $(document).ready(function(){
             startX = e.originalEvent.changedTouches[0].screenX;
         });
         $('.animateFadeList>li').on('touchend',function(e){
+            e.stopImmediatePropagation();
             endX=e.originalEvent.changedTouches[0].screenX;  
             touchX = endX - startX;
             indexEq = fadeIndex-1;
