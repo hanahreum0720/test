@@ -428,23 +428,20 @@ body {
 .container {
   position: relative;
   height: 100vh;
-  min-height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 .container .pageWrap {
   width: 100%;
   height: 100vh;
-  min-height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   transition-duration: 1.2s;
 }
 .container .pageWrap .page {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
 }
 .container .pageWrap .page .scrollBox {
@@ -478,8 +475,7 @@ body {
   display: flex;
   width: 100vw;
   height: 100vh;
-  min-height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: -1;
 }
 .balckBG span {
@@ -960,8 +956,7 @@ header .center .subMenu {
   width: 100%;
   max-width: 72rem;
   height: 100vh;
-  min-height: -webkit-fill-available;
-  height: fill-available;
+  height: calc(var(--vh, 1vh) * 100);
   padding-left: 12rem;
   background-color: #4bd254;
   transition: all 1.2s;
@@ -1721,8 +1716,7 @@ footer .copyright {
   }
   .main .main02 .center {
     height: 100vh;
-    min-height: -webkit-fill-available;
-    height: fill-available;
+    height: calc(var(--vh, 1vh) * 100);
   }
   .main .main02 .center > div:nth-of-type(1) {
     display: none;
@@ -1763,8 +1757,7 @@ footer .copyright {
   }
   .main .main03 .center {
     height: 100vh;
-    min-height: -webkit-fill-available;
-    height: fill-available;
+    height: calc(var(--vh, 1vh) * 100);
     padding: 10rem 0;
   }
   .main .main03 canvas {
