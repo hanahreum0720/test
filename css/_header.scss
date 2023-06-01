@@ -64,7 +64,7 @@ header{
             justify-content: center;
             width: 100%;
             max-width: 72rem;
-            height: 100vh;
+            @include fullvh();
             padding-left: 12rem;
             background-color: $main-color;
             transition: all 1.2s;
