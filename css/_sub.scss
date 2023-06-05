@@ -12,6 +12,8 @@
         @include centerAlign();
         width: 100%;
         @include fontWeightB();
+        @include fadeCont();
+        @include aniFadeIn($n:stani,$t:translateX(-50%) translateY(50%),$t2:translateX(-50%) translateY(-50%));
         h2{
             margin-bottom: 8rem;
             font-size: 8rem;
@@ -131,6 +133,11 @@
                             font-size: 8.8rem;
                             @include fontWeightE();
                             color: #fff;
+                            transition: all 0.3s;
+                            
+                            &:hover{
+                                color: $sub-color;
+                            }
                         }
                     }   
                     &.start{
@@ -142,6 +149,7 @@
             }
             .imgList{
                 width: 90%;
+                margin: 0 auto;
                 >li{
                     text-align: left;
                     &::before{ 
@@ -157,6 +165,9 @@
                         }
                     }
                     &:nth-child(1){
+                        left: 5%;
+                        width: 90%;
+                        margin: 0 auto;
                         &::before{ 
                             order: 1;
                             transition: 0.8s;
@@ -557,18 +568,18 @@
                 .center{
                     .circleAni{
                         &::before{
-                            @include anitop($n:about-05,$d:3.5s);
+                            @include anitop($n:about-05,$d:2.5s);
                         }
                         &::after{
-                            @include anitop($n:about-04,$d:3.5s,$t:20rem);
+                            @include anitop($n:about-04,$d:2.5s,$t:20rem);
                         }
                         i{
-                            @include anitop($n:about-03,$d:3.5s,$t:40rem);
+                            @include anitop($n:about-03,$d:2.5s,$t:40rem);
                         }
                     }
                     p{
                         &:nth-of-type(2){
-                            @include aniFadeIn($n:about-02,$s:1s,$d:3.5s,$t:translateY(25%)); 
+                            @include aniFadeIn($n:about-02,$s:1s,$d:2.5s,$t:translateY(25%)); 
                         }
                     }
                 }
@@ -591,6 +602,7 @@
                 gap:11.7rem;
                 li{
                     button{
+                        padding: 0;
                         font-size: 4.8rem;
                         @include fontWeightB();
                         @include lineTxt();
@@ -609,6 +621,7 @@
             }
             .tabBox{
                 display: none;
+                height: 20rem;
                 >ul{
                     @include flex();
                     >li{
@@ -958,11 +971,12 @@
                                     width: 28rem;
                                     padding: 1.5rem 0 1.4rem;
                                     text-align: center;
+                                    font-size: 1.6rem;
                                     span{
                                         display: inline-block;
                                         width: 10rem;
                                         height: 3.2rem;
-                                        margin:-0.3rem 1rem 0 0;
+                                        margin:-0.3rem 1.7rem 0 0;
                                         @include txthide();
                                         @include bgimg();
                                         vertical-align: middle;

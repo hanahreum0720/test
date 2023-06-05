@@ -21,6 +21,11 @@
                     z-index: 1;
                     @include aniFadeIn($n:main01-03,$t:translateX(50%),$t2:translateX(0%));
                 }
+                &.on{
+                    &::after{
+                        animation: ani-rotate2 12s infinite;
+                    }
+                }
             }
             i{
              &:nth-of-type(1){
@@ -101,8 +106,9 @@
             height: 4800px;
             >div{   
                 position: sticky;
-                &:nth-of-type(1){
-                    top: 25%;
+                top: 25%;
+                padding-left: 8rem;
+                >div:nth-of-type(1){
                     @include flexCenter();
                     p{
                         font-size: 1.6rem;
@@ -136,14 +142,14 @@
                         }
                     }
                 }
-                &:nth-of-type(2){
-                    top: 35%;
+                >div:nth-of-type(2){
+                    margin-top: 3.3rem;
                     background-image: url('../images/main/img_main_bg_area02.gif');
                     background-size: 43rem;
-                    background-position: right 10rem center;    
+                    background-position: right 17.5rem center;    
                     background-repeat: no-repeat;
                     .animateTxtFill{
-                        height: 50vh;
+                        height: 50rem;
                         li{
                             font-size: 6.4rem;
                             @include fontWeightB();
@@ -223,12 +229,12 @@
             max-width: 128rem !important;
         }
         canvas{
-            @include stickyPosition($t:calc(30% - 11rem));
+            @include stickyPosition($t:calc(50% - 35rem),$h:83vh);
             width: 100%;
             max-height: 80rem;
         }
         .btnWrap{
-            @include stickyPosition($t:calc(30% - 11rem));
+            @include stickyPosition($t:calc(50% - 35rem),$h:83vh);
             max-height: 80rem;
             ul{
                 display: none;
@@ -314,7 +320,7 @@
                             }
                         }
                         &:nth-child(3){
-                            top: 63%;
+                            top: 64%;
                             left: 9%;
                             &::before{
                                 background-image: url('../images/main/img_main_bg_obj_12.png');     
@@ -406,13 +412,27 @@
                         transform: translateX(-100%);
                     }
                     a{
-                        display: block;
+                        position: relative;
+                        display: inline-block;
                         color: #fff;
                         font-size: 2.4rem;
                         @include fontWeightB();
                         transform: translateX(-100%);
+                        &::before{     
+                            position: absolute;      
+                            bottom: 0.5rem;
+                            left: 0;
+                            @include virtualIcon($w:0%,$h:0.2rem){
+                                background-color: #fff;         
+                            }
+                            opacity: 0;
+                            transition: all 0.3s;
+                        }
                         &:hover{
-                            text-decoration: underline;
+                            &::before{
+                                width: 100%;
+                                opacity: 1;
+                            }
                         }
                     }
                 }
@@ -498,10 +518,11 @@
             .center{
                 @include fullvh();
                 >div{
-                    &:nth-of-type(1){
+                    padding-left: 0;
+                    >div:nth-of-type(1){
                         display: none;
                     }
-                    &:nth-of-type(2){
+                    >div:nth-of-type(2){
                         top: 20%;
                         padding-top: 40vh;
                         background-image: url('../images/main/img_main_bg_area02.gif');

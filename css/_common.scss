@@ -84,10 +84,10 @@ $main-bg-txt : #fff;
     left: 0;
     transform: translate(0,0);
 }
-@mixin stickyPosition($t:calc(50% - 40vh + 11rem)){
+@mixin stickyPosition($t:calc(50% - 40vh + 11rem),$h:80vh){
     position: sticky;
     top: $t;
-    height: 80vh;
+    height: $h;
 }
 @mixin fullvh(){
     height: 100vh;
@@ -200,6 +200,17 @@ $main-bg-txt : #fff;
     }
     100% {
         transform:rotate(360deg);
+    }
+}
+@keyframes ani-rotate2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50%{        
+        transform: rotate(15deg);
+    }
+    100% {
+        transform: rotate(0deg);
     }
 }
 @keyframes ani-career02 {
@@ -364,6 +375,7 @@ body{
             background-image: url('../images/btn_common_play.svg');  
             vertical-align: middle; 
          }
+         transition: all 0.3s;
     }
     &:hover{
         &::after{
@@ -480,13 +492,14 @@ body{
         &::before{
             position: absolute;
             left: 0;
-            bottom: calc(120% + 2rem);
+            bottom: calc(120% + 5.5rem);
             display: block;
             width: 18rem;
             content: attr(data-progressname);
             @include fontWeightB();
             transform: translate(-48.5%,  -50%) rotate(90deg);
             text-align: right;
+            font-size: 1.6rem;
         }
         span{
             position: relative;

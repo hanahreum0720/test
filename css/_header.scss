@@ -75,6 +75,7 @@ header{
                     font-size: 7.2rem;
                     line-height: 1.8;
                     @include fontWeightE();
+                    transition: all 0.3s;
                     &:hover{
                         color: $main-txt;
                     }
@@ -114,6 +115,9 @@ footer{
             li{
                 font-size: 1.6rem;
                 line-height: 1.5;
+                &:nth-child(1){
+                    margin-bottom: 4rem;
+                }
                 strong{
                     display: block;
                     margin-bottom: 1.2rem;

@@ -41,6 +41,7 @@
                 <span class="progressBar" data-progressname="Our Introduction"><span><i></i></span></span>
                 <div class="center animateFadeWrap">
                     <div>
+                    <div>
                         <p>AI 아나운서가 말하고 있습니다.</p>
                         <button type="button" class="btn_mute">음소거</button>
                     </div>
@@ -73,6 +74,7 @@
                                 </div>
                             </li>
                         </ul>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -132,6 +134,9 @@
 <script>
     $(document).ready(function(){
         $('.main01').trigger('click');
+        setTimeout(() => {
+            $('.main01 .balckBG span').addClass('on');
+        }, 2000);
         $(window).on('wheel touchend',function(){
             if($('.main01').hasClass('now') == true || $('.main04').hasClass('now') == true ){   
                 $('header').addClass('white');
