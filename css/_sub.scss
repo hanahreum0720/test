@@ -650,7 +650,7 @@
             }
             &.on{
                 .center{
-                    @include aniFadeIn($n:about-02,$s:1s,$d:1.2s,$t:translateY(25%),$t2:translateY(0%)); 
+                    @include aniFadeIn($n:about-02,$s:1s,$d:0.8s,$t:translateY(10%),$t2:translateY(0%)); 
                     
                 }
             }
@@ -1353,13 +1353,13 @@
                     .center{
                         .circleAni{
                             &::before{
-                                @include anitop($n:about-05-02,$d:3.5s);
+                                @include anitop($n:about-05-02,$d:2s);
                             }
                             &::after{
-                                @include anitop($n:about-04-02,$d:3.5s,$t:13rem);
+                                @include anitop($n:about-04-02,$d:2s,$t:13rem);
                             }
                             i{
-                                @include anitop($n:about-03-02,$d:3.5s,$t:26rem);
+                                @include anitop($n:about-03-02,$d:2s,$t:26rem);
                             }
                         }
                     }
@@ -1400,6 +1400,7 @@
                     margin: 0 auto  0;
                 }
                 .tabBox{
+                    height: auto;
                     >ul{
                         display: block;
                         >li{

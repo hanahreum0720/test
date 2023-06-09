@@ -1660,11 +1660,11 @@ footer .copyright {
   color: #fff;
   font-size: 2.4rem;
   font-family: "Pretendard-black";
-  transform: translateX(-100%);
+  transform: translateX(-120%);
 }
 .main .main04 .center ul li a::before {
   position: absolute;
-  bottom: 0.5rem;
+  top: 3.5rem;
   left: 0;
   content: "";
   display: inline-block;
@@ -1680,6 +1680,30 @@ footer .copyright {
 }
 .main .main04 .center ul li a:hover::before {
   width: 100%;
+  opacity: 1;
+}
+.main .main04 .center ul li:nth-child(3) a::after, .main .main04 .center ul li:nth-child(4) a::after {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 0%;
+  height: 0.2rem;
+  vertical-align: middle;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.main .main04 .center ul li:nth-child(3) a:hover::after {
+  width: 91%;
+  opacity: 1;
+}
+.main .main04 .center ul li:nth-child(4) a:hover::after {
+  width: 65%;
   opacity: 1;
 }
 .main .main04.on .center h2 {
@@ -2606,11 +2630,11 @@ footer .copyright {
   opacity: 0;
 }
 .sub.about .sub03.on .center {
-  animation: about-02 1s ease-in-out 1.2s forwards;
+  animation: about-02 1s ease-in-out 0.8s forwards;
 }
 @keyframes about-02 {
   0% {
-    transform: translateY(25%);
+    transform: translateY(10%);
     opacity: 0;
   }
   100% {
@@ -3255,7 +3279,7 @@ footer .copyright {
     top: 26rem;
   }
   .sub.about .sub01.on .center .circleAni::before {
-    animation: about-05-02 1.5s ease-in-out 3.5s forwards;
+    animation: about-05-02 1.5s ease-in-out 2s forwards;
   }
   @keyframes about-05-02 {
     0% {
@@ -3266,7 +3290,7 @@ footer .copyright {
     }
   }
   .sub.about .sub01.on .center .circleAni::after {
-    animation: about-04-02 1.5s ease-in-out 3.5s forwards;
+    animation: about-04-02 1.5s ease-in-out 2s forwards;
   }
   @keyframes about-04-02 {
     0% {
@@ -3277,7 +3301,7 @@ footer .copyright {
     }
   }
   .sub.about .sub01.on .center .circleAni i {
-    animation: about-03-02 1.5s ease-in-out 3.5s forwards;
+    animation: about-03-02 1.5s ease-in-out 2s forwards;
   }
   @keyframes about-03-02 {
     0% {
@@ -3335,6 +3359,9 @@ footer .copyright {
     width: calc(100% - 8rem);
     padding: 6rem 0 0;
     margin: 0 auto 0;
+  }
+  .sub.about .sub02 .tabBox {
+    height: auto;
   }
   .sub.about .sub02 .tabBox > ul {
     display: block;
