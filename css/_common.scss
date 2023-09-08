@@ -196,7 +196,8 @@ input[type="date"] {
     font-family: $main-font;
     appearance: none;
     -webkit-appearance: none;
-    &::-webkit-calendar-picker-indicator {
+    &::-webkit-calendar-picker-indicator,&::-webkit-inner-spin-button {
+        appearance: none;
         position: absolute;
         top: 0;
         left: 0;

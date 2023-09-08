@@ -297,7 +297,9 @@ input[type=date] {
        appearance: none;
   -webkit-appearance: none;
 }
-input[type=date]::-webkit-calendar-picker-indicator {
+input[type=date]::-webkit-calendar-picker-indicator, input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
   position: absolute;
   top: 0;
   left: 0;

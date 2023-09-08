@@ -297,7 +297,9 @@ input[type=date] {
        appearance: none;
   -webkit-appearance: none;
 }
-input[type=date]::-webkit-calendar-picker-indicator {
+input[type=date]::-webkit-calendar-picker-indicator, input[type=date]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -6542,10 +6544,10 @@ footer p:last-of-type {
   .pointGraphArea .pgOption .calendarBox .calendar input {
     display: block;
     width: 100%;
-    padding: 1rem 0 1rem 2rem !important;
+    padding: 1rem 0;
     font-size: 1.5rem;
     border: none;
-    text-align: center;
+    text-align: center !important;
     font-weight: 400;
     border-radius: 0;
     border-bottom: 1px solid #d8d8d8;

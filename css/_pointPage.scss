@@ -870,10 +870,10 @@
                 input{    
                     display: block;  
                     width: 100%;
-                    padding: 1rem  0 1rem 2rem!important;
+                    padding: 1rem  0 ;
                     font-size: 1.5rem;
                     border: none;
-                    text-align: center;
+                    text-align: center !important;
                     font-weight:400;
                     border-radius: 0;
                     border-bottom: 1px solid $border-color;
