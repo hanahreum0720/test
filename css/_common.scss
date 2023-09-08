@@ -194,6 +194,8 @@ textarea {
 input[type="date"] {
     position: relative;
     font-family: $main-font;
+    appearance: none;
+    -webkit-appearance: none;
     &::-webkit-calendar-picker-indicator {
         position: absolute;
         top: 0;

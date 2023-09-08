@@ -293,6 +293,9 @@ textarea {
 input[type=date] {
   position: relative;
   font-family: "NotoSansR";
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
 }
 input[type=date]::-webkit-calendar-picker-indicator {
   position: absolute;

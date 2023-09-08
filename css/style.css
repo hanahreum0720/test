@@ -293,6 +293,9 @@ textarea {
 input[type=date] {
   position: relative;
   font-family: "NotoSansR";
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
 }
 input[type=date]::-webkit-calendar-picker-indicator {
   position: absolute;
@@ -5755,6 +5758,7 @@ footer p:last-of-type {
           justify-content: space-between;
   width: 100%;
   line-height: 2;
+  font-size: 1.5rem;
 }
 .pointSummary3 .hoverInfo + span {
   font-size: 1.3rem;
