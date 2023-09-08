@@ -5828,6 +5828,7 @@ footer p:last-of-type {
   width: 8rem;
   height: 100%;
   margin-left: 2rem;
+  vertical-align: middle;
   cursor: pointer;
 }
 .pointGraphArea .pgOption .calendarBox .calendar::before {
@@ -5859,6 +5860,7 @@ footer p:last-of-type {
 }
 .pointGraphArea .pgOption .calendarBox .wave {
   display: inline-block;
+  vertical-align: middle;
 }
 .pointGraphArea .pgOption .calendarBox .wave + .calendar {
   margin: 0 0.5rem 0 0;
