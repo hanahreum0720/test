@@ -822,6 +822,7 @@
 .pointGraphArea{
     background-color: transparent;
     box-shadow:none;
+    border-radius: 0;
     .pgOption{
         flex-direction: column;
         gap: 1rem;
@@ -870,7 +871,7 @@
                 input{    
                     display: block;  
                     width: 80%;
-                    padding: 1rem  0;
+                    padding: 1rem  0 !important;
                     margin-left: 20%; 
                     font-size: 1.5rem;
                     border: none;

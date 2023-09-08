@@ -6471,6 +6471,7 @@ footer p:last-of-type {
     background-color: transparent;
     -webkit-box-shadow: none;
             box-shadow: none;
+    border-radius: 0;
   }
   .pointGraphArea .pgOption {
     -webkit-box-orient: vertical;
@@ -6542,7 +6543,7 @@ footer p:last-of-type {
   .pointGraphArea .pgOption .calendarBox .calendar input {
     display: block;
     width: 80%;
-    padding: 1rem 0;
+    padding: 1rem 0 !important;
     margin-left: 20%;
     font-size: 1.5rem;
     border: none;
