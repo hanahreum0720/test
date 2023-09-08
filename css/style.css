@@ -6538,6 +6538,7 @@ footer p:last-of-type {
   .pointGraphArea .pgOption .calendarBox .calendar {
     width: 45%;
     margin: 0 0.5rem 0 0.25rem;
+    border-bottom: 1px solid #d8d8d8;
   }
   .pointGraphArea .pgOption .calendarBox .calendar::before {
     top: calc(50% - 0.75rem);
@@ -6545,15 +6546,14 @@ footer p:last-of-type {
   }
   .pointGraphArea .pgOption .calendarBox .calendar input {
     display: block;
-    width: 100%;
+    width: 13rem !important;
     padding: 1rem 0 !important;
-    margin: 0 !important;
+    margin: 0 0 0 3rem !important;
     font-size: 1.5rem;
     border: none;
     text-align: center !important;
     font-weight: 400;
     border-radius: 0;
-    border-bottom: 1px solid #d8d8d8;
   }
   .pointGraphArea .pgOption .calendarBox .wave + .calendar::before {
     display: inline-block;
