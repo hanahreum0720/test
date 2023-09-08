@@ -6785,6 +6785,7 @@ footer p:last-of-type {
     border: none;
     -webkit-box-shadow: none;
             box-shadow: none;
+    border-radius: 0rem;
   }
   .pointDetailPage .list-area .la-graph .lg-info {
     margin-bottom: 5rem;
