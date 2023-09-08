@@ -1,6 +1,12 @@
 @charset "utf-8";
-@import "_reset";
+@import "_base";
 @import "_common";
+@import "_font";
 @import "_header";
-@import "_main"; 
-@import "_sub"; 
+@import "_content";
+@import "_subContent";
+@import "_mainPage";
+@import "_pointpage";
+@import "_servicePage";
+@import "_settingPage";
+@import "_policy";

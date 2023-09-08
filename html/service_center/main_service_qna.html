@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    
+    <title>REPLEASY</title>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/common.js"></script>
+    <link rel="shortcut icon" href="../../image/favicon/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="user-sub service qna-list">
+    <header>
+        <div class="center">
+            <h1><a href="../main/00_main.html"><img src="../../image/logo.svg" alt="REPLEASY"></a></h1>
+            <ul class="gnbMenu">
+                <li><a href="../main/00_main.html">서비스 소개</a></li>
+                <li><a href="../main/01_point01.html">포인트</a></li>
+                <li><a href="../main/02_mycontent.html">마이리플</a></li>
+                <li><a href="../service_center/main_service_center.html">고객센터</a></li>
+            </ul>
+            <div class="userArea loginComplete">
+                <a href="../main/01_login.html" class="userNoLogin">로그인 바로가기</a>
+                <div class="userLogin">
+                    <span class="userName"><i><img src="../../image/sample_user.png" alt="userImage"></i><span>홍길동</span></span>
+                    <ul class="userMenu">
+                        <li><a href="../membership/01_login.html">로그아웃</a></li>
+                        <li><a href="../main/03_userSetting.html">마이 리플 관리</a></li>
+                    </ul>
+                </div>
+                <button class="mobMenuOpen">모바일메뉴</button>
+            </div>
+        </div>
+    </header>
+    <div class="content center_100">            
+        <div class="sub-menu sp-title">
+            <div class="center_100">
+                <button class="mob-btn-back">뒤로가기</button>
+                <h2>고객센터</h2>
+            </div>
+            <span class="sm-now">QnA<span class="sm-open"></span></span>
+            <ul class="sm-list">
+                <li><a href="./main_service_center.html">공지사항</a></li>
+                <li><a href="./main_service_faq.html">FAQ</a></li>
+                <li class="on"><a href="./main_service_qna.html">QnA</a></li>
+            </ul>
+        </div> 
+        <div class="sm-div">
+            <h3 class="my-sub-title">
+                QnA
+            </h3>
+            <button class="sb-mob-open">모바일 검색영역 열기</button>
+            <div class="condition-search-wrap type03">
+                <div class="mob-title">
+                    <button class="sb-mob-close">모바일검색</button>
+                    <span>상세검색</span>
+                </div>
+                <div class="row">
+                    <span class="title">조회 기간</span>
+                    <div class="input">
+                        <div class="cs-btn-area">
+                            <button type="button" class="on" id="gc-date-week">1주일</button>
+                            <button type="button" id="gc-date-month">1개월</button>
+                            <button type="button" id="gc-date-month-6">3개월</button>
+                            <button type="button" id="gc-date-free">기간설정</button>
+                        </div>
+                        <div class="cs-cal-area searchDate">
+                            <div class="calendarBox" id="">
+                                <div class="calendar">
+                                    <input type="date" name="sDate" id="gc-date-1" value="2022-06-30">
+                                </div>
+                                <div class="wave">~</div>
+                                <div class="calendar">
+                                    <input type="date" name="eDate" id="gc-date-2" value="2022-06-30">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="title">구분</span>
+                    <div class="input">
+                        <select name="" id="">
+                            <option value="" selected>전체</option>
+                            <option value="">계정</option>
+                            <option value="">결제</option>
+                            <option value="">포인트</option>
+                            <option value="">오류</option>
+                            <option value="">쿠폰(모바일 상품권)</option>
+                            <option value="">기타</option>
+                        </select>
+                        <span><input type="checkbox" name="my-check" id="my-check"><label for="my-check"> 내 문의만 보기</label></span>
+                    </div>
+                    <span class="title">직접입력</span>
+                    <div class="input">
+                        <select name="" id="">
+                            <option value="" selected>제목</option>
+                            <option value="">내용</option>
+                            <option value="">제목+내용</option>
+                        </select>
+                        <input type="text" placeholder="검색어를 입력하세요." class="txt-input">
+                    </div>
+                </div>
+                <button type="button" class="search">조회</button>
+            </div>
+            <div class="search-result-box">
+                <!-- 검색결과가 없을 시 클래스none 추가  -->
+                <p class="box box-g">"<span>결제</span>” 로 검색한 결과입니다.</p> 
+                <p class="box box-g">검색결과가 존재하지 않습니다.</p>
+                <b>검색결과 <span>5</span></b>
+            </div>
+            <div class="search-next-box">
+                <!-- search-result-box에 none클래스가 있을경우 없어지는 박스 :search-next-box -->
+                
+                <ul class="board-table type02">
+                    <li class="row thead">
+                        <div>
+                            <div class="cell">No.</div>
+                            <div class="cell">구분/상태</div>
+                            <div class="cell">제목</div>
+                            <div class="cell">작성자</div>
+                            <div class="cell">날짜</div>
+                        </div>
+                    </li>
+                    <li class="row fixed">
+                        <!-- 상단고정공지-노란배경 클래스 fixed -->
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">122</div>
+                            <div class="cell"><span class="q-tag state">처리중</span><span class="q-tag category">기타</span></div>
+                            <div class="cell">1PAY  1분 QnA 활용법!</div>
+                            <div class="cell">admin</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">122</div>
+                            <div class="cell">
+                                <!-- 상태에따라 state에 ing / complete  -->
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <!-- 비밀글이면 <i class="i-privacy">비밀글</i> 추가 -->
+                            <div class="cell"><i class="i-privacy">비밀글</i>샵에서 구매한 상품이 쿠폰함에 있는데 매장에서 사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요사용하고싶어요</div>
+                            <!-- 작성자에 따라 my -->
+                            <div class="cell my">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">121</div>
+                            <div class="cell">
+                                <span class="q-tag state complete"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">ggggggggggggggggyyyyyyyyyyyyyyyy</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">120</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">어제 적립된 포인트가 얼마인지 어디서 볼 수 있죠?</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">119</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">하루 최대 적립 가능한 포인트는 얼마인가요?</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">118</div>
+                            <div class="cell">
+                                <span class="q-tag state complete"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">구매한 상품이 쿠폰함에 있는데 매장에서 사용하고싶어요</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">117</div>
+                            <div class="cell">
+                                <span class="q-tag state complete"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">어제 적립된 포인트가 얼마인지 어디서 볼 수 있죠?</div>
+                            <div class="cell">apdfadf*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">116</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">하루 최대 적립 가능한 포인트는 얼마인가요?</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">115</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">구매한 상품이 쿠폰함에 있는데 매장에서 사용하고싶어요</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">114</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">어제 적립된 포인트가 얼마인지 어디서 볼 수 있죠?</div>
+                            <div class="cell my">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                    <li class="row">
+                        <a href="./main_service_qna_detail.html" >
+                            <div class="cell">113</div>
+                            <div class="cell">
+                                <span class="q-tag state ing"></span>
+                                <span class="q-tag category">기타</span>
+                            </div>
+                            <div class="cell">어제 적립된 포인트가 얼마인지 어디서 볼 수 있죠?</div>
+                            <div class="cell">ap*****</div>
+                            <div class="cell">2023-03-13</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="paging-wrap">
+                    <button class="paging-move paging-previous">이전</button>
+                    <button class="on">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button class="paging-move paging-next">다음</button>
+                </div>
+
+            </div>
+
+            <div class="btn-fixed-area">
+                <a href="./main_service_qna_write.html" class="btn btn-main">글쓰기</a>
+            </div>
+
+
+        </div>
+    </div>
+    
+    <footer>
+        <div class="center_100">
+            <img src="../../image/footer_logo.svg" alt="MY1PAY">
+            <div>
+                <ul class="policy">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                </ul>
+                <p>
+                    한경훈, 이근옥  ㅣ  서울특별시 구로구 구로동 디지털로 272 <i class="mob_br"></i>한신아이티타워 505호  ㅣ  113-86-60934    <i class="pc_br"></i><span class="mob_only"> ㅣ  </span>    TEL : 070-4672-2303 <i class="mob_br"></i> <span class="pc_only"> ㅣ  </span>   FAX : 02-865-6845  ㅣ   E-MAIL : enliple@enliple.com
+                </p>
+                <p>Copyright(c) ENLIPLE All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(function(){
+            
+            // $('.sb-mob-open').on('click',function(){
+            //     $('.condition-search-wrap').addClass('on');
+            //     scrollDim();
+            // });
+            // $('.sb-mob-close').on('click',function(){
+            //     $('.condition-search-wrap').removeClass('on');                
+            //     scrollAuto(scrollHeight);
+            // });
+            // 개발참고 //
+            // 시연용 이벤트 처리 
+            // 텍스트없을시에만 검색결과가 없습니다.표시중
+            // search-result-box에 none 클래스 붙여서 표시하는 것 
+            // 검색결과 db에서 불러올시 이부분 변경하시면됩니다.
+            function searchResult(){
+                $('.search-result-box').removeClass('on none');
+                let inputTxt = $('.txt-input').val();
+                if(inputTxt.length === 0){
+                     $('.search-result-box').addClass('on none');
+                }else{
+                     $('.search-result-box').addClass('on');
+                     $('.search-result-box p span').text(inputTxt);
+                }
+            }
+            $('.search').on('click',function(){
+                if($('body').hasClass('uni-mob')){
+                        $(this).parent('.condition-search-wrap').removeClass('on');
+                    
+                }
+                searchResult();
+            });
+            
+            /* date btn event */   
+            var modifyDate = document.getElementById("gc-date-1");
+            var today = document.getElementById("gc-date-2");
+            var modifyDate2 = document.getElementById("lc-date-1");
+            var today2 = document.getElementById("lc-date-2");
+            function gcDate(d){
+                return d.getFullYear() + "-" + ((d.getMonth()+1)>9 ? (d.getMonth()+1).toString() : "0"+(d.getMonth()+1)) + "-" + (d.getDate()>9 ? d.getDate().toString() : "0"+d.getDate().toString());
+            }
+            function changeDate(day1,day2,num){
+                var td = new Date();    
+                day1.value = gcDate(td);
+                var md = new Date(td.setDate(td.getDate()-num));
+                day2.value = gcDate(md);
+            }
+            function changeMonth(mon1,mon2,num){
+                var td = new Date();    
+                mon1.value = gcDate(td);
+                var md = new Date(td.setMonth(td.getMonth()-num));
+                mon2.value = gcDate(md);
+            }
+
+            changeDate(today,modifyDate,7);
+
+            $('#gc-date-week').on('click',function(){
+                changeDate(today,modifyDate,7);
+            });
+            $('#gc-date-month').on('click',function(){
+                changeMonth(today,modifyDate,1);
+            });
+            $('#gc-date-month-6').on('click',function(){
+                changeMonth(today,modifyDate,3);
+            });
+            $('.cs-cal-area input').on('click',function(){
+                $('.cs-btn-area button').removeClass('on');
+                $('#gc-date-free').addClass('on');
+            });
+            $('.cs-btn-area button').on('click',function(){
+                $(this).siblings().removeClass('on');
+                $(this).addClass('on');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="59.999" height="55.378" viewBox="0 0 59.999 55.378">
+    <defs>
+        <linearGradient id="pt1yrzlgfa" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ffe500"/>
+            <stop offset="1" stop-color="#ffc800"/>
+        </linearGradient>
+    </defs>
+    <g data-name="그룹 4870">
+        <g data-name="그룹 4814">
+            <g data-name="그룹 4663">
+                <path data-name="합치기 9" d="m12.352 54.575-1.585-7.664H6.161A6.082 6.082 0 0 1 0 40.91V6a6.082 6.082 0 0 1 6.161-6h47.678A6.082 6.082 0 0 1 60 6v34.91a6.082 6.082 0 0 1-6.16 6H23.877l-9.849 8.226a1.037 1.037 0 0 1-1.676-.562z" style="fill:url(#pt1yrzlgfa)"/>
+            </g>
+        </g>
+        <g data-name="그룹 4783">
+            <path data-name="패스 11537" d="M30 37.5a14 14 0 1 0-14-14 14 14 0 0 0 14 14z"/>
+            <path data-name="패스 11541" d="M232.76 401.523h-6.547a1.824 1.824 0 0 0-1.814 1.831v11.494h3.545v-4.36h4.816a3.133 3.133 0 0 0 3.115-3.145v-2.675a3.134 3.134 0 0 0-3.115-3.145zm-.058 3.405v2.155a.165.165 0 0 1-.164.165h-4.445a.161.161 0 0 1-.149-.108v-2.268a.161.161 0 0 1 .149-.108h4.445a.164.164 0 0 1 .162.164z" transform="translate(-199.966 -384.439)" style="fill:#ffc600"/>
+        </g>
+    </g>
+</svg>

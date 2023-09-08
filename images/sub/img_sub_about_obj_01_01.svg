@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="379" height="383" viewBox="0 0 379 383">
-    <g transform="translate(-990 -319)">
-        <g data-name="타원 13" transform="translate(990 319)" style="stroke:#111;stroke-width:2px;fill:none">
-            <ellipse cx="189.5" cy="189" rx="189.5" ry="189" style="stroke:none"/>
-            <ellipse cx="189.5" cy="189" rx="188.5" ry="188" style="fill:none"/>
-        </g>
-        <circle data-name="타원 14" cx="8" cy="8" r="8" transform="translate(1141 686)" style="fill:#111"/>
-    </g>
-</svg>

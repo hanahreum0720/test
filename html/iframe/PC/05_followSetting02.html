@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        ol,ul {
+            list-style: none;
+        }
+        strong,h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        em {
+            font-style: normal;
+        }
+      
+a {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none;
+    color: #292929;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.4rem;
+}
+        input {
+            outline: none;
+            border: none;
+            background: #fff;
+            color: #333;
+            padding: 0 10px;
+        }
+        input::placeholder,
+        textarea::placeholder {
+         color: #a8a8a8;
+        }
+
+        input::-ms-clear {
+            display: none;
+        }
+        input:-webkit-autofill {
+            background: #fff;
+            -webkit-text-fill-color: #333;
+        }
+        input[type=password]::-ms-reveal,
+        input[type=password]::-ms-clear {
+           display: none;
+        }
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input:not([type=checkbox]),
+        textarea {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+        }
+        input[type=date] {
+            position: relative;
+            font-family: sans-serif;
+        }
+        input[type=date]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+        input[type=checkbox] + label {
+            position: relative;
+            display: inline-block;
+            height: 2rem;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+        input[type=checkbox] + label::before {
+            content: "";
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            vertical-align: middle;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: -1px 0.5rem 0 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        input[type=checkbox] + label::after {
+            position: absolute;
+            top: 1.2rem;
+            left: 0.4rem;
+            content: "";
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.3rem;
+            vertical-align: middle;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: -0.7rem 0.3rem 0 0;
+            transform: rotate(-45deg);
+            border-left: 1px solid #a8a8a8;
+            border-bottom: 1px solid #a8a8a8;
+            border-width: 2px;
+        }
+        input[type=checkbox]:checked + label::before {
+            border-color: #ffc600;
+            background-color: #ffc600;
+        }
+        input[type=checkbox]:checked + label::after {
+            border-color: #fff;
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0.813rem 2rem 0.813rem 0.813rem;
+            background-image: url("../image/icon_select.svg");
+            background-size: 0.625rem 0.4rem;
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            min-width: 280px;
+            font-family: sans-serif;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            position: relative;
+            color: #292929;
+            font-size: 1.6rem;
+            line-height: 1;
+            word-break: break-word;
+            -webkit-overflow-scrolling: touch;
+        }
+        body::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #6d6d6d;
+            border-radius: 5px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: #bebebe;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 480px) {
+            html,
+            body {
+                font-size: 2.33vw;
+            }
+        }
+    </style>
+    <style>
+        .content {
+            position: relative;
+            min-height: calc(100vh - 30rem);
+        }
+        .content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .center {
+            width: calc(100% - 3rem);
+            max-width: 123rem;
+            margin: 0 auto;
+        }
+        .center_100 {
+            width: 100%;
+            max-width: 123rem;
+            margin: 0 auto;
+        }
+        .center_500 {
+            width: calc(100% - 3rem);
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1.7rem 1rem;
+            border-radius: 0.8rem;
+            font-size: 1.8rem;
+            text-align: center;
+            border: 1px solid transparent;
+            line-height: 1;
+            color: #000;
+        }
+        .btn.btn-grayborder {
+            background-color: #f5f5fa;
+            border-color: #d8d8d8;
+        }
+        .btn.txtBtn {
+            display: inline-block;
+            padding: 1rem 0;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+    </style>
+    <style>
+      section{
+        padding-bottom: 1rem;
+      }
+      .sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  vertical-align: middle;
+}  
+.divTitle {
+  padding: 2rem 0 1rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.pageTitle {
+  position: relative;
+  padding: 2rem 0;
+  text-align: center;
+}
+.pageTitle .backstepBtn {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+.pageTitle .alertLineBtn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.pageTitle + .tabList {
+  margin: 1rem 0 1.8rem;
+}
+
+.backstepBtn, .closeBtn {
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-indent: -5000000000000000px;
+  overflow: hidden;
+  font-size: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+.backstepBtn::before, .backstepBtn::after, .closeBtn::before, .closeBtn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  display: inline-block;
+  width: 0.2rem;
+  height: 100%;
+  vertical-align: middle;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+  border-radius: 0.5rem;
+}
+.backstepBtn::before, .closeBtn::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.backstepBtn::after, .closeBtn::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.backstepBtn {
+  width: 1.5rem;
+}
+.backstepBtn::before, .backstepBtn::after {
+  left: 0%;
+}
+.backstepBtn::before {
+  top: calc(50% - 0.1rem);
+}
+.backstepBtn + .sectionTitle {
+  margin-left: 1rem;
+}
+
+.alertBtn {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../../../image/alarm_on.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -5000000000000000px;
+  overflow: hidden;
+  font-size: 0px;
+  text-align: left;
+  vertical-align: middle;
+  filter: grayscale(1);
+}
+.alertBtn.on {
+  filter: grayscale(0);
+}
+.alertBtn.type02 {
+  margin-right: 3.1rem;
+}
+.alertLineBtn {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../../../image/top_alarm.svg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -5000000000000000px;
+  overflow: hidden;
+  font-size: 0px;
+  text-align: left;
+  vertical-align: middle;
+}
+.alertLineBtn.on {
+  background-image: url(../../../image/alarm_on.svg);
+}
+.alertLineBtn.on::after {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  content: "";
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #fe4e3a;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.pagingMoreBtn {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.5rem 3rem;
+  border: 1px solid #d8d8d8;
+  border-radius: 2rem;
+  font-size: 1.4rem;
+}
+.pagingMoreBtn::after {
+  content: "";
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  vertical-align: middle;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: -0.8rem 0 0 1rem;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  transform: rotate(-45deg);
+}
+
+.tabList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d8d8d8;
+}
+.tabList li {
+  flex: 1;
+  text-align: center;
+}
+.tabList li a, .tabList li button {
+  display: inline-block;
+  padding: 1.5rem 0;
+  color: #999;
+  font-size: 1.7rem;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+}
+.tabList li.on a, .tabList li.on button {
+  color: #000;
+  border-color: #000;
+}
+
+.lrWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.userImg span {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.userImg span img {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.userImg span.noImg {
+  background-image: url(../../../image/my_profile_on.svg);
+  filter: grayscale(1);
+}
+.userImg span.noImg img {
+  display: none;
+}
+.userImg span.noImg.login {
+  filter: grayscale(0);
+}
+
+.profileWrap {
+  grid-area: profile;
+  display: grid;
+  grid-template-areas: "img name btn" "img date btn";
+  grid-template-columns: 5rem 5fr 2fr;
+  column-gap: 1rem;
+  row-gap: 0rem;
+}
+.profileWrap > div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+}
+.profileWrap .userImg {
+  grid-area: img;
+}
+.profileWrap .userName {
+  grid-area: name;
+  font-size: 1.5rem;
+  font-weight: bold;
+  word-break: keep-all;
+}
+.profileWrap .userDateInfo {
+  grid-area: date;
+  font-size: 1.2rem;
+  color: #999;
+}
+.profileWrap .userBtnWrap {
+  position: relative;
+  grid-area: btn;
+  justify-content: right;
+}
+
+.ulList > li {
+  margin-top: 2rem;
+}
+
+.iframeCommentWrap .center, .iframeCommentWrap .center_100 {
+  max-width: 100%;
+}
+
+.subscribeList {
+  padding: 1rem 0;
+}
+.subscribeList li {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+.subscribeList li .profileWrap {
+  grid-template-columns: 4rem 5fr 2fr;
+  width: 100%;
+}
+.subscribeList li .profileWrap .userImg span {
+  width: 4rem;
+  height: 4rem;
+}
+.subscribeList li .profileWrap .userName {
+  margin-bottom: 0.8rem;
+}
+.subscribeList li .btn {
+  padding: 1rem 0;
+  min-width: 8rem;
+  margin-left: 1rem;
+  font-size: 1.6rem;
+}
+.iframePopTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffc600;
+}
+.iframePopTitle span {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div class="iframeCommentWrap pcPop">
+        <div class="iframePopTitle">
+            <span>홍길동님의 리플</span>
+            <button type="button" class="closeBtn">닫기</button>
+        </div>
+        <div class="iframeInner">
+        <section>
+            <div class="pageTitle">
+                <button type="button" class="backstepBtn">뒤로가기</button>
+                <span class="sectionTitle">구독관리</span>
+                <a href="#" class="alertLineBtn">알림</a>
+            </div>
+            <!--타이틀-->
+            <ul class="tabList">
+                <li><a href="#">구독자 10</a></li>
+                <li class="on"><a href="#">구독중 4</a></li>
+                <li><a href="#">차단 4</a></li>
+            </ul>
+            <!--탭-->
+            <div class="center">                
+                <div class="lrWrap">
+                    <div class="left">
+                        <input type="checkbox" name="chk01" id="chk01-01">
+                        <label for="chk01-01">전체선택</label>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="alertBtn type02">알림</button>
+                        <button type="button" class="btn txtBtn">구독 취소</button>
+                    </div>
+                </div>
+                <!--옵션-->
+                <ul class="subscribeList">
+                    <li>
+                        <input type="checkbox" name="chk01" id="chk01-02">
+                        <label for="chk01-02"></label>
+                        <div class="profileWrap">
+                            <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+                            <div class="userName">홍길동</div>
+                            <div class="userDateInfo">구독 : 2023.06.26</div>
+                            <div class="userBtnWrap">
+                                <button type="button" class="alertBtn">알림</button>
+                                <button type="button" class="btn btn-grayborder">차단</button>
+                            </div>
+                        </div>
+                    </li>
+                    <!--이하 반복-->
+                    <li>
+                        <input type="checkbox" name="chk01" id="chk01-02">
+                        <label for="chk01-02"></label>
+                        <div class="profileWrap">
+                            <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+                            <div class="userName">홍길동</div>
+                            <div class="userDateInfo">구독 : 2023.06.26</div>
+                            <div class="userBtnWrap">
+                                <button type="button" class="alertBtn">알림</button>
+                                <button type="button" class="btn btn-grayborder">차단</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="chk01" id="chk01-02">
+                        <label for="chk01-02"></label>
+                        <div class="profileWrap">
+                            <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+                            <div class="userName">홍길동</div>
+                            <div class="userDateInfo">구독 : 2023.06.26</div>
+                            <div class="userBtnWrap">
+                                <button type="button" class="alertBtn">알림</button>
+                                <button type="button" class="btn btn-grayborder">차단</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="pagingMoreBtn">더보기</button>
+        </section>
+        </div>
+    </div>
+
+    <script>
+        let clickOnEvent = function(eventBtn){
+            for(var i = 0; i<eventBtn.length ; i++){
+                (function(now){
+                    eventBtn[now].onclick = function(){    
+                        if(!eventBtn[now].classList.contains('on')){
+                            eventBtn[now].classList.add('on');
+                        }else{
+                            eventBtn[now].classList.remove('on');
+                        }
+                    }
+                })(i)
+            }
+        }
+
+        const alertBtn = document.querySelectorAll('.alertBtn'); 
+        clickOnEvent(alertBtn);
+        
+    </script>
+</body>
+</html>

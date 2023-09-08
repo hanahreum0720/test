@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <path d="M0 0h20v20H0z" style="fill:none"/>
+    <g transform="translate(2.794 1.673)">
+        <rect width="2.458" height="2.458" rx="1.229" transform="translate(8.561 10.871)" style="fill:#292929"/>
+        <rect width="2.458" height="2.458" rx="1.229" transform="translate(8.561 7.906)" style="fill:#292929"/>
+        <path d="M-108.351-2.963h-1.608v-1.655a.393.393 0 0 0-.4-.382h-.268a.393.393 0 0 0-.4.382v1.655h-6.431v-1.655a.393.393 0 0 0-.4-.382h-.268a.393.393 0 0 0-.4.382v1.655h-1.608a1.571 1.571 0 0 0-1.608 1.526v11.2a1.571 1.571 0 0 0 1.608 1.528h11.791a1.571 1.571 0 0 0 1.608-1.528v-11.2a1.571 1.571 0 0 0-1.616-1.526zm-12.327 4.073h12.863v8.656a.524.524 0 0 1-.536.509h-11.791a.524.524 0 0 1-.536-.509zm.536-3.055h11.791a.524.524 0 0 1 .536.508V.09h-12.863v-1.527a.524.524 0 0 1 .536-.507z" transform="translate(121.75 5)" style="fill:#292929"/>
+        <rect width="2.458" height="2.458" rx="1.229" transform="translate(3.988 10.871)" style="fill:#292929"/>
+        <rect width="2.458" height="2.458" rx="1.229" transform="translate(3.988 7.906)" style="fill:#292929"/>
+    </g>
+</svg>

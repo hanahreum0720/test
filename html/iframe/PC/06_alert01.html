@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    strong,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
+    em {
+      font-style: normal;
+    }
+
+   
+a {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none;
+    color: #292929;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.4rem;
+}
+    input {
+      outline: none;
+      border: none;
+      background: #fff;
+      color: #333;
+      padding: 0 10px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a8a8a8;
+    }
+
+    input::-ms-clear {
+      display: none;
+    }
+
+    input:-webkit-autofill {
+      background: #fff;
+      -webkit-text-fill-color: #333;
+    }
+
+    input[type=password]::-ms-reveal,
+    input[type=password]::-ms-clear {
+      display: none;
+    }
+
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input:not([type=checkbox]),
+    textarea {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+    }
+
+    input[type=date] {
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    input[type=date]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox]+label {
+      position: relative;
+      display: inline-block;
+      height: 2rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    input[type=checkbox]+label::before {
+      content: "";
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -1px 0.5rem 0 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 50%;
+      box-sizing: border-box;
+    }
+
+    input[type=checkbox]+label::after {
+      position: absolute;
+      top: 1.2rem;
+      left: 0.4rem;
+      content: "";
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.3rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.7rem 0.3rem 0 0;
+      transform: rotate(-45deg);
+      border-left: 1px solid #a8a8a8;
+      border-bottom: 1px solid #a8a8a8;
+      border-width: 2px;
+    }
+
+    input[type=checkbox]:checked+label::before {
+      border-color: #ffc600;
+      background-color: #ffc600;
+    }
+
+    input[type=checkbox]:checked+label::after {
+      border-color: #fff;
+    }
+
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 0.813rem 2rem 0.813rem 0.813rem;
+      background-image: url("../image/icon_select.svg");
+      background-size: 0.625rem 0.4rem;
+      background-position: right 10px center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: 1.5rem;
+      font-family: sans-serif;
+      cursor: pointer;
+    }
+
+    select::-ms-expand {
+      display: none;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      min-width: 280px;
+      font-family: sans-serif;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      position: relative;
+      color: #292929;
+      font-size: 1.6rem;
+      line-height: 1;
+      word-break: break-word;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #6d6d6d;
+      border-radius: 5px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #bebebe;
+      border-radius: 5px;
+    }
+
+    @media only screen and (max-width: 480px) {
+
+      html,
+      body {
+        font-size: 2.33vw;
+      }
+    }
+  </style>
+  <style>
+    .content {
+      position: relative;
+      min-height: calc(100vh - 30rem);
+    }
+
+    .content::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .center {
+      width: calc(100% - 3rem);
+      max-width: 123rem;
+      margin: 0 auto;
+    }
+
+    .center_100 {
+      width: 100%;
+      max-width: 123rem;
+      margin: 0 auto;
+    }
+
+    .center_500 {
+      width: calc(100% - 3rem);
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1.7rem 1rem;
+      border-radius: 0.8rem;
+      font-size: 1.8rem;
+      text-align: center;
+      border: 1px solid transparent;
+      line-height: 1;
+      color: #000;
+    }
+
+    .btn.btn-main {
+      background-color: #ffc600;
+      border-color: #ffc600;
+    }
+  </style>
+  <style>
+    section {
+      padding-bottom: 1rem;
+    }
+
+    .sectionTitle {
+      font-size: 2.2rem;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
+    .divTitle {
+      padding: 2rem 0 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
+    .pageTitle {
+      position: relative;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .pageTitle .backstepBtn {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+    }
+
+    .pageTitle+.tabList {
+      margin: 1rem 0 1.8rem;
+    }
+
+    .txtRight {
+      display: block;
+      margin: 0 0 1rem;
+      font-size: 1.4rem;
+      color: #666;
+      text-align: right;
+    }
+
+    .selectBtn {
+      display: block;
+    }
+
+    .selectBtn::after {
+      content: "";
+      display: inline-block;
+      width: 0px;
+      height: 0px;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.5rem 0 0 0.5rem;
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+      border-top: 0.7rem solid #000;
+    }
+
+    .selectBtn+.optionPop {
+      right: auto;
+      left: 0;
+    }
+
+    .moreBtn {
+      display: inline-block;
+      width: 1rem;
+      height: 2rem;
+      background-image: url(../../../image/more.svg);
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-indent: -5000000000000000px;
+      overflow: hidden;
+      font-size: 0px;
+      text-align: left;
+      vertical-align: middle;
+      background-size: auto 100%;
+      background-position: top right;
+    }
+
+    .backstepBtn,
+    .closeBtn {
+      position: relative;
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+      text-indent: -5000000000000000px;
+      overflow: hidden;
+      font-size: 0px;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .backstepBtn::before,
+    .backstepBtn::after,
+    .closeBtn::before,
+    .closeBtn::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "";
+      display: inline-block;
+      width: 0.2rem;
+      height: 100%;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000;
+      border-radius: 0.5rem;
+    }
+
+    .backstepBtn::before,
+    .closeBtn::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .backstepBtn::after,
+    .closeBtn::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .backstepBtn {
+      width: 1.5rem;
+    }
+
+    .backstepBtn::before,
+    .backstepBtn::after {
+      left: 0%;
+    }
+
+    .backstepBtn::before {
+      top: calc(50% - 0.1rem);
+    }
+
+    .backstepBtn+.sectionTitle {
+      margin-left: 1rem;
+    }
+
+    .optionBtnWrap {
+      position: relative;
+    }
+
+    .optionBtnWrap .optionBtn+.optionPop {
+      position: absolute;
+      top: calc(100% + 1rem);
+      right: 0;
+      display: none;
+      min-width: 15rem;
+      padding: 1rem 0;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
+      border: solid 1px #ccc;
+      background-color: #fff;
+      text-align: left;
+      z-index: 1;
+    }
+
+    .optionBtnWrap .optionBtn+.optionPop ul li a,
+    .optionBtnWrap .optionBtn+.optionPop ul li button {
+      display: block;
+      width: 100%;
+      padding: 0.5rem 1.5rem;
+      font-size: 1.3rem;
+      text-align: left;
+    }
+
+    .optionBtnWrap .optionBtn+.optionPop ul li a:hover,
+    .optionBtnWrap .optionBtn+.optionPop ul li button:hover {
+      background-color: #f5f5fa;
+    }
+
+    .optionBtnWrap .optionBtn.on+.optionPop {
+      display: block;
+    }
+
+    .recommentBtn {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .recommentBtn::before {
+      content: "";
+      display: inline-block;
+      width: auto;
+      height: auto;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      content: "답글";
+      margin: -0.5rem 0.5rem 0 0;
+      font-weight: normal;
+    }
+
+    .recommentBtn.on {
+      border-bottom: 1px solid #000;
+    }
+
+    .likeBtn,
+    .dislikeBtn {
+      color: #999;
+    }
+
+    .likeBtn::before,
+    .dislikeBtn::before {
+      content: "";
+      display: inline-block;
+      width: 1.8rem;
+      height: 1.8rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.3rem 0.5rem 0 0;
+      background-image: url(../../../image/thumbs_up_off.svg);
+    }
+
+    .likeBtn.on,
+    .dislikeBtn.on {
+      font-weight: bold;
+      color: #000;
+    }
+
+    .likeBtn.on::before,
+    .dislikeBtn.on::before {
+      background-image: url(../../../image/thumbs_up_on.svg);
+    }
+
+    .dislikeBtn {
+      margin-left: 2rem;
+    }
+
+    .dislikeBtn::before {
+      transform: rotate(180deg) scaleX(-1);
+    }
+
+    .countBtn {
+      display: inline-block;
+      font-size: 1.4rem;
+      color: #999;
+    }
+
+    .countBtn::before {
+      content: "";
+      display: inline-block;
+      width: 1.1rem;
+      height: 1.1rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.4rem 0.5rem 0 0;
+      background-image: url(../../../image/icon_comment.svg);
+    }
+
+    .pagingMoreBtn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.5rem 3rem;
+      border: 1px solid #d8d8d8;
+      border-radius: 2rem;
+      font-size: 1.4rem;
+    }
+
+    .pagingMoreBtn::after {
+      content: "";
+      display: inline-block;
+      width: 0.6rem;
+      height: 0.6rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.8rem 0 0 1rem;
+      border-left: 1px solid #000;
+      border-bottom: 1px solid #000;
+      transform: rotate(-45deg);
+    }
+
+    .checkTag {
+      display: inline-block;
+      min-width: 6rem;
+      padding: 0.4rem 0.5rem;
+      border-radius: 1.5rem;
+      background-color: #f5f5fa;
+      color: #a8a8a8;
+      font-size: 1.2rem;
+      word-break: keep-all;
+      font-size: 1.2rem;
+    }
+
+    .checkTag.on {
+      background-color: #ffc600;
+      color: #fff;
+    }
+
+    .checkTag::before {
+      content: "";
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.3rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.7rem 0.3rem 0 0;
+      transform: rotate(-45deg);
+      border-left: 1px solid #a8a8a8;
+      border-bottom: 1px solid #a8a8a8;
+    }
+
+    .checkTag.on::before {
+      border-color: #fff;
+    }
+
+    .nodataInfo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 10rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    .nodataInfo::before {
+      content: "";
+      display: inline-block;
+      width: 4.5rem;
+      height: 4.5rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      margin: 0 auto 1rem;
+      background-image: url(../../../image/ico_nodata.svg);
+      border-radius: 50%;
+    }
+    .alignList li {
+  display: inline-block;
+  margin-left: 0.3rem;
+}
+
+    .alignList li::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 1rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.1rem 0.5rem 0 0;
+      background-color: #999;
+    }
+
+    .alignList li:first-child::before {
+      display: none;
+    }
+
+    .alignList li:first-child::before {
+      display: inline-block;
+      background-color: transparent;
+    }
+
+    .alignList li a,
+    .alignList li button {
+      display: inline-block;
+      color: #999;
+      font-size: 1.3rem;
+    }
+
+    .alignList li.on a,
+    .alignList li.on button {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .tabList {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    .tabList li {
+      flex: 1;
+      text-align: center;
+    }
+
+    .tabList li a,
+    .tabList li button {
+      display: inline-block;
+      padding: 1.5rem 0;
+      color: #999;
+      font-size: 1.7rem;
+      border-bottom: 2px solid transparent;
+      font-weight: bold;
+    }
+
+    .tabList li.on a,
+    .tabList li.on button {
+      color: #000;
+      border-color: #000;
+    }
+
+    .lrWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    .userImg span {
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50%;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .userImg span img {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .userImg span.noImg {
+      background-image: url(../../../image/my_profile_on.svg);
+      filter: grayscale(1);
+    }
+
+    .userImg span.noImg img {
+      display: none;
+    }
+
+    .userImg span.noImg.login {
+      filter: grayscale(0);
+    }
+
+    .profileWrap {
+      grid-area: profile;
+      display: grid;
+      grid-template-areas: "img name btn""img date btn";
+      grid-template-columns: 5rem 5fr 2fr;
+      column-gap: 1rem;
+      row-gap: 0rem;
+    }
+
+    .profileWrap>div {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .profileWrap .userImg {
+      grid-area: img;
+    }
+
+    .profileWrap .userName {
+      grid-area: name;
+      font-size: 1.5rem;
+      font-weight: bold;
+      word-break: keep-all;
+    }
+
+    .profileWrap .userDateInfo {
+      grid-area: date;
+      font-size: 1.2rem;
+      color: #999;
+    }
+
+    .profileWrap .userBtnWrap {
+      position: relative;
+      grid-area: btn;
+      justify-content: right;
+    }
+
+    .ulList>li {
+      margin-top: 2rem;
+    }
+
+    .newsWrap {
+      display: grid;
+      grid-template-areas: "newstitle newsbtn""newsinfo newsbtn";
+      grid-template-columns: 5fr 1fr;
+      column-gap: 1rem;
+      row-gap: 0.8rem;
+      padding: 2rem;
+      background-color: #f5f5fa;
+      border-radius: 1rem;
+    }
+
+    .newsWrap>div {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+    }
+
+    .newsWrap .newsTitle {
+      grid-area: newstitle;
+      font-size: 1.6rem;
+      word-break: keep-all;
+      overflow: hidden;
+    }
+
+    .newsWrap .newsTitle p {
+      width: 95%;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      overflow: hidden;
+    }
+
+    .newsWrap .newsInfo {
+      grid-area: newsinfo;
+      font-size: 1.4rem;
+      color: #999;
+    }
+
+    .newsWrap .newsBtnWrap {
+      position: relative;
+      grid-area: newsbtn;
+      justify-content: right;
+    }
+
+    .newsWrap .newsLink {
+      text-decoration: underline;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+.commentLink {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+    .commentWrap {
+      padding: 2rem 0 0;
+    }
+
+    .commentWrap .profileWrap {
+      grid-template-areas: "img name date btn";
+      grid-template-columns: 3rem minmax(5rem, auto) 5fr 2fr;
+    }
+
+    .commentWrap .profileWrap .userImg span {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .commentWrap .txtWrap {
+      padding: 0 0 2rem 4rem;
+      font-size: 1.4rem;
+      line-height: 1.5;
+    }
+
+    .commentWrap .newsWrap {
+      grid-template-areas: "newstitle newstitle""newsinfo newsbtn";
+      grid-template-columns: 3fr 1fr;
+      row-gap: 1.2rem;
+      margin: 0 0 2rem 4rem;
+    }
+
+    .commentWrap .newsWrap .newsBtnWrap {
+      align-items: end;
+    }
+
+    .commentWrap>.lrWrap {
+      padding-left: 4rem;
+    }
+
+    .commentWrap.recomment {
+      padding: 2rem 2rem;
+      background-color: #f5f5fa;
+      border-bottom: 1px solid #d8d8d8;
+    }
+
+    .commentWrap.recomment .lrWrap {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .commentWrap.recomment .lrWrap .recommentBtn {
+      display: none;
+    }
+
+    .alertBox {
+      padding: 1.6rem;
+      margin: 2.5rem 0 1rem 0;
+      background-color: #fffbee;
+      border: 1px solid #f6ecc7;
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .alertBox p {
+      font-size: 1.2rem;
+    }
+
+    .alertBox p::before {
+      content: "";
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      vertical-align: middle;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: -0.3rem 0.5rem 0 0;
+      background-image: url(../../../image/alarm_img.svg);
+    }
+
+    .alertBox .btn.btn-main {
+      padding: 1rem 3rem;
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 1.6rem;
+    }
+
+    .myManageList, .alertFilterList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 0;
+}
+.myManageList li, .alertFilterList li {
+  position: relative;
+  padding: 1rem 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.myManageList li::before, .alertFilterList li::before {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 90%;
+  vertical-align: middle;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f5f5fa;
+  margin: -1px 1rem 0 0;
+  vertical-align: middle;
+}
+.myManageList li:nth-child(1)::before, .alertFilterList li:nth-child(1)::before {
+  display: none;
+}
+.myManageList li a, .alertFilterList li a {
+  display: block;
+}
+.myManageList li a > span, .alertFilterList li a > span {
+  display: block;
+}
+.myManageList li a > span:nth-of-type(1), .alertFilterList li a > span:nth-of-type(1) {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #777;
+}
+.myManageList li a > span:nth-of-type(2), .alertFilterList li a > span:nth-of-type(2) {
+  font-size: 1.6rem;
+}
+
+.alertFilterList {
+  margin: 2rem 0;
+  background-color: #f5f5fa;
+  border-radius: 1rem;
+}
+.alertFilterList li::before {
+  background-color: #d8d8d8;
+}
+.alertFilterList li a {
+  color: #999;
+}
+.alertFilterList li a > span:nth-of-type(1) {
+  color: #aaa;
+}
+.alertFilterList li.on a {
+  color: #000;
+}
+.alertFilterList li.on a > span {
+  font-weight: bold;
+}
+.alertFilterList li.on a > span:nth-of-type(1) {
+  color: #777;
+}
+    .iframeCommentWrap .center,
+    .iframeCommentWrap .center_100 {
+      max-width: 100%;
+    }
+
+    .iframePopTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      background-color: #ffc600;
+    }
+
+    .iframePopTitle span {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iframeCommentWrap pcPop">
+    <div class="iframePopTitle">
+      <span>홍길동님의 리플</span>
+      <button type="button" class="closeBtn">닫기</button>
+    </div>
+    <div class="iframeInner">
+      <section>
+        <div class="pageTitle">
+          <button type="button" class="backstepBtn">뒤로가기</button>
+          <span class="sectionTitle">알림 관리</span>
+        </div>
+        <!--타이틀-->
+        <ul class="tabList">
+          <li class="on"><a href="#">알림 내역</a></li>
+          <li><a href="#">알림 설정</a></li>
+        </ul>
+        <!--탭-->
+        <div class="center">
+          <div class="">
+            <ul class="alertFilterList">
+                <li class="on">
+                    <a href="#">
+                        <span>전체</span>
+                        <span>50</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>구독중 댓글 </span>
+                        <span>50</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>내 댓글 반응</span>
+                        <span>50</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+          <div class="lrWrap">
+            <div class="left optionBtnWrap">
+              <!-- <button type="button" class="optionBtn selectBtn">전체보기</button>
+              <div class="optionPop">
+                <ul>
+                  <li><button type="button">전체보기</button></li>
+                  <li><button type="button">신규 댓글만</button></li>
+                  <li><button type="button">내게 온 답글만</button></li>
+                </ul>
+              </div> -->
+            </div>
+            <div class="right">
+              <ul class="alignList">
+                <li class="on"><button type="button">최신순</button></li>
+                <li><button type="button">과거순</button></li>
+                <li><button type="button">공감순</button></li>
+                <li><button type="button">답글순</button></li>
+              </ul>
+            </div>
+          </div>
+          <!--옵션-->
+          <ul class="ulList">
+            <li>
+              <!-- <div class="alertBox">
+                <p>작성하신 댓글에 새로운 답글이 등록되었어요.</p>
+                <a href="#" class="btn btn-main">댓글 등록</a>
+              </div> -->
+              <div class="commentWrap">
+                <div class="profileWrap">
+                  <div class="userImg"><span><img src="../../../image/sample_user.png" alt="사용자이미지"></span></div>
+                  <div class="userName">홍길동</div>
+                  <div class="userDateInfo">2023.06.26</div>
+                  <div class="userBtnWrap optionBtnWrap">
+                    <span class="checkTag on">구독중</span>
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                      <ul>
+                        <li><button type="button">구독해제</button></li>
+                        <li><button type="button">핀 등록(기사)</button></li>
+                        <li><button type="button">신고</button></li>
+                        <li><button type="button">차단</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <p class="txtWrap">
+                  정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+                </p>
+                <div class="txtRight">
+                    <a href="#" class="">
+                      이후 추가된 댓글 500+
+                    </a>
+                    <a href="#" class="commentLink">
+                        댓글보기 &gt;
+                    </a>
+                </div>
+                <div class="newsWrap">
+                  <div class="newsTitle">
+                    <p>손흥민 득점왕 최고의 최고 찬사최고의 최고최고의 최고최고의 최고최고의 최고</p>
+                  </div>
+
+                  <div class="newsInfo">네이버 뉴스<span> ㅣ </span>23.06.10<span> ㅣ </span><span
+                      class="countBtn">2,400+</span></div>
+                  <div class="newsBtnWrap">
+                    <a href="#" class="newsLink">기사보기 &gt;</a>
+                  </div>
+                </div>
+                <div class="lrWrap">
+                  <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                  </div>
+                  <div class="right">
+                    <button type="button" class="likeBtn">253</button>
+                    <button type="button" class="dislikeBtn">12</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!--이하 반복-->
+            <li>
+              <!-- <div class="alertBox">
+                <p>작성하신 댓글에 새로운 답글이 등록되었어요.</p>
+                <a href="#" class="btn btn-main">댓글 등록</a>
+              </div> -->
+              <div class="commentWrap">
+                <div class="profileWrap">
+                  <div class="userImg"><span><img src="../../../image/sample_user.png" alt="사용자이미지"></span></div>
+                  <div class="userName">홍길동</div>
+                  <div class="userDateInfo">2023.06.26</div>
+                  <div class="userBtnWrap optionBtnWrap">
+                    <span class="checkTag on">구독중</span>
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                      <ul>
+                        <li><button type="button">구독해제</button></li>
+                        <li><button type="button">핀 등록(기사)</button></li>
+                        <li><button type="button">신고</button></li>
+                        <li><button type="button">차단</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <p class="txtWrap">
+                  정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+                </p>
+                <div class="txtRight">
+                    <a href="#" class="commentLink">
+                        댓글보기 &gt;
+                    </a>
+                </div>
+                <div class="newsWrap">
+                  <div class="newsTitle">
+                    <p>손흥민 득점왕 최고의 최고 찬사최고의 최고최고의 최고최고의 최고최고의 최고</p>
+                  </div>
+
+                  <div class="newsInfo">네이버 뉴스<span> ㅣ </span>23.06.10<span> ㅣ </span><span
+                      class="countBtn">2,400+</span></div>
+                  <div class="newsBtnWrap">
+                    <a href="#" class="newsLink">기사보기 &gt;</a>
+                  </div>
+                </div>
+                <div class="lrWrap">
+                  <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                  </div>
+                  <div class="right">
+                    <button type="button" class="likeBtn">253</button>
+                    <button type="button" class="dislikeBtn">12</button>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <button class="pagingMoreBtn">더보기</button>
+        <p class="nodataInfo">
+          알림 내역이 없습니다.
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    let clickOnEvent = function (eventBtn) {
+      for (var i = 0; i < eventBtn.length; i++) {
+        (function (now) {
+          eventBtn[now].onclick = function () {
+            if (!eventBtn[now].classList.contains('on')) {
+              eventBtn[now].classList.add('on');
+            } else {
+              eventBtn[now].classList.remove('on');
+            }
+          }
+        })(i)
+      }
+    }
+
+    const optionBtn = document.querySelectorAll('.optionBtn');
+    clickOnEvent(optionBtn);
+  </script>
+</body>
+
+</html>

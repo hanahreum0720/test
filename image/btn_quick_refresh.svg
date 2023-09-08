@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+    <defs>
+        <filter id="dutyo493ra" x="0" y="0" width="37" height="37" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feFlood flood-opacity=".2"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#dutyo493ra)">
+        <circle data-name="타원 33" cx="14" cy="14" r="14" transform="translate(4.5 2.5)" style="fill:#c1c1c1"/>
+    </g>
+    <path d="M11.607 6.5a5.107 5.107 0 0 0-9.118-3.162l.9.9a.464.464 0 0 1-.328.793H.464A.464.464 0 0 1 0 4.563V1.969a.464.464 0 0 1 .793-.328l.706.706A6.5 6.5 0 1 1 .174 8a.7.7 0 0 1 1.356-.32A5.108 5.108 0 0 0 11.607 6.5z" style="fill:#fff;stroke:#fff;stroke-width:.5px;fill-rule:evenodd" transform="translate(12.5 10.5)"/>
+</svg>

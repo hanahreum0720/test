@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    
+    <title>iframe/REPLEASY</title>
+    <link rel="shortcut icon" href="/image/favicon/favicon.ico" type="image/ico">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        ol,ul {
+            list-style: none;
+        }
+        strong,h1,h2,h3,h4,h5,h6 {
+            font-weight: normal;
+        }
+        em {
+            font-style: normal;
+        }
+       
+a {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none;
+    color: #292929;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.4rem;
+}
+        input {
+            outline: none;
+            border: none;
+            background: #fff;
+            color: #333;
+            padding: 0 10px;
+        }
+        input::placeholder,
+        textarea::placeholder {
+         color: #a8a8a8;
+        }
+
+        input::-ms-clear {
+            display: none;
+        }
+        input:-webkit-autofill {
+            background: #fff;
+            -webkit-text-fill-color: #333;
+        }
+        input[type=password]::-ms-reveal,
+        input[type=password]::-ms-clear {
+           display: none;
+        }
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input:not([type=checkbox]),
+        textarea {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+        }
+        input[type=date] {
+            position: relative;
+            font-family: sans-serif;
+        }
+        input[type=date]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+        input[type=checkbox] + label {
+            position: relative;
+            display: inline-block;
+            height: 2rem;
+            font-size: 1.6rem;
+            cursor: pointer;
+        }
+        input[type=checkbox] + label::before {
+            content: "";
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            vertical-align: middle;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: -1px 0.5rem 0 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        input[type=checkbox] + label::after {
+            position: absolute;
+            top: 1.2rem;
+            left: 0.4rem;
+            content: "";
+            display: inline-block;
+            width: 0.8rem;
+            height: 0.3rem;
+            vertical-align: middle;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: -0.7rem 0.3rem 0 0;
+            transform: rotate(-45deg);
+            border-left: 1px solid #a8a8a8;
+            border-bottom: 1px solid #a8a8a8;
+            border-width: 2px;
+        }
+        input[type=checkbox]:checked + label::before {
+            border-color: #ffc600;
+            background-color: #ffc600;
+        }
+        input[type=checkbox]:checked + label::after {
+            border-color: #fff;
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 0.813rem 2rem 0.813rem 0.813rem;
+            background-image: url("../image/icon_select.svg");
+            background-size: 0.625rem 0.4rem;
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1.5rem;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+        select::-ms-expand {
+            display: none;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            min-width: 280px;
+            font-family: sans-serif;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            position: relative;
+            color: #292929;
+            font-size: 1.6rem;
+            line-height: 1;
+            word-break: break-word;
+            -webkit-overflow-scrolling: touch;
+        }
+        body::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #6d6d6d;
+            border-radius: 5px;
+        }
+        body::-webkit-scrollbar-track {
+            background-color: #bebebe;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 480px) {
+            html,
+            body {
+                font-size: 2.33vw;
+            }
+        }
+    </style>
+    <style>
+        .content {
+            position: relative;
+            min-height: calc(100vh - 30rem);
+        }
+        .content::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .center {
+            width: calc(100% - 3rem);
+            max-width: 123rem;
+            margin: 0 auto;
+        }
+        .center_100 {
+            width: 100%;
+            max-width: 123rem;
+            margin: 0 auto;
+        }
+        .center_500 {
+            width: calc(100% - 3rem);
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+        .inputBox {
+            position: relative;
+            margin-bottom: 1rem;
+            border: 1px solid #d8d8d8;
+            border-radius: 0.5rem;
+        }
+        .inputBox input {
+            width: 100%;
+            padding: 1.7rem 1rem;
+            border-radius: 1rem;
+            background-color: transparent;
+            font-size: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1.7rem 1rem;
+            border-radius: 0.8rem;
+            font-size: 1.8rem;
+            text-align: center;
+            border: 1px solid transparent;
+            line-height: 1;
+            color: #000;
+        }
+        .btn.btn-yellow {
+            background-color: #fee500;
+            border-color: #fee500;
+        }
+        .btn.btn-black {
+            background-color: #333;
+            border-color: #333;
+            color: #fff;
+        }
+        .btn.btn-main {
+            background-color: #ffc600;
+            border-color: #ffc600;
+        }
+        .btn.btn-border {
+            background-color: #fff;
+            border-color: #d8d8d8;
+        }
+        .btn.txtBtn {
+            display: inline-block;
+            padding: 1rem 0;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+        .btn.btn_100 {
+            width: 100%;
+        }
+        .btn.btn-gra {
+            background: -webkit-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
+            background: -moz-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
+            background: -o-linear-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
+            background: linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
+            color: #000;
+        }
+        .btn i {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin: -0.5rem 0.8rem 0 0;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: middle;
+        }
+        .btn i.repleasy {
+            position: relative;
+            width: 8rem;
+            height: 1rem;
+            background-image: url(../../../image/logo.svg);
+        }
+        .btn i.repleasy::before {
+            position: absolute;
+            top: -0.3rem;
+            left: -2.5rem;
+            content: "";
+            display: inline-block;
+            width: 1.9rem;
+            height: 1.7rem;
+            vertical-align: middle;
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(../../../image/logo_mini.svg);
+        }
+        .btn i.kakao {
+            background-image: url(../../../image/login_kakao.svg);
+        }
+        .btn i.google {
+            background-image: url(../../../image/login_google.svg);
+        }
+    </style>
+    <style>
+        
+        .sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.inputTitle {
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.lrWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+.snsLoginWrap .lrWrap {
+  padding: 1rem 0 3rem 0;
+  justify-content: center;
+}
+.snsLoginWrap .inputTitle {
+  margin: 4rem 0 2rem;
+}
+.snsLoginWrap .btnBox .btn {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+.snsLoginWrap .info {
+  padding: 5rem 0;
+}
+.snsLoginWrap .info li {
+  position: relative;
+  padding-left: 1.3rem;
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.snsLoginWrap .info li::before {
+  position: absolute;
+  top: 0rem;
+  left: 0.5rem;
+  content: "*";
+  display: block;
+}
+.iframeCommentWrap .center, .iframeCommentWrap .center_100 {
+  max-width: 100%;
+}
+.iframeCommentWrap.pc {
+  padding: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="iframeCommentWrap pc">
+      <section>
+        <div class="snsLoginWrap">
+            <div class="lrWrap"><span class="sectionTitle">로그인이 필요한 서비스입니다.</span></div>
+            <div class="center_500">
+                <span class="inputTitle">SNS 로그인</span>
+                <div class="btnBox">
+                    <button type="button" class="btn btn-main"><i class="repleasy"></i>로그인</button>
+                    <button type="button" class="btn btn-yellow"><i class="kakao"></i>카카오 로그인</button>
+                    <button type="button" class="btn btn-border"><i class="google"></i>Google 로그인</button>
+                </div>
+                <ul class="info">
+                    <li>핀 등록, 댓글 작성, 구독 등의 서비스는 로그인 회원에게
+                        제공됩니다.</li>
+                    <li>로그인을 통해 포인트를 안전하게 보관하세요.</li>
+                </ul>
+
+            </div>
+        </div>
+  </section>
+</div>
+
+</body>
+</html>

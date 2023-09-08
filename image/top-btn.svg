@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <filter id="865q46rida" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <rect data-name="사각형 204" width="70" height="70" rx="20" transform="translate(9 6)" style="filter:url(#865q46rida)"/>
+    <path data-name="패스 2018" d="M16.834 8v23.629m0 0 8.333-8.329m-8.334 8.334L8.5 23.3" transform="rotate(180 30.333 30.564)" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:3px"/>
+</svg>

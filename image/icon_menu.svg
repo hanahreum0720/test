@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <path data-name="사각형 7" style="fill:none" d="M0 0h20v20H0z"/>
+    <g data-name="그룹 1">
+        <path data-name="사각형 9" transform="translate(8.042 2)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 172" transform="translate(8.042 7.387)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 176" transform="translate(8.042 12.774)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 170" transform="translate(13.084 2)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 173" transform="translate(13.084 7.387)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 175" transform="translate(13.084 12.774)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 171" transform="translate(3 2)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 174" transform="translate(3 7.387)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+        <path data-name="사각형 177" transform="translate(3 12.774)" style="fill:#292929" d="M0 0h4.188v4.531H0z"/>
+    </g>
+</svg>

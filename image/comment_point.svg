@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+    <defs>
+        <linearGradient id="mgyyqlf0aa" x1=".146" y1=".146" x2=".854" y2=".854" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ffe01a"/>
+            <stop offset="1" stop-color="#f9b323"/>
+        </linearGradient>
+        <linearGradient id="ulk3z1ndnb" x1=".146" y1=".854" x2=".854" y2=".146" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#ffeb4d"/>
+            <stop offset=".995" stop-color="#feb919"/>
+            <stop offset="1" stop-color="#ebaf34"/>
+        </linearGradient>
+    </defs>
+    <g transform="translate(-553.662 -110.672)">
+        <circle data-name="타원 63" cx="12.5" cy="12.5" transform="translate(553.662 110.672)" style="fill:url(#mgyyqlf0aa)" r="12.5"/>
+        <circle data-name="타원 64" cx="10.655" cy="10.655" r="10.655" transform="translate(555.508 112.517)" style="fill:url(#ulk3z1ndnb)"/>
+        <path data-name="패스 11517" d="M-3.347.822h2.524v-3.484H.4c2.215 0 4.147-1.1 4.147-3.6 0-2.6-1.9-3.413-4.217-3.413h-3.677zm2.524-5.473v-3.032h1.03c1.213 0 1.89.367 1.89 1.425 0 1.03-.592 1.608-1.82 1.608z" transform="translate(565.834 128.185)" style="fill:#fff"/>
+    </g>
+</svg>

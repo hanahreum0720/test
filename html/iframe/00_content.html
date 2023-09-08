@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    
+    <title>REPLEASY</title>
+    <link rel="shortcut icon" href="../../image/favicon/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="../../css/service_common.css">
+    <style>
+        body{ height:auto;padding-bottom: 100px; }
+        body h4{margin: 30px 0px 10px;font-weight: bold;background-color: #ccc;}
+        section{width: 100%;max-width: 480px;}
+    </style>
+</head>
+<body>
+    
+    <div class="floatingWrap alert">
+        <a href="#" class="iconWrap">
+            <i></i>
+            <span>+99</span>
+        </a>
+    </div>
+    <h4>- 모바일타이틀</h4>
+    <section>
+        <div class="lrWrap">
+            <div class="left">
+                <button type="button" class="backstepBtn">뒤로가기</button>
+                <span class="sectionTitle">답글</span>
+            </div>
+            <div class="right">
+                <button type="button" class="closeBtn">닫기</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="pageTitle">
+            <button type="button" class="backstepBtn">뒤로가기</button>
+            <span class="sectionTitle">구독관리</span>
+            <a href="#" class="alertLineBtn">알림</a>
+        </div>
+    </section>
+
+    <h4>- 프로필</h4>
+    <section>
+        <div class="profileWrap">
+            <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+            <div class="userName">홍길동</div>
+            <div class="userDateInfo">가입 : 2023.06.26</div>
+            <div class="userBtnWrap">
+                <a href="#" class="settingBtn">설정</a>
+                <a href="#" class="settingBtn openPopBtn" data-popname="popLayer01">설정</a>
+            </div>
+        </div>
+    </section>
+    <h4>- 남의 프로필</h4>
+    <section>
+        <div class="profileWrap">
+            <div class="userImg"><span class="noImg"><img src="" alt="사용자이미지"></span></div>
+            <div class="userName">홍길동</div>
+            <div class="userDateInfo">가입 : 2023.06.26</div>
+            <div class="userBtnWrap">
+                <button type="button" class="subscribeBtn on">구독</button>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 댓글</h4>
+    <section>
+        <div class="commentWrap">
+            <div class="profileWrap">
+                <div class="userImg"><span><img src="../../image/sample_user.png" alt="사용자이미지"></span></div>
+                <div class="userName">홍길동</div>
+                <div class="userDateInfo">2023.06.26</div>
+                <div class="userBtnWrap optionBtnWrap">
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">삭제</button></li>
+                            <li><button type="button">핀 등록(기사)</button></li>
+                            <li><button type="button">기사 URL 복사</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="txtWrap">
+                정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+            </p>
+            <div class="lrWrap">
+                <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="likeBtn">253</button>                    
+                    <button type="button" class="dislikeBtn">12</button>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 댓글의 답글</h4>
+    <section>
+        <div class="commentWrap">
+            <div class="profileWrap">
+                <div class="userImg"><span><img src="../../image/sample_user.png" alt="사용자이미지"></span></div>
+                <div class="userName">홍길동</div>
+                <div class="userDateInfo">2023.06.26</div>
+                <div class="userBtnWrap optionBtnWrap">
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">구독하기</button></li>
+                            <li><button type="button">신고</button></li>
+                            <li><button type="button">차단</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="txtWrap">
+                정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+            </p>
+            <div class="lrWrap">
+                <div class="left">
+                    <button type="button" class="recommentBtn on">5</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="likeBtn on">253</button>                    
+                    <button type="button" class="dislikeBtn">12</button>                    
+                </div>
+            </div>
+        </div>
+        <div class="commentWrap recomment">
+            <div class="profileWrap">
+                <div class="userImg"><span class="noImg"><img src="" alt="사용자이미지"></span></div>
+                <div class="userName">김철수</div>
+                <div class="userDateInfo">2023.06.26</div>
+                <div class="userBtnWrap optionBtnWrap">
+                    <span class="checkTag on">구독중</span>
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">구독해제</button></li>
+                            <li><button type="button">핀 등록(기사)</button></li>
+                            <li><button type="button">신고</button></li>
+                            <li><button type="button">차단</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="txtWrap">
+                정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+            </p>
+            <div class="lrWrap">
+                <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="likeBtn">253</button>                    
+                    <button type="button" class="dislikeBtn">12</button>                    
+                </div>
+            </div>
+        </div>
+        <div class="commentWrap recomment">
+            <div class="profileWrap">
+                <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+                <div class="userName">나의이름나의이름</div>
+                <div class="userDateInfo">2023.06.26</div>
+                <div class="userBtnWrap optionBtnWrap">
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">삭제</button></li>
+                            <li><button type="button">핀 등록(기사)</button></li>
+                            <li><button type="button">기사 URL 복사</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="txtWrap">
+                정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+            </p>
+            <div class="lrWrap">
+                <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="likeBtn">253</button>                    
+                    <button type="button" class="dislikeBtn">12</button>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <h4>- 댓글/기사</h4>
+    <section>
+        <div class="commentWrap">
+            <div class="profileWrap">
+                <div class="userImg"><span><img src="../../image/sample_user.png" alt="사용자이미지"></span></div>
+                <div class="userName">홍길동</div>
+                <div class="userDateInfo">2023.06.26</div>
+                <div class="userBtnWrap optionBtnWrap">
+                    <span class="checkTag on">구독중</span>
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">구독해제</button></li>
+                            <li><button type="button">핀 등록(기사)</button></li>
+                            <li><button type="button">신고</button></li>
+                            <li><button type="button">차단</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <p class="txtWrap">
+                정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!
+            </p>
+            <div class="newsWrap">
+                <div class="newsTitle">
+                    <p>손흥민 득점왕 최고의 최고 찬사최고의 최고최고의 최고최고의 최고최고의 최고</p>
+                </div>
+                <div class="newsInfo">네이버 뉴스<span> ㅣ </span>23.06.10<span> ㅣ </span><span class="countBtn">2,400+</span></div>
+                <div class="newsBtnWrap">
+                    <a href="#" class="newsLink">기사보기 &gt;</a>
+                </div>
+            </div>
+            <div class="lrWrap">
+                <div class="left">
+                    <button type="button" class="recommentBtn">5</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="likeBtn">253</button>                    
+                    <button type="button" class="dislikeBtn">12</button>                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 마이페이지</h4>
+    <section>
+        <ul class="myInfoList">
+            <li class="point"><span>포인트</span><span><a href="#" class="useBtn">사용하기</a>287P</span></li>
+            <li class="ranking"><span>리플 순위</span><span>361점 (12위)</span></li>
+            <li class="comment"><span>총 리플 수</span><span>1,520개</span></li>
+            <li class="like"><span>좋아요 수</span><span>912개</span></li>
+        </ul>
+    </section>
+    <section>
+        <ul class="myManageList">
+            <li><a href="#"><span>댓글&답글</span><span>1,520</span></a></li>
+            <li><a href="#"><span>구독자</span><span>3,245</span></a></li>
+            <li><a href="#"><span>구독중</span><span>48</span></a></li>
+            <li><a href="#"><span>핀 관리</span><span>128</span></a></li>
+        </ul>
+    </section>
+
+    <h4>- 탭</h4>
+    <section>
+        <ul class="tabList">
+            <li class="on"><a href="#">탭1</a></li>
+            <li><a href="#">탭2</a></li>
+            <li><a href="#">탭3</a></li>
+        </ul>
+    </section>
+
+    <h4>- 옵션 핀/정렬</h4>
+    <section>
+        <div class="lrWrap">
+            <div class="left">
+                <button type="button" class="pinBtn">핀 등록</button>
+            </div>
+            <div class="right">
+                <ul class="alignList">
+                    <li class="on"><button type="button">최신순</button></li>
+                    <li><button type="button">과거순</button></li>
+                    <li><button type="button">공감순</button></li>
+                    <li><button type="button">답글순</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 옵션 select / 정렬</h4>
+    <section>
+        <div class="lrWrap">
+            <div class="left optionBtnWrap">
+                <button type="button" class="optionBtn selectBtn">전체보기</button>
+                <div class="optionPop">
+                    <ul>
+                        <li><button type="button">전체보기</button></li>
+                        <li><button type="button">신규 댓글만</button></li>
+                        <li><button type="button">내게 온 답글만</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <ul class="alignList">
+                    <li class="on"><button type="button">최신순</button></li>
+                    <li><button type="button">과거순</button></li>
+                    <li><button type="button">공감순</button></li>
+                    <li><button type="button">답글순</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 옵션 체크박스/버튼</h4>
+    <section>
+        <div class="lrWrap">
+            <div class="left">
+                <input type="checkbox" name="chk01" id="chk01-01">
+                <label for="chk01-01">전체선택</label>
+            </div>
+            <div class="right">
+                <button type="button" class="alertBtn">알림</button>
+                <button type="button" class="btn txtBtn">차단 해제</button>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 구독관리</h4>
+    <section>
+        <ul class="subscribeList">
+            <li>
+                <input type="checkbox" name="chk01" id="chk01-02">
+                <label for="chk01-02"></label>
+                <div class="profileWrap">
+                    <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+                    <div class="userName">홍길동</div>
+                    <div class="userDateInfo">구독 : 2023.06.26</div>
+                    <div class="userBtnWrap">
+                        <button type="button" class="alertBtn">알림</button>
+                        <button type="button" class="btn btn-grayborder">차단</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <h4>- 알림내역</h4>
+    <section>
+        <div class="alertBox">
+            <p>작성하신 댓글에 새로운 답글이 등록되었어요.</p>
+            <a href="#" class="btn btn-main">댓글 등록</a>
+        </div>
+    </section>
+
+    <h4>- 알림관리</h4>
+    <section>
+        <div class="lrWrap">
+            <div class="left">
+                <span class="hoverInfo">내 댓글 답글 알림
+                    <i>i <span>댓글 구독시 알림 ON 생태로 구독합니다.</span></i>
+                </span>
+            </div>
+            <div class="right">
+                <div class="toggleWrap">
+                    <div class="toggleBox on">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 해시태그</h4>
+    <section>
+        <button class="moreTxtBtn">더보기</button>
+        <ul class="hashtagList">
+            <li><a href="#">#손흥민</a></li>
+            <li><a href="#">#득점왕</a></li>
+            <li><a href="#">#지하철1호선</a></li>
+            <li><a href="#">#손흥민</a></li>
+            <li><a href="#">#득점왕</a></li>
+            <li><a href="#">#지하철1호선</a></li>
+            <li><a href="#">#손흥민</a></li>
+            <li><a href="#">#득점왕</a></li>
+            <li><a href="#">#지하철1호선</a></li>
+        </ul>
+    </section>
+
+    <h4>- 기사핀</h4>
+    <section>
+        <div class="newsWrap">
+            <div class="newsTitle">
+                <p>손흥민 득점왕 “최고의 최고 찬사 …”</p>
+            </div>
+            <div class="newsInfo">https://fontawesome.com/search?q...</div>
+            <div class="newsBtnWrap">
+                <button type="button" class="heartBtn">좋아요</button>
+                <div class="optionBtnWrap">
+                    <button type="button" class="optionBtn moreBtn">더보기</button>
+                    <div class="optionPop">
+                        <ul>
+                            <li><button type="button">핀 삭제</button></li>
+                            <li><button type="button">기사 URL 복사</button></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 유저설정</h4>
+    <section>
+        <div class="userInfoSettingWrap">
+            <div class="userImg">
+                <span class="noImg login"><img src="" alt="사용자이미지"></span>
+            </div>
+            <div>
+                <span class="inputTitle">이메일</span>
+                <span class="checkTag">사용중</span>
+                <div class="flexBox">
+                    <div class="inputBox">
+                        <input type="text" value="AAA1233@email.com">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="inputTitle">닉네임</span>
+                <span class="checkTag on">사용중</span>
+                <div class="flexBox">
+                    <div class="inputBox">
+                        <input type="text">
+                    </div>
+                    <button class="btn btn-main">중복 확인</button>
+                </div>
+            </div>
+        </div>
+        <div class="userPwsettingWrap">
+            <span class="inputTitle">비밀번호 변경</span>
+            <div class="inputBox warning" data-info="비밀번호가 틀렸습니다.">
+                <input type="password" placeholder="현재 비밀번호">
+            </div>
+            <div class="inputBox" data-info="비밀번호가 틀렸습니다.">
+                <input type="password" placeholder="변경할 비밀번호">
+            </div>
+            <div class="inputBox" data-info="비밀번호가 틀렸습니다.">
+                <input type="password" placeholder="변경할 비밀번호 확인">
+            </div>
+            <button type="submit" class="btn btn-main">변경</button>
+        </div>
+        <button class="moreTxtBtn">회원탈퇴</button>
+    </section>
+
+    <h4>- 신고</h4>
+    <section>
+        <ul class="reportInfoList">
+            <li><span>작성자</span><p>홍길동</p></li>
+            <li><span>내용</span><p>정말 좋은 기사라고 생각합니다<br>후속 기사 활발하게 부탁드립니다.<br>화이팅!</p></li>
+        </ul>
+        <ul class="reportChoiceList">
+            <li><span>사유 선택</span></li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-01">
+                <label for="chk03-01">스팸 홍보/도배글</label>
+            </li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-02">
+                <label for="chk03-02">욕설/음란, 차별적 표현을 포함</label>
+            </li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-03">
+                <label for="chk03-03">불법 정보를 포함</label>
+            </li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-04">
+                <label for="chk03-04">불쾌한 표현을 포함</label>
+            </li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-05">
+                <label for="chk03-05">개인정보 노출 게시물</label>
+            </li>
+            <li>
+                <input type="checkbox" name="chk03" id="chk03-06">
+                <label for="chk03-06">청소년 유해 내용 포함</label>
+            </li>
+        </ul>
+        <button type="submit" class="btn btn-red">신고하기</button>
+    </section>
+
+    <h4>- snsBtn</h4>
+    <section>
+        <div class="snsLoginWrap">
+            <div class="lrWrap"><span class="sectionTitle">로그인이 필요한 서비스입니다.</span></div>
+            <span class="inputTitle">SNS 로그인</span>
+            <div class="btnBox">
+                <button type="button" class="btn btn-main"><i class="repleasy"></i>로그인</button>
+                <button type="button" class="btn btn-yellow"><i class="kakao"></i>카카오 로그인</button>
+                <button type="button" class="btn btn-border"><i class="google"></i>Google 로그인</button>
+            </div>
+            <ul class="info">
+                <li>핀 등록, 댓글 작성, 구독 등의 서비스는 로그인 회원에게
+                    제공됩니다.</li>
+                <li>로그인을 통해 포인트를 안전하게 보관하세요.</li>
+            </ul>
+        </div>
+    </section>
+
+    <h4>- 입력창 Mo</h4>
+    <section>
+        <div class="typingWrap">
+            <div class="userBtnWrap optionBtnWrap">
+                <button type="button" class="optionBtn moreBtn type02">더보기</button>
+                <div class="optionPop">
+                    <ul>
+                        <li><button type="button">최신순</button></li>
+                        <li><button type="button">과거순</button></li>
+                        <li><button type="button">공감순</button></li>
+                        <li><button type="button">답글순</button></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="nologin">댓글을 작성하고 포인트를 받으세요.</a>
+            <div class="inputBox">
+                <button type="buton" class="emojiBtn">이모지</button>
+                <input type="text" placeholder="댓글을 작성하고 포인트를 받으세요." class="commentInput">
+            </div>
+            <div class="typingBtn">
+                <a href="#" class="alertBtn">알림</a>
+                <button type="submit" class="btn txtBtn">등록</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="typingWrap login">
+            <div class="userImg"><span class="noImg login"><img src="" alt="사용자이미지"></span></div>
+            <a href="#" class="nologin">댓글을 작성하고 포인트를 받으세요.</a>
+            <div class="inputBox">
+                <button type="buton" class="emojiBtn">이모지</button>
+                <input type="text" placeholder="댓글을 작성하고 포인트를 받으세요." class="commentInput">
+            </div>
+            <div class="typingBtn">
+                <a href="#" class="alertBtn">알림</a>
+                <button type="submit" class="btn txtBtn">등록</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="typingWrap login">
+            <div class="userImg"><span class="login"><img src="../../image/sample_user.png" alt="사용자이미지"></span></div>
+            <a href="#" class="nologin">댓글을 작성하고 포인트를 받으세요.</a>
+            <div class="inputBox">
+                <button type="buton" class="emojiBtn">이모지</button>
+                <input type="text" placeholder="댓글을 작성하고 포인트를 받으세요." class="commentInput">
+            </div>
+            <div class="typingBtn">
+                <a href="#" class="alertBtn on">알림</a>
+                <button type="submit" class="btn txtBtn">등록</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <h4>- 입력창 Mo type2</h4>
+    <section>
+        <div class="typingWrap2">
+            <div class="userBtnWrap optionBtnWrap">
+                <button type="button" class="optionBtn moreBtn type02">더보기</button>
+                <div class="optionPop">
+                    <ul>
+                        <li><button type="button">최신순</button></li>
+                        <li><button type="button">과거순</button></li>
+                        <li><button type="button">공감순</button></li>
+                        <li><button type="button">답글순</button></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="nologin">댓글을 작성하고 포인트를 받으세요.</a>
+            <div class="typingArea">
+                <div class="inputBox">
+                    <textarea placeholder="댓글을 작성하고 포인트를 받으세요." class="commentInput"></textarea>
+                </div>
+                <div class="lrWrap">
+                    <span class="typingCount"><b>100 / </b> 300</span>
+                    <button type="submit" class="btn btn-main">등록</button>
+                </div>
+            </div>
+            <a href="#" class="alertBtn">알림</a>
+        </div>
+    </section>
+    <section>
+        <div class="typingWrap2 login">
+            <div class="userBtnWrap optionBtnWrap">
+                <button type="button" class="optionBtn moreBtn type02">더보기</button>
+                <div class="optionPop">
+                    <ul>
+                        <li><button type="button">최신순</button></li>
+                        <li><button type="button">과거순</button></li>
+                        <li><button type="button">공감순</button></li>
+                        <li><button type="button">답글순</button></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="nologin">댓글을 작성하고 포인트를 받으세요.</a>
+            <div class="typingArea">
+                <div class="inputBox">
+                    <textarea placeholder="댓글을 작성하고 포인트를 받으세요." class="commentInput"></textarea>
+                </div>
+                <div class="lrWrap">
+                    <span class="typingCount"><b>100 / </b> 300</span>
+                    <button type="submit" class="btn btn-main">등록</button>
+                </div>
+            </div>
+            <div class="typingBtn">
+                <a href="#" class="alertBtn on">알림</a>
+            </div>
+        </div>
+    </section>
+
+
+    <h4>- 입력창 PC</h4>
+    <section>
+        <div class="typingWrap_PC">
+            <a href="#" class="nologin">댓글을 작성 하려면 로그인해 주세요.</a>
+            <div class="loginInputBox">
+                <div class="profileWrap">
+                    <div class="userImg"><span class="noImg"><img src="" alt="사용자이미지"></span></div>
+                    <div class="userName">홍길동</div>
+                </div>
+                <div class="inputBox">
+                    <textarea placeholder="댓글을 작성하고 포인트를 받으세요."></textarea>
+                </div>
+                <div class="lrWrap">
+                    <button type="buton" class="emojiBtn">이모지</button>
+                    <div class="typingBtn">
+                        <span class="typingCount"><b>100 / </b> 300</span>
+                        <button type="submit" class="btn btn-main">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="typingWrap_PC login">
+            <a href="#" class="nologin">댓글을 작성 하려면 로그인해 주세요.</a>
+            <div class="loginInputBox">
+                <div class="profileWrap">
+                    <div class="userImg"><span class="noImg"><img src="" alt="사용자이미지"></span></div>
+                    <div class="userName">홍길동</div>
+                </div>
+                <div class="inputBox">
+                    <textarea placeholder="댓글을 작성하고 포인트를 받으세요."></textarea>
+                </div>
+                <div class="lrWrap">
+                    <button type="buton" class="emojiBtn">이모지</button>
+                    <div class="typingBtn">
+                        <span class="typingCount"><b>100 / </b> 300</span>
+                        <button type="submit" class="btn btn-main">등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <h4>- 더보기</h4>
+    <section>
+        <button class="pagingMoreBtn">더보기</button>
+    </section>
+    <div class="popLayer type01" id="popLayer01">
+        <p>개인정보 설정 변경은 <br>안전한 개인정보 보호를 위해 <br>리플이지 홈페이지에서 가능합니다. </p>
+        <button class="closePopBtn btn btn-main">이동</button></div>   
+    <div class="popBack"></div>
+
+    <script>
+        let clickOnEvent = function(eventBtn){
+            for(var i = 0; i<eventBtn.length ; i++){
+                (function(now){
+                    eventBtn[now].onclick = function(){    
+                        if(!eventBtn[now].classList.contains('on')){
+                            eventBtn[now].classList.add('on');
+                        }else{
+                            eventBtn[now].classList.remove('on');
+                        }
+                    }
+                })(i)
+            }
+        }
+
+        const optionBtn = document.querySelectorAll('.optionBtn'); 
+        const likeBtn = document.querySelectorAll('.likeBtn'); 
+        const dislikeBtn = document.querySelectorAll('.dislikeBtn'); 
+        const subscribeBtn = document.querySelectorAll('.subscribeBtn'); 
+        const pinBtn = document.querySelectorAll('.pinBtn'); 
+        const alertBtn = document.querySelectorAll('.alertBtn'); 
+        const heartBtn = document.querySelectorAll('.heartBtn'); 
+        const toggleBox = document.querySelectorAll('.toggleBox'); 
+        clickOnEvent(optionBtn);
+        clickOnEvent(likeBtn);
+        clickOnEvent(dislikeBtn);
+        clickOnEvent(subscribeBtn);
+        clickOnEvent(pinBtn);
+        clickOnEvent(alertBtn);
+        clickOnEvent(heartBtn);
+        clickOnEvent(toggleBox);
+
+
+        let inputFocus = function(eventInput){
+            for(var i = 0; i<eventInput.length ; i++){
+                (function(now){
+                    let pp = eventInput[now].closest('.typingWrap2');
+                    eventInput[now].onfocus = function(){    
+                        pp.classList.add('focus');
+                    }
+                    eventInput[now].onblur = function(){    
+                        pp.classList.remove('focus');
+                    }
+                    eventInput[now].oninput = function(){    
+                        if(eventInput[now].value ==""){
+                            pp.classList.remove('keyup');
+
+                        }else{
+                            pp.classList.add('keyup');
+                        }
+                    }
+                })(i)
+            }
+        }
+        const commentInput = document.querySelectorAll('.commentInput'); 
+        inputFocus(commentInput);
+
+
+        const noscroll = document.querySelector('html');
+        const popOpen = document.querySelectorAll('.openPopBtn');   
+        const popClose = document.querySelectorAll('.closePopBtn');   
+        const popLayerAll = document.querySelectorAll('.popLayer');
+        const popBack = document.querySelector('.popBack');
+        for(var i = 0; i<popOpen.length ; i++){
+            (function(now){
+                popOpen[now].onclick = function(){    
+                    let popLayerName =  popOpen[now].dataset.popname;
+                    let popLayer = document.querySelector('#'+popLayerName);
+                    for( var pl of popLayerAll){
+                        pl.classList.remove('on');
+                    }
+                    popLayer.classList.add('on');
+                    popBack.classList.add('on');
+                    noscroll.classList.add('no');
+                }
+            })(i)
+        }
+        for(var i = 0; i<popClose.length ; i++){
+            (function(now){
+                popClose[now].onclick = function(){                    
+                    popClose[now].parentElement.classList.remove('on');
+                    popBack.classList.remove('on');
+                    noscroll.classList.remove('no');
+                }
+            })(i)
+        }
+        popBack.onclick = function(){
+            for( var pl of popLayerAll){
+                pl.classList.remove('on');
+            }
+            popBack.classList.remove('on');
+            noscroll.classList.remove('no');
+        }
+    </script>
+</body>
+</html>
