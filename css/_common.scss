@@ -193,6 +193,8 @@ textarea {
 
 input[type="date"] {
     position: relative;
+    padding: 1rem  0 !important;
+    margin: 0 !important;
     font-family: $main-font;
     appearance: none;
     -webkit-appearance: none;

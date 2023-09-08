@@ -292,6 +292,8 @@ textarea {
 
 input[type=date] {
   position: relative;
+  padding: 1rem 0 !important;
+  margin: 0 !important;
   font-family: "NotoSansR";
   -moz-appearance: none;
        appearance: none;
@@ -6544,7 +6546,8 @@ footer p:last-of-type {
   .pointGraphArea .pgOption .calendarBox .calendar input {
     display: block;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 0 !important;
+    margin: 0 !important;
     font-size: 1.5rem;
     border: none;
     text-align: center !important;
