@@ -6538,15 +6538,14 @@ footer p:last-of-type {
     left: 1rem;
   }
   .pointGraphArea .pgOption .calendarBox .calendar input {
-    display: inline-block;
-    width: 100%;
-    padding: 1rem 0.5rem 1rem 2rem;
-    margin-left: 0.5rem;
+    display: block;
+    width: 80%;
+    padding: 1rem 0;
+    margin-left: 20%;
     font-size: 1.5rem;
     border: none;
     text-align: center;
     font-weight: 400;
-    line-height: 2;
   }
   .pointGraphArea .pgOption .calendarBox .wave + .calendar::before {
     display: inline-block;
