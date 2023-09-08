@@ -6540,7 +6540,7 @@ footer p:last-of-type {
   .pointGraphArea .pgOption .calendarBox .calendar input {
     display: inline-block;
     width: 100%;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 2rem;
     margin-left: 0.5rem;
     font-size: 1.5rem;
     border: none;
