@@ -67,7 +67,7 @@
             .center {
                 @include centerPositionMob();
                 width: 100%;
-                height: 100vh;
+                @include fullvh();
                 margin: 0 auto 0rem;
                 padding: 0 2rem;
                 overflow: hidden;
