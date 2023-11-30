@@ -220,6 +220,7 @@ body,input,select,textarea,button,a{
 }
 body{
     touch-action: pan-x pan-y;
+    overscroll-behavior-y: none;
 }
 input,textarea{
     @include fontSB();
