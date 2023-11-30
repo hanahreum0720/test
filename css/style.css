@@ -1307,4 +1307,9 @@ footer .center button span:nth-child(1)::after {
   .container.main .process .slickSlide .slickItem p::after {
     height: 56rem;
   }
+}
+@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+  .container.main .container, .container.main .container .pageWrap, .container.main .container .pageWrap .page, .container.main .page:not(.notice, .footer) .center, .container.main .popDim {
+    min-height: -webkit-fill-available;
+  }
 }/*# sourceMappingURL=style.css.map */

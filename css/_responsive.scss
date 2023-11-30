@@ -315,3 +315,12 @@
         }
     }
 }
+
+@supports (-webkit-appearance:none) and (stroke-color: transparent) {
+    .container.main{
+        .container, .container .pageWrap, .container .pageWrap .page,.page:not(.notice, .footer) .center,.popDim{
+            min-height: -webkit-fill-available;
+
+        }
+    }
+  }
