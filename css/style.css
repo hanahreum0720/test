@@ -810,8 +810,8 @@ footer .center button span:nth-child(1)::after {
 }
 .container.main .page:not(.footer).on h3, .container.main .page:not(.footer).on p, .container.main .page:not(.footer).on ul, .container.main .page:not(.footer).on .btn {
   opacity: 0;
-  -webkit-animation: ani-fadein 0.8s forwards ease-in-out 0.5s;
-          animation: ani-fadein 0.8s forwards ease-in-out 0.5s;
+  -webkit-animation: ani-fadein 0.8s forwards ease-in-out 0s;
+          animation: ani-fadein 0.8s forwards ease-in-out 0s;
 }
 .container.main .intro {
   background-color: #000;
