@@ -469,8 +469,8 @@ img {
   width: 100%;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  -webkit-transition-duration: 1.2s;
-          transition-duration: 1.2s;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 .container .pageWrap .page {
   position: relative;
@@ -712,7 +712,7 @@ footer .center button span:nth-child(1)::after {
     bottom: 31rem;
   }
   footer {
-    padding: 5.4rem 0 4.8rem;
+    padding: 0;
   }
   footer .center {
     display: -webkit-box;
@@ -726,6 +726,7 @@ footer .center button span:nth-child(1)::after {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 2rem;
+    padding: 5.4rem 0 4.8rem;
   }
   footer .center .footerLogo {
     -webkit-box-ordinal-group: 2;
