@@ -1,7 +1,10 @@
 $(document).ready(function () {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', vh+"px");
+    function setVh(){
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh+"px");
 
+    }
+    setVh();
     
     //스크롤
     let pageWrap = document.querySelector('.pageWrap');
@@ -66,8 +69,7 @@ $(document).ready(function () {
         }
     });
     window.addEventListener('resize', function () {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', vh+"px");
+        setVh();
         windowHeight = window.innerHeight;
         footerHeight = $('.page.footer').innerHeight();
         //windowHeight =  $(".page").eq(current).innerHeight();  

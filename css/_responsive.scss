@@ -316,7 +316,7 @@
     }
 }
 
-@supports (-webkit-appearance:none) and (stroke-color: transparent) {
+@supports (-webkit-touch-callout: none) {
     .container.main{
         .container, .container .pageWrap, .container .pageWrap .page,.page:not(.notice, .footer) .center,.popDim{
             min-height: -webkit-fill-available;

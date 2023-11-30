@@ -1308,7 +1308,7 @@ footer .center button span:nth-child(1)::after {
     height: 56rem;
   }
 }
-@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+@supports (-webkit-touch-callout: none) {
   .container.main .container, .container.main .container .pageWrap, .container.main .container .pageWrap .page, .container.main .page:not(.notice, .footer) .center, .container.main .popDim {
     min-height: -webkit-fill-available;
   }
