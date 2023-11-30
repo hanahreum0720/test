@@ -1,495 +1,200 @@
-
 header {
-    position: relative;
-    background-color: $main-color;
-    h1 {
-        display: inline-block;
-        width:21.5rem;
-        vertical-align: middle;
-        a {
-            display: block;
-            height: 100%;
-            img {
-                display: block;
-                width: 100%;
-                height: auto;
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    z-index: 1;
+    .center {
+        @include flex();
+        height: 100%;
+        @include centerAlign();
+        h1{
+            height: 4.8rem;
+            a{
+                @include bgLogo();
             }
         }
-    }
-    .center{
-        @include flex();
-        height: 10rem;
-    }
-    .gnbMenu{
-        @include flex();
-        gap: 9.4rem;
-        a{
-            display: block;
+        .btn.btn-w{
+            width: 15.5rem;
+            height: 5.5rem;
+            border-radius: 3rem;
             font-size: 2rem;
-            @include txtbold();
+            @include fontL();
         }
     }
-    .userArea{
-        cursor: pointer;
-        .userNoLogin{
-            display: block;
-            width: 4rem;
-            height: 4rem;      
-            border-radius: 50%;      
-            background-color: $sub-color;
-            background-image: url('../image/icon_user.svg');
-            @include bgimg($s:50%);
-            @include txthide();
-        }
-        .userLogin{
-            position: relative;            
-            display: none;
-            .userName{
-                display: block;
-                padding: 0.8rem;
-                border-radius: 2rem;
-                background-color: $sub-color;
-                font-size: 1.2rem;
-                text-align: center;
-                i{
-                    display: inline-block;
-                    width: 2.5rem;
-                    height: 2.5rem;
-                    margin-right: 1rem;
-                    border-radius: 50%;
-                    background-image: url('../image/icon_userLogin.svg');
-                    @include bgimg();
-                    overflow: hidden;
-                    vertical-align: middle;
-                    img{
-                        display: block;
-                        width: 105%;
-                        height: 105%;
-                    }
-                }
-                &::after{
-                    @include virtualIcon($w:1rem,$h:0.6rem){
-                        margin:0 0.8rem 0 2rem;
-                        background-image: url('../image/icon_down.svg');
-
-                    }
-                }
-            }
-            .userMenu{
-                position: absolute;
-                top: calc(100% + 0.5rem);
-                padding: 1rem 1.5rem;
-                border-radius: 0.5rem;
-                box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
-                border: solid 1px #ccc;
-                background-color: #fff;
-                z-index: 2000;
-                a{
-                    font-size: 1.3rem;
-                    line-height: 2;
-                }
-                @include classOn();
-            }
-        }
-        &.loginComplete{
-            .userNoLogin{
-                display: none;
-            }
-            .userLogin{
-                display: block;
-            }
+    .topBtn{
+        position: fixed;
+        bottom: 4rem;
+        left: calc(100% - 16rem);
+        display: block;
+        width: 6.4rem;
+        height: 6.4rem;
+        @include bgimg();
+        background-image: url(../images/topBtn.svg);
+        @include txthide();
+        transition: all 1s;
+        &.on{
+            bottom: calc(15.6rem + 4rem );
         }
     }
-    .mobMenuOpen {
-        display: none;
+    &.on{
+        background-color: transparent;
+        border-bottom-color: transparent;
+        h1{
+            a{
+                background-image: url(../images/logo_b.svg);
+            }
+        }
+        .btn.btn-w{
+            color: $main-txt;
+            box-shadow: 0 0 0 1px  $main-txt inset; 
+        }
+        .topBtn{        
+            filter: invert(1);
+        }
     }
 }
 
 footer {
-    clear: both;
-    padding: 4.8rem 0;
-    border-top: 1px solid $border-color;
-    background-color:#fff;
-    color: $main-txt2;
-    >div{
-        @include flex($j:left);
-        gap:10rem;
-    }
-    ul {
-        padding: 0 0 2.5rem 0;
-        li {
-            display: inline-block;
-            color: $main-txt;
-            line-height: 1.5;
-            a{
-                font-size: 1.6rem;
-            }
-            &:last-child {
-                padding: 0;
-                &::before {
-                    @include virtualIcon($w:1px, $h:1.5rem) {
-                        background-color: #000;
-                        margin: -1px 1rem 0;
-                        vertical-align: middle;
-                    }
-                }
-            }
-        }
-    }
-    p{
-        font-size: 1.4rem;
-        line-height: 2;
-        &:last-of-type{
-            padding-top: 0.5rem;
-        }
-    }
-}
-.sp-title {
-    display: none;
-
-    &.sub-menu {
-        display: block;
-        float: left;
-        width: 20rem;
-        margin-right: 5rem;
-
-        .mob-btn-back,
-        .sm-now {
-            display: none;
-        }
-
-        .center {
-            width: 100%;
-        }
-
-        h2 {
-            padding: 5rem 0 3rem;
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .sm-list {
-            padding-top: 1.5rem;
-            border-top: 1px solid $border-color;
-
-            li {
-                a {
-                    display: block;
-                    padding: 1.5rem 0;
-                    color: $gray-color;
-                    font-size: 1.6rem;
-                }
-
-                &.on {
-                    a {
-                        color: $main-color;
-                    }
-                }
-            }
-        }
-
-        &+.sm-div {
-            float: left;
-            width: calc(100% - 25rem);
-        }
-    }
-    
-    .sb-mob-close {
-        position: absolute;
-        top: 50%;
-        left: 2.1rem;
-        transform: translateY(-50%);
-        left: 2.1rem;
-        display: none;
-        width: 1.2rem;
-        height: 1.5rem;
-        background-image: url(../image/main/icon_mob_back.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100% auto;
-        cursor: pointer;
-        @include txthide();
-    }
-    .search-box {
-        position: fixed;
-        top: 3.8rem;
-        bottom: auto;
-        right: 0.313rem;
-        width: 2rem;
-        height: 3.125rem;
-        padding: 0;
-        background-color: #fff;
-        z-index: 5000;
-
-        input {
-            display: none;
-        }
-
-        .search {
-            width: 1.25rem;
-            height: 1.25rem;
-            background-image: url(../image/icon_search_b.svg);
-        }
-    }
-    &.on {
-        width: 100%;
-
-        .search-box {
-            width: 100%;
-
-            .sb-mob-close {
-                display: block;
-            }
-
-            input {
-                display: block;
-                max-width: 75%;
-                height: 100%;
-                margin-left: 12%;
-                &::placeholder{
-                    font-size: 1.5rem;
-                }
-            }
-
-            .search {
-                margin-right: 1.2rem;
-            }
-
-        }
-
-    }
-}
-
-
-
-@media only screen and (max-width: 1280px) {
-
-    .sp-title.sub-menu {
-        width: 16rem;
-        margin-right: 1rem;
-
-        &+.sm-div {
-            width: calc(100% - 17rem);
-        }
-    }
-    header {
-        h1 {
-            width: 17.5rem;
-        }
-        .center{
-            height: 7rem;
-        }
-        .gnbMenu{
-            position: fixed;
-            top: 7rem;
-            left: 0;
-            width: 100vw;
-            height: calc(100vh - 7rem);
-            background-color: #fff;
-            z-index: 5000;
-            a{
-                padding: 2.2rem 3rem;
-            }
-            @include classOn();
-        }
-        .userArea{
-            @include flex();
-            gap:1.5rem;
-            .userNoLogin{
-                background-color: transparent;
-                background-size: 60%;
-            }
-            .userLogin{
-                .userName{
-                    padding: 0;
-                    background-color: transparent;
-                    span{
-                        @include txthide();
-                    }
-                    i{
-                        width: 3rem;
-                        height: 3rem;
-                    }
-                    &::after{
-                        display: none;
-                    }
-                }
-                .userMenu{
-                    right: 0;
-                    width: 300%;
-                }
-            }
-        }
-        .mobMenuOpen{
-            display: inline-block;
-            width: 2.5rem;
-            height: 2.5rem;
-            background-image: url('../image/mob_menu.svg');
-            @include bgimg($s:100%);
-            @include txthide();
-            &.on{
-                background-image: url('../image/icon_close.svg');
-                background-size: 90%;;
-            }
-        }
-    }
-
-    footer {
-        text-align: center;
-        padding: 4em 0rem;
-        letter-spacing: -0.25px;
-        >div{
-            justify-content: center;
-            >img{
-                display: none;
-            }
+    position: relative;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 5rem 0;
+    background-color: $main-txt;
+    overflow: visible !important;
+    .center {
+        @include flex();
+        color: $main-bg-txt;
+        .footerLogo{
+            @include bgLogo($w:21rem, $h:3.6rem,$bgimg:url('../images/footerLogo.svg'))
         }
         ul{
+            max-width: 84.1rem;
             li{
-                a{
-                    color: $main-txt;
-                    @include txtbold();
-                }
-                &:last-child{
-                    &::before {
-                        height: 1.2rem;
-                        margin: -5px 1rem 0 1rem;
-                    }
-
-                }
-            }
-        }
-        p{
-            font-size: 1.5rem;
-            &:last-of-type{
-                padding-top: 2rem;
-            }
-        }
-    }
-    .sp-title {
-        position: relative;
-        display: block;
-        width: 100%;
-        background-color: #fff;
-        border-bottom: 1px solid $border-color;
-        z-index: 1000;
-
-        .center {
-            width: 100%;
-        }
-
-        h2 {
-            display: block;
-            width: 100%;
-            height: auto;
-            padding: 1.8rem 0;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .mob-btn-back {
-            position: absolute;
-            top: 2rem;
-            left: 1rem;
-            display: block;
-            width:1.2rem;
-            height: 1.5rem;
-            background-image: url(../image/main/icon_mob_back.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100% auto;
-            cursor: pointer;
-            @include txthide();
-        }
-
-        +div,
-        +section {
-            margin-top: 7rem;
-        }
-
-        &.sub-menu {
-            float: none;
-            width: 100%;
-            margin-right: 0;
-            border-bottom: none;
-
-            .mob-btn-back {
-                display: block;
-            }
-
-            .sm-now {
-                position: relative;
-                display: none;
-                width: 100%;
-                padding: 1rem 2.5rem;
-                font-size: 1.5rem;
-                text-align: center;
-                cursor: pointer;
-                border-top: 1px solid $border-color;
-                border-bottom: 1px solid $border-color;
-                &.on {
-                    &::after {
-                        transform: rotate(180deg);
-                    }
-
-                    &+ul.sm-list {
-                        display: block;
+                float: left;
+                color: $gray-color;
+                font-size: 1.4rem;
+                line-height: 2;
+                &:not(:nth-child(1),:nth-child(3)){
+                    &::before{
+                        @include virtualIcon($w:1px,$h:1.1rem);
+                        margin: -0.2rem 1.5rem 0;
+                        background-color: #555;
                     }
                 }
-                .sm-open{
-                    @include virtualIcon($w:1.8rem, $h:1.8rem) {
-                        position: absolute;
-                        right: 1.5rem;
-                        background-image: url(../image/icon_faq_more_open.svg);
-                        background-size: 100% auto;
-                    }
-
+                &:nth-child(3){
+                    clear: both;
                 }
             }
-
-            .sm-list {
-                display: flex;
-                padding-top: 0rem;
-                border-top: none;
-                border-bottom: 1px solid $border-color;
-                z-index: 3000;
-
-                li {
-                    flex: 1;
-                    a {
-                        text-align: center;
-                        color: #999;
-                        @include txtbold();
-                        border-bottom: 2px solid transparent;
-                    }
-                    &.on{
-                        a{
-                            color: $main-txt;
-                            border-bottom-color: $main-txt;
-                        }
+        }
+        button{
+            width: 27rem;
+            height: 4rem;
+            border-radius: 0.5rem;
+            font-size: 1.4rem;
+            span{
+                &:nth-child(1){
+                    &::after{
+                        @include virtualIcon($w:1px,$h:1.5rem);
+                        margin: -0.2rem 3.2rem 0;
+                        background-color: #707070;
                     }
                 }
-            }
 
-            h2 {
-                padding: 1.8rem 0 1.8rem;
-                font-size: 1.8rem;
             }
-
-            &+.sm-div {
-                float: none;
-                width: 100%;
-                margin-top: 0rem;
-                padding: 0 2rem;
-            }
-
         }
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .sp-title.sub-menu + .sm-div{
-        padding:0;
+    header {
+        height: 6rem;
+        .center {
+            h1{
+                height: 2.7rem;
+                a{
+                    width: 6.7rem;
+                    height: 2.7rem;
+                }
+            }
+            .btn.btn-w{
+                width: 8rem;
+                height: 3rem;
+                font-size: 1.1rem;
+            }
+        }
+        .topBtn{
+            bottom: 2rem;
+            left: auto;
+            right: 2rem;
+            width: 3.6rem;
+            height: 3.6rem;
+            &.on{
+                bottom: 31rem;
+            }
+
+        }
+    }
+
+    footer {
+        padding: 5.4rem 0 4.8rem;
+        .center {
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            gap: 2rem;
+            .footerLogo{
+                order: 1;
+                width: 16rem;
+                height: 2.7rem;
+            }
+            ul{
+                order: 3;
+                max-width: 100%;
+                display: grid;
+                grid-template-columns:7rem 1fr;
+                grid-template-rows:1.5rem 1.5rem 1.5rem 5rem 1.5rem;
+                grid-template-areas: "grid1 grid1"
+                "grid2 grid2"
+                "grid5 grid5"
+                "grid3 grid4"
+                "grid6 grid6"
+                ;
+                grid-row-gap: 0.5rem;
+                margin-top: 3rem;
+                li{
+                    float: none;
+                    font-size: 1.25rem;
+                    line-height: 1.5;
+                    &:not(:nth-child(1),:nth-child(3),:nth-child(4)){
+                        &::before{
+                            display: none;
+                        }
+                    }
+                
+                    @for $i from 1 through 6 {
+                        &:nth-child(#{$i}){
+                            grid-area: grid + #{$i} ;
+                        }
+                    }
+                }
+            }
+            button{
+                order: 2;
+                width: 21.9rem;
+                height: 3.3rem;
+                font-size: 1.1rem;
+                span{
+                    &:nth-child(1){
+                        &::after{
+                            height: 1.22rem;
+                            margin: -0.2rem 2.7rem 0;
+                        }
+                    }
+    
+                }
+            }
+        }
     }
 }

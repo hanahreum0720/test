@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
-    <g data-name="타원 38" style="fill:#fff;stroke:#dde2e6">
-        <circle cx="35" cy="35" r="35" style="stroke:none"/>
-        <circle cx="35" cy="35" r="34.5" style="fill:none"/>
-    </g>
-    <text transform="translate(19 51)" style="fill:#ffc600;font-size:16px;font-family:NotoSansCJKkr-Bold,Noto Sans CJK KR;font-weight:700"><tspan x="0" y="0">TOP</tspan></text>
-    <path data-name="사각형 6" transform="rotate(-90 29 3)" style="fill:none" d="M0 0h18v18H0z"/>
-    <path data-name="패스 1" d="m3003.25 695.25 6.112 6.112-6.112 6.112" transform="rotate(-90 1181.189 1847.475)" style="stroke:#ffc600;stroke-linecap:round;stroke-width:2px;fill:none"/>
-</svg>

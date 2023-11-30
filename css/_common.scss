@@ -1,111 +1,52 @@
 //공통
-$main-color : #ffc600;
-$sub-color : #fff1c1;
+$main-color : #2db400;
+$sub-color : #3ae800;
+$gray-color: #bbbbbb;
+$darkgray-color: #999999;
 $main-txt: #000;
-$main-txt2: #555;
-$red-txt : #fe4e3a;
-$gray-color: #a8a8a8;
-$bg-color : #f5f5fa;
-$border-color :#d8d8d8;
-$border-color2 :#dae1e6;
-$border-color3 :#edf0f2;
-$main-font: "NotoSansR";
+$red-txt : #f51a1a;
+$blue-txt : #4664e6;
+$main-bg-txt : #fff;
 
-@mixin centerAlign($w:100%,$mw:123rem) {
-    width: $w;
-    max-width: $mw;
-    margin: 0 auto;
-}
+::selection{background-color: $main-color;color: #fff;}
 
-@mixin flex($j:space-between,$a:center) {
-    display: flex;
-    justify-content: $j;
-    align-items: $a;    
+@mixin mainfont{
+    font-family: "Pretendard-Regular";
+    font-weight: normal;
 }
-@mixin classOn($d:block){
-    display: none;
-    &.on{
-        display: $d
-    }
+@mixin fontT{
+    font-family:"Pretendard-Thin";
 }
-
-@mixin bgimg($s:100%,$p:center) {
-    background-size: $s;
-    background-position: $p;
-    background-repeat: no-repeat;
+@mixin fontL{
+    font-family:"Pretendard-Light";
 }
-
-@mixin bgimgBtn($w:2rem,$h:2rem,$bgimg:url(../image/alarm_on.svg)){
-    display: inline-block;
-    width: $w;
-    height: $h;
-    background-image: $bgimg;
-    @include bgimg();
-    @include txthide();
-    vertical-align: middle;
+@mixin fontM{
+    font-family:"Pretendard-Medium";
 }
-@mixin filterOn($f:grayscale(1),$onf:grayscale(0)){
-    filter: $f;
-    &.on{
-        filter: $onf;
-    }
+@mixin fontSB{
+    font-family:"Pretendard-SemiBold";
 }
-@mixin grayBtn(){
-    background-color: $bg-color;
-    color: $gray-color;
-    font-size: 1.2rem;
-    word-break: keep-all;
-    &.on{
-        background-color: $main-color;
-        color: #fff;
-    }
+@mixin fontB{
+    font-family:"Pretendard-Bold";
 }
-@mixin checkIcon(){
-    @include virtualIcon($w:0.8rem,$h:0.3rem);
-    margin:-0.7rem 0.3rem 0 0;
-    transform: rotate(-45deg);
-    border-left: 1px solid $gray-color;
-    border-bottom: 1px solid $gray-color;
+@mixin fontEB{
+    font-family:"Pretendard-ExtraBold";
 }
-@mixin checkIconOn(){
-    &.on{
-        &::before{
-            border-color: #fff;
-        }
-    }
+@mixin fontPoint{
+    font-family:"Poppins-Bold";
 }
-
-@mixin txtbold{
-    font-weight: bold;
-}
-@mixin gradient {
-    background: -webkit-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
-    background: -moz-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
-    background: -o-linear-linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
-    background: linear-gradient(to bottom, #ffe600, #ffce00 47%, #ffc600);
-}
-@mixin gradient2 {
-    background: -webkit-linear-gradient(to right, #ffe600, #ffce00 47%, #ffc600);
-    background: -moz-linear-gradient(to right, #ffe600, #ffce00 47%, #ffc600);
-    background: -o-linear-linear-gradient(to right, #ffe600, #ffce00 47%, #ffc600);
-    background: linear-gradient(to right, #ffe600, #ffce00 47%, #ffc600);
-}
-
-
 @mixin txthide {
     text-indent: -5000000000000000px;
     overflow: hidden;
     font-size: 0px;
     text-align: left;
 }
-
 @mixin txtellipsis {
     text-overflow: ellipsis;
     white-space: nowrap;
     word-wrap: normal;
     overflow: hidden;
 }
-
 @mixin txtellipsisMulti($h:2.4rem, $lh:1.2rem, $l:2) {
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -117,39 +58,6 @@ $main-font: "NotoSansR";
     line-height: $lh;
     height: $h;
 }
-
-@mixin tablecell {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-
-    >* {
-        display: table-cell !important;
-    }
-}
-
-
-@mixin virtualIcon($w:1rem, $h:1rem) {
-    content: '';
-    display: inline-block;
-    width: $w;
-    height: $h;
-    vertical-align: middle;
-    @include bgimg();
-    @content;
-}
-@mixin leftBar($m:-0.1rem 0.5rem 0 0,$b:#999){    
-    &::before{
-        @include virtualIcon($w:1px,$h:1rem);
-        margin:$m;
-        background-color: $b;
-    }
-    &:first-child{
-        &::before{
-            display: none;
-        }
-    }
-}
 @mixin clear() {
     &::after {
         content: '';
@@ -157,398 +65,295 @@ $main-font: "NotoSansR";
         clear: both;
     }
 }
-@mixin areaUnderLine(){
-    border-bottom: 1rem solid #eee;
+@mixin centerAlign($mw:152rem){
+    width: calc(100% - 4rem);
+    max-width: $mw;
+    margin: 0 auto;
 }
-
-@mixin areaTopLine() {
-    border-top: 9px solid #f8f8f8;
+@mixin centerPosition($t:50%,$l:50%,$tx:-50%,$ty:-50%){
+    position: absolute;
+    top: $t;
+    left: $l;
+    transform: translateX($tx) translateY($ty);
 }
-
-@keyframes rotationLoading {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(359deg);
-    }
+@mixin centerPositionMob(){
+    position: inherit;
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
 }
-
-.content {
-    position: relative;
-    &::after {
-        content: '';
-        display: block;
-        clear: both;
-    }
+@mixin stickyPosition($t:calc(50% - 40vh + 11rem),$h:80vh){
+    position: sticky;
+    top: $t;
+    height: $h;
 }
-
-input:not([type="checkbox"]),
-textarea {
-    padding: 1.5rem;
-    border-radius: 1rem;
-    font-size: 1.5rem;
+@mixin fullvh(){
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
-
-input[type="date"] {
-    position: relative;
-    padding: 1rem  0 !important;
-    margin: 0 !important;
-    font-family: $main-font;
-    appearance: none;
-    -webkit-appearance: none;
-    &::-webkit-calendar-picker-indicator,&::-webkit-inner-spin-button {
-        appearance: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        z-index: 1;
-        cursor: pointer;
-    }
-
+@mixin flex($j:space-between,$a:center){
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
 }
-
-input[type="checkbox"] {
-    display: none;
-    &+label {
-        position: relative;
-        display: inline-block;
-        height: 2rem;
-        font-size: 1.6rem;
-        cursor: pointer;
-        &::before {
-            @include virtualIcon($w:2rem, $h:2rem) {
-                margin: -1px 0.5rem 0 0;
-                background-color: #fff;
-                border: 1px solid #ccc;
-                border-radius: 50%;
-                box-sizing: border-box;
-            }
-        }
-        &::after{
-            position: absolute;
-            top: 1.2rem;
-            left: 0.4rem;
-            @include checkIcon();
-            border-width: 2px;
-        }
-    }
-    &:checked+label {
-        &::before{
-            border-color: $main-color;
-            background-color: $main-color;
-        }
-        &::after {
-            border-color: #fff;
-        }
-    }
+@mixin gird($gtc: repeat(auto-fill, minmax(30rem, 1fr)),$cg:6.5rem,$rg:4.5rem){
+    display: grid;
+    grid-template-columns:$gtc;
+    column-gap: $cg;
+    row-gap: $rg;
 }
-
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 0.813rem 2rem 0.813rem 0.813rem;
-    background-image: url('../image/icon_select.svg');
-    background-size: 0.625rem 0.4rem;
-    background-position: right 10px center;
+@mixin bgimg($s:100%,$p:center) {
+    background-position: $p;
     background-repeat: no-repeat;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1.5rem;
-    font-family:  sans-serif;
+    background-size: $s;
+}
+@mixin bgLogo($w:12rem, $h:4.8rem,$bgimg:url('../images/logo.svg')) {
+    display: inline-block;
+    width: $w;
+    height: $h;
+    background-image: $bgimg;
+    @include bgimg();
+    @include txthide();
+}
+
+@mixin virtualIcon($d:inline-block,$w:1rem, $h:1rem) {
+    content: '';
+    display: $d;
+    width: $w;
+    height: $h;
+    vertical-align: middle;
+    @include bgimg();
+    @content;
+}
+@mixin customSelect($p:0.5rem 3rem 0.4rem 1rem,$bgurl:url('../images/arr-btm.svg'),$bc:$gray-color){
+    padding: $p;
+    background-image: $bgurl;
+    background-size: auto 2rem;
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    border-bottom: 2px solid $bc;
     cursor: pointer;
-    &::-ms-expand {
-        display: none;
+}
+@mixin customSlide($ts:0.3s){
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all $ts;    
+}
+@mixin customSlideOn(){
+    visibility: inherit;
+    max-height: 1000px;
+}
+@mixin customScroll($w:5px,$h:5px,$barcolor:$gray-color,$bgrcolor:transparent){
+    overflow: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: $w;
+        height: $h;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $barcolor;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $bgrcolor;
+        border-radius: 5px;
     }
 }
-.flexBox{
-    @include flex();
+@mixin gradient{    
+  background:  linear-gradient(89deg, #4664e6 -3%, #8e84ff 105%);
 }
-.scrollBox{
-    box-sizing: border-box;
-    overflow: hidden;
-    overflow-y: scroll;
-}
-.inputTitle{
-    display: inline-block;
-    margin: 0 1rem 1rem 0;
-    font-size: 1.6rem;
-    @include txtbold();
-}
-.inputBox {
+@mixin crossMark($w:2.8rem, $h:2.8rem,$vw:2px,$vh:2.8rem,$bc:$main-txt) {
     position: relative;
-    margin-bottom: 1rem;
-    border: 1px solid $border-color;
-    border-radius: 0.5rem;
-    input{
-        width: 100%;
-        padding: 1.7rem 1rem;
-        border-radius: 1rem;
-        background-color: transparent;
+    display: inline-block;
+    width: $w;
+    height: $h;
+    vertical-align: middle;
+    @include txthide();
+    &::before, &::after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 48%;
+      height: $vh;
+      width: $vw;
+      background-color: $bc;
+    }
+    &::after {
+      transform: rotate(90deg);
+    }   
+
+}
+@mixin xBtn() {
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }   
+}
+@keyframes ani-float {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-2%);
+    }
+    100% {
+        transform: translateY(-0%);
+    }
+}
+@keyframes ani-fadein {
+    0% {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+body,input,select,textarea,button,a{
+    color: $main-txt;
+    @include mainfont();
+}
+body{
+    touch-action: pan-x pan-y;
+}
+input,textarea{
+    @include fontSB();
+    &::placeholder{
+        color: $darkgray-color;
+        @include mainfont();
         font-size: 1.5rem;
     }
-    &.warning {
-        margin-bottom: 3rem;
-        border-color: $red-txt;
-        &::after {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            display: block;
-            content: attr(data-info);
-            width: 100%;
-            height: 20px;
-            font-size: 1.2rem;
-            color:  $red-txt;
-        }
-    }
-    .cont{
-        display: none;
-    }
-    &.infoText{
-        margin-bottom: 3rem;
-        border-color: $red-txt;
-        .cont{
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            display: block;
-            width: 100%;
-            height: 20px;
-            font-size: 1.2rem;
-            color:  $red-txt;
-        }
-        &.black{
-            border-color: $border-color;
-            .cont{
-                color: $main-txt;
-            }
-        }
-    }
-    &.disabledW{        
-        background-color: #fff !important;
-        border: none;                    
-        input{
-            padding-left: 0 !important;                            
-        }
+}
+textarea{
+    resize: none;
+    width: 100%;
+    min-height: 8.7rem;
+    padding: 1rem 0;
+    border: none;
+    font-size: 1.6rem;
+    @include customScroll();
+    &:focus{
+        outline: none;
     }
 }
-.content{
-    min-height: calc(100vh - 30rem);
-}
-.center{
-   @include centerAlign($w:calc(100% - 3rem));
-}
-.center_100{
-   @include centerAlign();
-}
-.center_500{
-   @include centerAlign($w:calc(100% - 3rem),$mw:50rem);
-}
-.pc_br{
-    display: block;
-}
-.pc_only{
+img{
     display: inline-block;
-}
-.mob_br,.mob_only{
-    display: none;
-}
-.txt-red{
-    color: $red-txt;
-}
-.txt-main{
-    color: $main-color;
-}
-.txt-blue {
-    color: #3da0f8;
+    max-width: 100%;
 }
 .red {
     color: #f00 !important;
 }
-.btn {
-    display: inline-block;
-    padding: 1.7rem 1rem;
-    border-radius: 0.8rem;
-    font-size: 1.8rem;
-    text-align: center;
-    border: 1px solid transparent;
-    line-height: 1;
+.txt_main {
+    color: $sub-color;
+}
+.txt_red {
+    color: $red-txt;
+}
+.txt_blue {
+    color: $blue-txt;
+}
+.hide{
+    display: none !important;
+}
+.btn{
+    @include flex($j:center);
     color: $main-txt;
-    &.btn-yellow{
-        background-color: #fee500;
-        border-color: #fee500;
-    } 
-    &.btn-red{
-        background-color: $red-txt;
-        border-color:  $red-txt;
-        color: #fff;
-        @include txtbold();
-    } 
-    &.btn-black{
-        background-color: #333;
-        border-color: #333;
-        color: #fff;
-    }
-    &.btn-main{
+    transition: all 0.3s;
+    @include fontL();
+    cursor: pointer;
+    &:hover{
+        box-shadow: none; 
         background-color: $main-color;
-        border-color: $main-color;
+        color: $main-bg-txt;
     }
-    &.btn-border{
-        background-color: #fff;
-        border-color: $border-color;
+    &.btn-w{
+        color: $main-bg-txt;
+        box-shadow: 0 0 0 1px  $main-bg-txt inset; 
+        &:hover{
+            color: $main-bg-txt !important;
+            box-shadow:none !important;
+            background-color: $main-color !important;
+        }
     }
-    &.btn-grayborder{
-        background-color: $bg-color;
-        border-color: $border-color;
+    &.btn-green{
+        width: 40rem;
+        height: 9rem;
+        border-radius: 1rem;
+        background-color: $main-color;
+        color: $main-bg-txt;
+        font-size: 2.8rem;
+        @include fontM();
     }
-    &.disabled {
-        border: solid 1px #e5e5e5 !important;
-        background: #f8f8f8 !important;
-        color: #b5b5b5 !important;
-    }
-    &.txtBtn{
-        display: inline-block;
-        padding: 1rem 0;
-        @include txtbold();
-        font-size: 1.6rem;
-    }
-    &.btn_100{
+}
+.pc_br{
+    display: block;
+}
+.mob_br{
+    display: none;
+}
+.scrollTxtBox{
+    max-height: 20rem;
+    padding: 1rem;
+    margin:  0 0 3rem;
+    border:1px solid #ccc;
+    line-height: 1.25;
+    @include customScroll();
+}
+.container{ 
+    position: relative;
+    @include fullvh();
+    overflow: hidden;
+    .pageWrap{
         width: 100%;
-    }
-    &.btn-r {
-        @include virtualIcon($w:1.25rem, $h:1.25rem) {
-            margin: -3px 0.5rem 0 0;
-            background-image: url(../image/reset_ico.svg);
-        }
-    }
-
-    &.btn-d {
-        @include virtualIcon($w:1.25rem, $h:1.25rem) {
-            margin: -3px 0.5rem 0 0;
-            background-image: url(../image/download_b_l_ico.svg);
-            background-size: 100% auto;
-        }
-    }
-
-    &.btn-b {
-        background-color: #212121;
-        color: #fff;
-
-        &.btn-d {
-            &::before {
-                background-image: url(../image/download_w_ico.svg);
-            }
-        }
-    }&.btn-line {
-        border: 1px solid $main-color;
-        color: $main-color;
-    }
-
-    &.btn-line-b {
-        border: 1px solid $main-txt;
-        color: $main-txt;
-        background-color: #fff;
-    }
-
-    &.btn-line-g {
-        border: 1px solid $border-color;
-        color: $gray-color;
-        background-color: #fff;
-    }
-
-    &.btn-sub {
-        background-color: $sub-color;
-        color: $main-txt;
-    }
-
-    &.btn-gra {
-        @include gradient();
-        color: $main-txt;
-    }
-
-    &.btn-w {
-        border: 1px solid #212121;
-    }
-
-    &.btn-s {
-        border-radius: 0;
-    }
-    &.disabled02 {
-        border: solid 1px #999 !important;
-        background: #999 !important;
-        color: #fff !important;
-    }
-    i{
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-        margin: -0.5rem 0.8rem 0 0;
-        @include bgimg();
-        vertical-align: middle;
-        &.repleasy{
-            position: relative;
-            width: 8rem;
-            height: 1rem;
-            background-image: url(../image/logo.svg);
-            &::before{
-                position: absolute;
-                top: -0.3rem;
-                left: -2.5rem;
-                @include virtualIcon($w:1.9rem,$h:1.7rem);
-                background-image: url(../image/logo_mini.svg);
-            }
-        }
-        &.kakao{
-            background-image: url(../image/login_kakao.svg);
-        }
-        &.google{
-            background-image: url(../image/login_google.svg);
-        }
+        @include fullvh();
+        transition-duration: 1.2s;
+            .page{                
+                position: relative;
+                width: 100%;
+                @include fullvh();
+                overflow: hidden;
+                .scrollBox{
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;               
+                    @include customScroll($w:0px);
+                }
+                .center{
+                    @include centerAlign();
+                }
+        }    
     }
 }
 
+
+@media only screen and (max-width: 1400px) {
+    html,body{
+        font-size: 0.7vw;
+    }
+}
 @media only screen and (max-width: 768px) {
-    .pc-br,
-    .pc-only {
-        display: none !important;
+    html,body{
+        //font-size: 2.7778vw;
+        font-size: 1.8vw;
     }
-    .mob-br {
-        display: block !important;
-        margin: 0 !important;
+    .pc_br{
+        display: none;
     }
-    .mob-only {
-        display: inline-block !important;
-        margin: 0 !important;
-    }
-    .btn-fixed-area {
-        position: fixed;
-        bottom: 0rem;
-        left: 0;
-        display: flex;
-        width: 100%;
-        z-index: 901;
-        &.on{
-            z-index: 900;
-        }
-        >button,
-        >a {
-            flex: 1;
-            max-width: 100%;
-            height: 100%;
-            padding: 1.5rem 0rem !important;
-            margin: 0 !important;
-            border-radius: 0 !important;
-            font-size: 1.6rem !important;
-        }
+    .mob_br{
+        display: block;
     }
 }
-@media only screen and (max-width:480px) {
-    html,
-    body {
-        font-size: 2.33vw;
+@media only screen and (max-width: 430px) {
+    html,body{
+        font-size: 2.7778vw;
+        //font-size: 4.267vw;
+        //480기준 10px 1rem font-size: 2.08333vw;
+        //360기준
+        //font-size: 2.5vw;
     }
 }

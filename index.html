@@ -1,308 +1,223 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">    
-    <title>REPLEASY</title>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/common.js"></script>
-    <link rel="shortcut icon" href="/image/favicon/favicon.ico" type="image/ico">
-    <style>
-        button,a{display: block;}
-        iframe{
-            width: 100%;
-            height: 100%;
-        }
-        h2{
-            background-color: #ddd;
-        }
-        p{
-            max-width: 600px;
-            color: #999;
-            background-color: #f5f5f5;
-        } 
-        .popLayer {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 95vw;
-            background-color: #fff;
-            border-radius: 10px;
-            z-index: 5000;
-            display: none;
-        }.popLayer.iframePop {
-            top: 0;
-            left: auto;
-            right: 0;
-            transform: translate(0,0);
-            max-width: 360px;
-            height: 100vh;
-            border-radius: 0;
-            overflow: hidden;
-        }
-        .popLayer.on,.popBack.on  {
-            display: block;
-        }
-        .popBack {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: none;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="./images/favicon/favicon.png">
+    <title>RePay</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/slick.js"></script>
 </head>
+
 <body>
-    <h2>수정요청반영 <span style="color:#f00">(23.09.08 업데이트 / 230908_v0.1)</span></h2> 
-    <h3>반응형페이지 </h3>
-    <p> 1. 로고변경<br>
-        2. 알림 탭 on처리<br>
-        3. 정렬필터 css변경<br>
-        4. qna 상세검색 버튼 <br>
-        5. 갤럭시폴드 input date <br>
-        6. option poplayer 위치수정<br>
-    </p>
-    <div>image, style.css만수정</div>
+    <div class='container main'>
+        <header>
+            <div class="center">
+                <h1><a href="index.html">RePay</a></h1>
+                <a href="#" class="btn btn-w">로그인</a>
+            </div>
+            <button type="button" class="topBtn">top</button>
+        </header>
+        <div class='pageWrap'>
+            <section class='page intro now'>
+                <h2 class="hide">repay intro</h2>
+                <div class="scrollBox">
+                    <div class="center">
+                        <h3>콘텐츠에서 찾는 즐거움, <br>
+                            그게 바로 RePay의 매력</h3>
+                        <p>네이버페이 쿠폰으로 완성하세요!</p>
+                        <a href="#" class="btn btn-green">Repay 포인트 적립하러가기</a>
+                    </div>
+                </div>
+            </section>
+            <section class='page strenghts'>
+                <h2 class="hide">repay strength</h2>
+                <div class="scrollBox">
+                    <div class="center">
+                        <h3>RePay를 이용해야<i class="mob_br"></i>하는 이유?</h3>
+                        <ul>
+                            <li>가입만해도 500p 적립 OK!</li>
+                            <li>
+                                매일 봐도 질리지 않는 콘텐츠!</li>
+                            <li>
+                                적립된 포인트 N 페이 쿠폰으로 변신!</li>
+                            <li>
+                                PC/모바일 모든 곳에 적용 가능한 서비스!</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class='page service'>
+                <h2 class="hide">repay service</h2>
+                <div class="scrollBox">
+                    <div class="center">
+                        <h3>RePay 서비스란?</h3>
+                        <p>
+                            RePay서비스는 다양한 활동(콘텐츠, 광고 보기)을 <br>
+                            통하여 포인트를 적립하고 네이버페이 쿠폰으로 <br>
+                            전환 할 수 있는 서비스입니다.<br>
+                            RePay서비스의 콘텐츠 및 광고는 <br>
+                            주식회사 미디어게인의 제휴사에서 제공합니다.
+                        </p>
+                    </div>
+            </section>
+            <section class='page process'>
+                <h2 class="hide">repay process</h2>
+                <div class="scrollBox">
+                    <div class="center">
+                        <h3>네이버페이 쿠폰 <i class="mob_br"></i>전환 프로세스</h3>
+                        <div class="slickSlide">
+                            <div class="slickItem item01">
+                                <p>
+                                    <span>1.포인트 내역 조회 </span>
+                                    <span>*내역은 당일만 조회 가능합니다.</span>
+                                </p>
+                            </div>
+                            <div class="slickItem item02">
+                                <p>
+                                    <span>2.네이버페이 쿠폰 구매 </span>
+                                    <span>*현재 네이버페이 쿠폰 1,000원만 전환 가능합니다.</span>
+                                </p>
+                            </div>
+                            <div class="slickItem item03">
+                                <p>
+                                    <span>3.네이버페이 전환 신청</span>
+                                    <span>*전환 신청 시 가입하신 이메일로 익일 발송됩니다.</span>
+                                </p>
+                            </div>
+                        </div>
 
-    <h3>매체 </h3>
-    <p> 1. nodata info 추가<br>
-        2. 알림 탭 on처리<br>
-        3. 댓글창 선추가<br>
-        4. 정렬필터 css변경 <br>
-        5. 댓글창 아이디 넓이 <br>
-        6. option poplayer 위치수정<br>
-    </p>
+                    </div>
+                </div>
+            </section>
+            <section class='page notice'>
+                <h2 class="hide">repay notice</h2>
+                <div class="scrollBox">
+                    <div class="center">
+                        <h3>RePay 서비스 <i class="mob_br"></i>유의 사항</h3>
+                        <ul>
+                            <li>회원가입 시 정확한 정보를 입력하지 않을 경우 <span class="txt_main">쿠폰 발송이 불가</span> 합니다.</li>
+                            <li>부적절한 행위 등을 방지하기 위하여 <span class="txt_main">최근 10 분 동안 10 회 클릭으로 제한 </span>됩니다.</li>
+                            <li>당일 받을 수 있는 포인트는 2,000P 이며 당사 정책에 따라 변경될 수 있습니다.</li>
+                            <li>포인트 적립 내역은 당일 분에 대해서만 조회되며 , 익일 초기화됩니다.</li>
+                        </ul>
 
-
-    <a target="_blank" href="./html/iframe/MO/01_main_mo.html">댓글 MO(로그인 전 입력창 예시 !주석참고)</a>
-    <a target="_blank" href="./html/iframe/MO/01_02_main_mo.html">댓글 MO(로그인 후 상단 프로필 영역/알림 추가버전)</a>
-    <a target="_blank" href="./html/iframe/MO/02_main_repley.html">답글 MO(로그인 후 입력창 예시)</a>
-    <a target="_blank" href="./html/iframe/PC/01_main_pc.html">댓글 PC(로그인 전 입력창 예시 !주석참고)</a>
-    <a target="_blank" href="./html/iframe/PC/02_main_repley.html">답글 PC(로그인 후 입력창 예시)</a>
-
-    <a target="_blank" href="./html/iframe/MO/06_alert01.html">알림관리 /내역</a>
-    <a target="_blank" href="./html/iframe/MO/08_profile_my01.html">마이리플 / 나의 글 탭 + 개인정보팝업</a>
-    <a target="_blank" href="./html/iframe/MO/08_profile_my02.html">마이리플 / 구독중인 댓글 탭 + 개인정보팝업</a>
-    <a target="_blank" href="./html/iframe/MO/08_profile_other.html">타인의 리플</a>
-    <button type="button" class="openPopBtn" data-popname="06_alert01">알림관리 /내역</button>
-    <button type="button" class="openPopBtn" data-popname="08_profile_my01">마이리플 / 나의 글 탭 + 개인정보팝업</button>
-    <button type="button" class="openPopBtn" data-popname="08_profile_my02">마이리플 / 구독중인 댓글 탭 + 개인정보팝업</button>
-    <button type="button" class="openPopBtn" data-popname="08_profile_other">타인의 리플</button>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <h2>수정요청반영 (이하 230906_v0.1)---------------------------------------------------------------</span></h2>    
-    <h3>반응형페이지 </h3>
-    <p> 1. 페이징 처리<br>
-        2. 닉네임 생성 안내 문구 추가<br>
-        3. nodata 안내 문구<br>
-        4. 이용약관, 개인정보처리방침 화면 추가<br>
-        5. 회원 가입 페이지 만 14세 이상 확인 및 약관내용수정 <br>
-        6.게시물 링크 버튼 추가<br>
-
-    </p>
-    <a target="_blank" href="./html/main/03_userSetting.html">환경설정(개인설정/알림내역/알림설정)</a>
-    <a target="_blank" href="./html/main/02_mycontent.html">마이리플(나의글/구독중댓글)</a>
-    <a target="_blank" href="./html/main/02_mycontent_pin_01.html">마이리플(나의핀/추천핀)</a>
-    <a target="_blank" href="./html/main/02_mycontent_follow_01.html">마이리플(구독자/구독중/차단)</a>
-    <a target="_blank" href="./html/membership/policy_privacy.html">개인정보처리방침</a>  
-    <a target="_blank" href="./html/membership/policy_service.html">서비스 이용약관</a>  
-    <a target="_blank" href="./html/membership/03_agree.html">간편동의및정보입력</a>
-
-
-    <br>
-    <br>    
-    <h3>매체 </h3>
-    <p>
-        1. 플로팅 아이콘 변경, 사이즈 확대<br>
-        2. 댓글 nodata 안내 문구 <br>
-        3. 알림 관리 필터, 중단 탭 구조로 변경<br>
-        4.게시물 링크 버튼 추가<br>
-    </p>
-    <!-- <a target="_blank" href="./html/iframe/PC/00_alert.html">PC플로팅 알림</a> -->
-    <a target="_blank" href="./html/iframe/MO/00_alert.html">MO플로팅 알림(공통)</a>
-
-    <h2>수정요청반영 (이하 230831_v0.1)---------------------------------------------------------------</span></h2>    
-    <h3>반응형페이지 </h3>
-    <p> 1. 닉네임 중복 체크 info문구 / 이메일 수정 불가 처리 <br>
-        2. 추가 : 회원 탈퇴 화면 <br>
-        3. FAQ, QNA 화면 수정: 스크롤바 제거, 알림창 수정, 음영 처리 적용, 영문 글자 잘림 수정 <br>
-        4. 추가된 댓글 수, 총 댓글 수 노출 <br>
-        5. 마이포인트 사용하기 버튼추가 <br>
-        6. nodata처리 : 존재하지 않는 사용자 처리,적립 그래프 <br>
-        7. 안내페이지 추가 <br>
-    </p>
-    <a target="_blank" href="./html/main/03_withdrawal01.html">회원탈퇴1</a>
-    <a target="_blank" href="./html/main/03_withdrawal02.html">회원탈퇴2</a>
-    <a target="_blank" href="./html/service_center/main_service_qna_detail.html">고객센터 qna</a>
-    <a target="_blank" href="./html/service_center/main_service_faq.html">고객센터 faq</a>
-    <a target="_blank" href="./html/main/01_point01.html">포인트</a>
-    <a target="_blank" href="./html/main/01_point02.html">포인트(상세그래프)</a>    
-    <a target="_blank" href="./html/main/info_admission_no.html">안내페이지</a>      
-
-
-    <h3>매체 </h3>
-    <p>
-        1. 플로팅 아이콘변경<br>
-        2. ios input 확대x : input fontsize16px fixed<br>
-        3. 댓글, 답글 강조처리(테두리,표기 추가) <br>
-        4. 추가된 댓글 수, 총 댓글 수 노출<br>
-        5. nodata처리 : 존재하지 않는 사용자 처리<br>
-        6. 구독하기 버튼 줄 바뀜 수정<br>
-        7. 타이틀영역 알림 표시 추가<br>
-    </p>
-    
-    <a target="_blank" href="./html/iframe/MO/05_followSetting01.html">구독관리 /구독자</a>
-    <a target="_blank" href="./html/iframe/MO/05_followSetting02.html">구독관리 /구독중</a>
-    <a target="_blank" href="./html/iframe/MO/05_followSetting03.html">구독관리 /차단</a>
-    <a target="_blank" href="./html/iframe/MO/07_pin01.html">핀관리 /나의 핀</a>
-    <a target="_blank" href="./html/iframe/MO/07_pin02.html">핀관리 /추천 핀</a>
-    <a target="_blank" href="./html/iframe/MO/08_profile_nodata.html">타인의 리플 no data</a>
-
-    <h2>수정요청반영 (이하 230823_v0.1)---------------------------------------------------------------</span></h2>    
-    <h3>반응형페이지 </h3>
-    <p>1. 포인트 화면 ui 변경 </p>
-
-    <h3>PC , MO / 매체 </h3>
-    <p>
-        2. input focus 확대 현상 // 메타태그 추가(모바일쪽 공통)<br>
-        2. 이모티콘 아이콘 삭제 // 태그 삭제, 상위 lrWrap에 right 클래스 추가 및 css추가
-     </p>
-    
-     <p>1. 플로팅아이콘 버튼 분리</p>
-
-    <h2>수정요청반영 <span>(이하 230822_v0.2)---------------------------------------------------------------</span></h2>    
-    <h3>반응형페이지 </h3>
-    <p>1. 포인트 화면 ui 변경 및 고객센터 메뉴 탭으로 변경</p>
-    
-    <h2>수정요청반영 <span >(이하 230822_v0.1)---------------------------------------------------------------</span></h2>    
-    <p>1. ui 및 팝업 css 수정</p>
-    <a target="_blank" href="./html/service_center/main_service_qna_write.html">고객센터 글쓰기</a>
-
-    <h2>수정요청반영 <span >(이하 230814_v0.1)---------------------------------------------------------------</span></h2>    
-    <h3>MO / 매체 </h3>
-    <p>1. 댓글창 프로필 영역 크기 줄이기<br>
-       2.댓글 입력 영역 고정 해제(로그인, 비로그인)
-    </p>
-    <br>
-    <p>1. 마이리플의 [댓글&답글, 구독자, 구독중, 핀관리] 잘보이도록 사이즈 확대<br>
-       2.화면 스크롤시 [나의 글, 나의 답글, 구독중 댓글] 탭 영역을 헤더로 고정
-    </p>
-
-    <h3>PC , MO / 매체 </h3>
-    <p>1. 플로팅아이콘 reset.css없이</p>
-
-
-    <h2>수정요청반영 <span>(이하 230809_v0.1)---------------------------------------------------------------</span></h2>
-    <h3>MO / 매체 위 팝업 표시 </h3>
-    <p>1. 댓글, 답글 입력창 input 태그 > textarea 태그 변경 요청<br>
-        2. 더보기 버튼 추가요청<br>
-        3. 모바일 광고영역 높이 수정요청 50>100px
-    </p>
-    <h3>MO / 전체화면 </h3>
-    <p>2. 더보기 버튼 추가요청</p>
-    <p>2. 더보기 버튼 추가요청<br>4. 마이페이지(마이리플) 알림 아이콘 추가요청</p>
-
-    <h3>PC / iframe 팝업 </h3>
-    <p>2. 더보기 버튼 추가요청</p>
-    <button type="button" class="openPopBtn" data-popname="05_followSetting01">구독관리 /구독자</button>
-    <button type="button" class="openPopBtn" data-popname="05_followSetting02">구독관리 /구독중</button>
-    <button type="button" class="openPopBtn" data-popname="05_followSetting03">구독관리 /차단</button>
-    <button type="button" class="openPopBtn" data-popname="07_pin01">핀관리 /나의 핀</button>
-    <button type="button" class="openPopBtn" data-popname="07_pin02">핀관리 /추천 핀</button>
-
-
-
-    <h3>반응형페이지 </h3>
-    <p>4. 마이페이지(마이리플) 알림 아이콘 추가요청</p>
-
-    <h3>MO / 사이즈 공통수정</h3>
-    <a target="_blank" href="./html/iframe/MO/03_login.html">로그인</a>
-    <a target="_blank" href="./html/iframe/MO/04_report.html">신고하기</a>
-    <a target="_blank" href="./html/iframe/MO/06_alert02.html">알림관리 /설정</a>
-
-
-
-    <h2>수정요청반영 <span>(이하 230808_v0.1)---------------------------------------------------------------</span></h2>
-    <p>- 반응형 개별 페이지 탭으로 병합</p>
-
-    <h2>수정요청반영 <span>(이하 230807_v0.1)---------------------------------------------------------------</span></h2>
-    <p>- inputBox 안내문구 data-info 대신 태그로 변경</p>
-    <a target="_blank" href="./html/membership/01_login.html">로그인</a>
-
-    <h2>추가요청건 <span>(이하 230727_v0.1)---------------------------------------------------------------</span></h2>
-    <h3>반응형페이지 </h3>
-
-
-    <h2>리플이지 (이하 230712_v0.1)---------------------------------------------------------------</h2>
-    <h3>PC / 전체화면 </h3>
-    <a target="_blank" href="./html/iframe/PC/03_login.html">로그인</a>
-    
-    <h3>PC / iframe 팝업 </h3>
-    <button type="button" class="openPopBtn" data-popname="04_report">신고하기</button>
-    <button type="button" class="openPopBtn" data-popname="06_alert02">알림관리 /설정</button>
-
-    <div class="popBack"></div>
-    <div class="popLayer iframePop" id="04_report">
-        <iframe src="./html/iframe/PC/04_report.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </section>
+            <footer class='page footer'>
+                <div class="scrollBox">
+                    <div class="center">
+                        <p class="footerLogo">media gain</p>
+                        <ul>
+                            <li>(주)미디어게인</li>
+                            <li>서울특별시 구로구 구로동 디지털로 272 한신아이티타워 407호</li>
+                            <li>대표: 김성일</li>
+                            <li>사업자 등록번호 : 834-86-02614</li>
+                            <li>E-mail: mediagain@mediagain.co.kr</li>
+                            <li>Copyright ⓒ 미디어게인 All Right Reserved.</li>
+                        </ul>
+                        <button type="button" class="btn btn-w popOpenBtn" data-popname="poplayer01">
+                            <span>이용약관</span>
+                            <span>개인정보처리 방침</span>
+                        </button>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
-    <div class="popLayer iframePop" id="05_followSetting01">
-        <iframe src="./html/iframe/PC/05_followSetting01.html" frameborder="0" ></iframe>
+    <div class="popLayer" id="poplayer01">
+        <div class="popDim"></div>
+        <div class="popContent">
+            <h5><img src="./images/logo_b.svg" alt="repay"> <button class="popCloseBtn ">닫기</button></h5>
+            <div>
+                <div>
+                    <span class="popConTitle">이용약관</span>
+                    <div class="scrollTxtBox">
+                        이 약관은 주식회사 인라이플(이하 회사)가 제공하는 다양한 웹과 모바일 서비스를 이용하는 데
+                        필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하기 위해 만들어졌습니다. <br>
+                        서비스를 제공하는 회사와 이를 이용하는 REPLEASY 서비스 회원(이하 회원) 또는 비회원의 관계를 설명합니다. <br>
+                        비회원으로서 서비스의 일부를 이용할 수 있으나, 본 약관에 동의하여 회원으로서 가입할 수 있고 이를 통해 다양한 서비스를 이용할 수 있습니다. <br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.<br>
+                        본 약관은 여러분이 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정하고 있으므로 조금만 시간을 내서
+                        주의 깊게 읽어주시기 바랍니다.
+                    </div>
+                </div>
+                <div>
+                    <span class="popConTitle">개인정보 처리방침</span>
+                    <div class="scrollTxtBox">
+                        주식회사 인라이플(이하 "회사"라 합니다)은 정보주체의 자유와 권리 보호를 위해 「개인정보 보호법」 및 관계 법령이 정한 바를 준수하여, 적법하게 개인정보를 처리하고
+                        안전하게 관리하고 있습니다.
+                        <br>
+                        본 개인정보 처리방침은 회사가 제공하는 다양한 웹과 모바일 서비스에 적용됩니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                        <br>
+                        이에 「개인정보 보호법」 제30조에 따라 정보주체에게 개인정보 처리에 관한 절차 및 기준을 안내하고, 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
+                        다음과 같이 개인정보 처리방침을 수립·공개합니다.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="popLayer iframePop" id="05_followSetting02">
-        <iframe src="./html/iframe/PC/05_followSetting02.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="05_followSetting03">
-        <iframe src="./html/iframe/PC/05_followSetting03.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="06_alert01">
-        <iframe src="./html/iframe/PC/06_alert01.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="06_alert02">
-        <iframe src="./html/iframe/PC/06_alert02.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="07_pin01">
-        <iframe src="./html/iframe/PC/07_pin01.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="07_pin02">
-        <iframe src="./html/iframe/PC/07_pin02.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="08_profile_my01">
-        <iframe src="./html/iframe/PC/08_profile_my01.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="08_profile_my02">
-        <iframe src="./html/iframe/PC/08_profile_my02.html" frameborder="0" ></iframe>
-    </div>
-    <div class="popLayer iframePop" id="08_profile_other">
-        <iframe src="./html/iframe/PC/08_profile_other.html" frameborder="0" ></iframe>
-    </div>
+    <script>
+        $(function () {
+            $('.slickSlide').slick({
+                slide: 'div',
+                slidesToShow: 3,
+                arrows: false,
+                dots: false,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        infinite: true,
+                        autoplay: true,
+                        autoplaySpeed: 5000,
+                    }
+                }]
+            });
 
-
-
-
-
-    
-    <h3>반응형페이지</h3>
-    <a target="_blank" href="./html/main/00_main.html">메인페이지</a>
-    <a target="_blank" href="./html/membership/02_join.html">회원가입</a>
-    <a target="_blank" href="./html/membership/04_emailSend.html">이메일링크메일발송</a>
-    <a target="_blank" href="./html/membership/05_complete.html">인증완료</a>
-    <a target="_blank" href="./html/membership/06_email.html">가입이메일</a>
-
-    <h2>추가요청건 </h2>
-    <h3>반응형페이지(완료)</h3>
+            $(".page").eq(0).addClass('on');
+        });
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <g data-name="그룹 1908">
+        <g data-name="그룹 1888">
+            <g data-name="타원 1" style="fill:#fff;stroke:#f2f2f2;opacity:.9">
+                <circle cx="18" cy="18" r="18" style="stroke:none"/>
+                <circle cx="18" cy="18" r="17.5" style="fill:none"/>
+            </g>
+            <path d="M5.35 0 0 4.736l.748.847 4.03-3.567v8.55H5.91V2.042l4.057 3.7.763-.835z" transform="translate(13.001 12.823)" style="fill:#040504"/>
+        </g>
+    </g>
+</svg>
