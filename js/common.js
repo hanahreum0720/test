@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty(`--vh`, `${vh}`);
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', vh+"px");
 
     
     //스크롤
@@ -66,6 +66,8 @@ $(document).ready(function () {
         }
     });
     window.addEventListener('resize', function () {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh+"px");
         windowHeight = window.innerHeight;
         footerHeight = $('.page.footer').innerHeight();
         //windowHeight =  $(".page").eq(current).innerHeight();  
