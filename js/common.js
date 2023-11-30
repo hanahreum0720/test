@@ -1,10 +1,4 @@
 $(document).ready(function () {
-    function setVh(){
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', vh+"px");
-
-    }
-    setVh();
     
     //스크롤
     let pageWrap = document.querySelector('.pageWrap');
@@ -15,6 +9,12 @@ $(document).ready(function () {
     let footerHeight = $('.page.footer').innerHeight();
     let scrollHeight = 0;
     let animation = true;
+
+    function setVh(){
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', vh+"px");
+    }
+    setVh();
 
     function ani() {
         animation = false;
@@ -69,10 +69,12 @@ $(document).ready(function () {
         }
     });
     window.addEventListener('resize', function () {
+        animation = false;
         setVh();
         windowHeight = window.innerHeight;
         footerHeight = $('.page.footer').innerHeight();
-        //windowHeight =  $(".page").eq(current).innerHeight();  
+        //windowHeight =  $(".page").eq(current).innerHeight(); 
+        animation = true; 
         wheel();
     })
 
