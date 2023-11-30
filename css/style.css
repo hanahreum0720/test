@@ -224,6 +224,9 @@ body {
   line-height: 1;
   word-break: break-word;
   -webkit-overflow-scrolling: touch;
+  -ms-touch-action: pan-x pan-y;
+      touch-action: pan-x pan-y;
+  overscroll-behavior-y: none;
 }
 
 ::-moz-selection {
@@ -293,12 +296,6 @@ body, input, select, textarea, button, a {
   color: #000;
   font-family: "Pretendard-Regular";
   font-weight: normal;
-}
-
-body {
-  -ms-touch-action: pan-x pan-y;
-      touch-action: pan-x pan-y;
-  overscroll-behavior-y: none;
 }
 
 input, textarea {

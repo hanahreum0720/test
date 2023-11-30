@@ -238,4 +238,6 @@ body {
     line-height: 1;
     word-break: break-word;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+    overscroll-behavior-y: none;
 }
