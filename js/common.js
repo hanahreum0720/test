@@ -1,5 +1,8 @@
 $(document).ready(function () {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty(`--vh`, `${vh}`);
 
+    
     //스크롤
     let pageWrap = document.querySelector('.pageWrap');
     let page = document.querySelectorAll('.page');
