@@ -406,8 +406,9 @@
 			var R = 9;
 			var W = banner.clientWidth || 720;
 			var H = banner.clientHeight || 120;
-			var GRAVITY = 0.12, BOUNCE = 0.45, FRICTION = 0.99;
+			var BOUNCE = 0.45, FRICTION = 0.99;
 			var mouseX = -999, mouseY = -999;
+			var desktopGravityY = 0.12; // 데스크톱용 하강 중력
 			var sensorX = 0, sensorY = 0;
 			var balls = [];
 			var ended = false;
@@ -479,8 +480,9 @@
 				}
 
 				if (angleX !== null && angleX !== undefined) {
-					sensorX = angleX * 0.015; // 감도 대폭 경감 (천천히 굴러가도록 0.08 -> 0.015)
-					sensorY = angleY * 0.012; // Y축 앞뒤 피치 감도 튜닝
+					sensorX = Math.max(-0.12, Math.min(0.12, angleX * 0.003)); // 감도 대폭 경감 (0.015 -> 0.003)
+					sensorY = Math.max(-0.12, Math.min(0.12, angleY * 0.002)); // Y축 피치 감도 대폭 경감 (0.012 -> 0.002)
+					desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
 					hasOrientationData = true;
 				}
 			});
@@ -507,8 +509,9 @@
 						gravityY = ay - 5.5; // 기본 세운 성분인 약 5.5m/s^2을 차감한 값을 피치 중력으로 매핑
 					}
 
-					sensorX = gravityX * 0.06; // 가속도 감도 대폭 경감 (기존 0.35 -> 0.06)
-					sensorY = gravityY * 0.05; // Y축 가속도 감도 튜닝
+					sensorX = Math.max(-0.12, Math.min(0.12, gravityX * 0.012)); // 감도 대폭 경감 (0.06 -> 0.012)
+					sensorY = Math.max(-0.12, Math.min(0.12, gravityY * 0.01));  // 감도 대폭 경감 (0.05 -> 0.01)
+					desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
 				}
 			});
 
@@ -539,13 +542,13 @@
 				for (var i = balls.length - 1; i >= 0; i--) {
 					var b = balls[i];
 					b.vx += sensorX;
-					b.vy += GRAVITY + sensorY;
+					b.vy += desktopGravityY + sensorY;
 
 					var dx = b.x - mouseX;
 					var dy = b.y - mouseY;
 					var dist = Math.sqrt(dx * dx + dy * dy);
-					if (dist < 45 && dist > 0.1) {
-						var force = (45 - dist) / 45 * 2.5;
+					if (dist < 65 && dist > 0.1) {
+						var force = (65 - dist) / 65 * 3.5; // 마우스 조작 반경 확대 및 감도 상향 (45/2.5 -> 65/3.5)
 						b.vx += (dx / dist) * force;
 						b.vy += (dy / dist) * force;
 					}
