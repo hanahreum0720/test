@@ -12,10 +12,102 @@
     <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/slick.js"></script>
+
+    <style>
+		.banner.banner-horizontal {
+			width: 100%;
+			max-width: 720px;
+			height: 120px;
+			position: relative;
+			overflow: hidden;
+			background: #e5e5e5;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			touch-action: none;
+			margin: 0 auto;
+			display: block;
+		}
+
+		@media (max-width: 720px) {
+			.banner.banner-horizontal {
+				height: auto;
+				aspect-ratio: 720 / 120;
+			}
+		}
+
+		.game-layer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		.ball {
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: #00f;
+		}
+
+		.hint {
+			position: absolute;
+			font-size: 11px;
+			color: #888;
+			white-space: nowrap;
+			transform: translateX(-50%);
+			pointer-events: none;
+			z-index: 2;
+			animation: blink 1.8s ease-in-out infinite;
+		}
+
+		@keyframes blink {
+			0%, 100% { opacity: 1; }
+			50% { opacity: 0.15; }
+		}
+
+		.bg-watermark {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 24px;
+			color: #d8d8d8;
+			font-weight: bold;
+			pointer-events: none;
+			z-index: 1;
+			letter-spacing: 2px;
+			user-select: none;
+		}
+    </style>
+
 </head>
 
 <body>
-    <div class='container main'>
+
+
+
+    <div class="frame-col" style="width: 100%; max-width: 720px; margin: 0 auto 32px auto; text-align: center;">
+        <div class="frame-label" style="font-size: 14px; font-weight: bold; margin-bottom: 4px; color: #333;">10번 가로형 구슬 굴리기 (720x120)</div>
+        <div class="frame-sub" style="font-size: 12px; color: #999; margin-bottom: 12px;">회색 배너 위에서 구슬 굴리기 (모바일 좌우 기울임 센서 연동)</div>
+        <div class="banner banner-horizontal" id="banner10">
+            <div class="bg-watermark">비상품 이미지 영역</div>
+            <div class="game-layer" id="layer10"></div>
+            <div class="sensor-info"
+                style="position: absolute; top: 10px; right: 15px; font-size: 10px; color: #666; pointer-events: none; z-index: 10; background: rgba(255,255,255,0.7); padding: 3px 8px; border-radius: 4px;">
+                ※ 모바일일 경우 좌우 움직임에 맞춰구르기(안드로이드)
+            </div>
+            <div class="hint" id="hint10"
+                style="bottom: 15px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #888; pointer-events: none; z-index: 10;">
+                마우스로 구슬을 밀거나 모바일을 좌우로 기울여보세요
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class='container main'>
         <header>
             <div class="center">
                 <h1><a href="index.html">RePay</a></h1>
@@ -194,7 +286,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <script>
         $(function () {
             $('.slickSlide').slick({
@@ -218,6 +310,174 @@
             $(".page").eq(0).addClass('on');
         });
     </script>
+
+    <script>
+		var isPageVisible = true;
+		document.addEventListener('visibilitychange', function () {
+			isPageVisible = !document.hidden;
+		});
+
+		(function () {
+			var banner = document.getElementById('banner10');
+			var layer = document.getElementById('layer10');
+			var R = 9;
+			var W = banner.clientWidth || 720;
+			var H = banner.clientHeight || 120;
+			var GRAVITY = 0.35, BOUNCE = 0.45, FRICTION = 0.99;
+			var mouseX = -999, mouseY = -999;
+			var sensorX = 0;
+			var balls = [];
+
+			function updateSize() {
+				W = banner.clientWidth || 720;
+				H = banner.clientHeight || 120;
+				R = Math.max(4, H * 0.075);
+				for (var i = 0; i < balls.length; i++) {
+					balls[i].el.style.width = (R * 2) + 'px';
+					balls[i].el.style.height = (R * 2) + 'px';
+				}
+			}
+			window.addEventListener('resize', updateSize);
+			window.addEventListener('orientationchange', updateSize);
+			setTimeout(updateSize, 300);
+
+			for (var i = 0; i < 18; i++) {
+				var el = document.createElement('div');
+				el.className = 'ball';
+				el.style.width = (R * 2) + 'px';
+				el.style.height = (R * 2) + 'px';
+				layer.appendChild(el);
+				balls.push({
+					el: el,
+					x: 20 + Math.random() * (W - 40),
+					y: -20 - Math.random() * 100,
+					vx: 0, vy: 0
+				});
+			}
+
+			function requestOrientationPermission() {
+				if (typeof DeviceOrientationEvent !== 'undefined' && 
+					typeof DeviceOrientationEvent.requestPermission === 'function') {
+					DeviceOrientationEvent.requestPermission()
+						.then(function (state) {
+							if (state === 'granted') {
+								// Permission granted
+							}
+						})
+						.catch(console.error);
+				}
+			}
+			banner.addEventListener('click', requestOrientationPermission);
+			banner.addEventListener('touchstart', requestOrientationPermission, { passive: true });
+
+			var hasOrientationData = false;
+
+			window.addEventListener('deviceorientation', function (e) {
+				if (!isPageVisible) return;
+				var g = e.gamma;
+				var b = e.beta;
+				var orientation = window.orientation || 0;
+				var angle = 0;
+
+				if (orientation === 90) {
+					angle = -b;
+				} else if (orientation === -90) {
+					angle = b;
+				} else {
+					angle = g;
+				}
+
+				if (angle !== null && angle !== undefined) {
+					sensorX = angle * 0.08;
+					hasOrientationData = true;
+				}
+			});
+
+			// devicemotion fallback
+			window.addEventListener('devicemotion', function (e) {
+				if (!isPageVisible || hasOrientationData) return;
+				if (e.accelerationIncludingGravity) {
+					var ax = e.accelerationIncludingGravity.x || 0;
+					var ay = e.accelerationIncludingGravity.y || 0;
+					var orientation = window.orientation || 0;
+					var gravityX = 0;
+
+					if (orientation === 90) {
+						gravityX = ay;
+					} else if (orientation === -90) {
+						gravityX = -ay;
+					} else {
+						gravityX = -ax;
+					}
+
+					sensorX = gravityX * 0.35;
+				}
+			});
+
+			function updatePointer(clientX, clientY) {
+				var rect = banner.getBoundingClientRect();
+				mouseX = clientX - rect.left;
+				mouseY = clientY - rect.top;
+			}
+			banner.addEventListener('mousemove', function (e) { updatePointer(e.clientX, e.clientY); });
+			banner.addEventListener('mouseleave', function () { mouseX = -999; mouseY = -999; });
+			banner.addEventListener('touchstart', function (e) {
+				e.preventDefault();
+				updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+			}, { passive: false });
+			banner.addEventListener('touchmove', function (e) {
+				e.preventDefault();
+				updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+			}, { passive: false });
+			banner.addEventListener('touchend', function () { mouseX = -999; mouseY = -999; });
+
+			function loop() {
+				if (!isPageVisible) {
+					requestAnimationFrame(loop);
+					return;
+				}
+				for (var i = 0; i < balls.length; i++) {
+					var b = balls[i];
+					b.vy += GRAVITY;
+					b.vx += sensorX;
+
+					var dx = b.x - mouseX;
+					var dy = b.y - mouseY;
+					var dist = Math.sqrt(dx * dx + dy * dy);
+					if (dist < 45 && dist > 0.1) {
+						var force = (45 - dist) / 45 * 2.5;
+						b.vx += (dx / dist) * force;
+						b.vy += (dy / dist) * force;
+					}
+					b.vx *= FRICTION;
+					b.x += b.vx;
+					b.y += b.vy;
+
+					if (b.x < R) { b.x = R; b.vx *= -BOUNCE; }
+					if (b.x > W - R) { b.x = W - R; b.vx *= -BOUNCE; }
+					if (b.y > H - R) { b.y = H - R; b.vy *= -BOUNCE; b.vx *= 0.95; }
+
+					for (var j = i + 1; j < balls.length; j++) {
+						var o = balls[j];
+						var ddx = o.x - b.x;
+						var ddy = o.y - b.y;
+						var d = Math.sqrt(ddx * ddx + ddy * ddy);
+						if (d < R * 2 && d > 0.1) {
+							var overlap = (R * 2 - d) / 2;
+							var nx = ddx / d, ny = ddy / d;
+							b.x -= nx * overlap; b.y -= ny * overlap;
+							o.x += nx * overlap; o.y += ny * overlap;
+						}
+					}
+					b.el.style.left = (b.x - R) + 'px';
+					b.el.style.top = (b.y - R) + 'px';
+				}
+				requestAnimationFrame(loop);
+			}
+			loop();
+		})();
+	</script>
+
 </body>
 
 </html>
