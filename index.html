@@ -14,132 +14,139 @@
     <script src="./js/slick.js"></script>
 
     <style>
-		.banner.banner-horizontal {
-			width: 100%;
-			max-width: 720px;
-			height: 120px;
-			position: relative;
-			overflow: hidden;
-			background: #e5e5e5;
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			touch-action: none;
-			margin: 0 auto;
-			display: block;
-		}
+        .banner.banner-horizontal {
+            width: 100%;
+            max-width: 720px;
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+            background: #e5e5e5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            touch-action: none;
+            margin: 0 auto;
+            display: block;
+        }
 
-		@media (max-width: 720px) {
-			.banner.banner-horizontal {
-				height: auto;
-				aspect-ratio: 720 / 120;
-			}
-		}
+        @media (max-width: 720px) {
+            .banner.banner-horizontal {
+                height: auto;
+                aspect-ratio: 720 / 120;
+            }
+        }
 
-		.game-layer {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 2;
-			pointer-events: none;
-		}
+        .game-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
 
-		.ball {
-			position: absolute;
-			width: 15px;
-			height: 15px;
-			border-radius: 50%;
-			background: #00f;
-		}
+        .ball {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #00f;
+        }
 
-		.hint {
-			position: absolute;
-			font-size: 11px;
-			color: #888;
-			white-space: nowrap;
-			transform: translateX(-50%);
-			pointer-events: none;
-			z-index: 2;
-			animation: blink 1.8s ease-in-out infinite;
-		}
+        .hint {
+            position: absolute;
+            font-size: 11px;
+            color: #888;
+            white-space: nowrap;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 2;
+            animation: blink 1.8s ease-in-out infinite;
+        }
 
-		@keyframes blink {
-			0%, 100% { opacity: 1; }
-			50% { opacity: 0.15; }
-		}
+        @keyframes blink {
 
-		.bg-watermark {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			font-size: 24px;
-			color: #d8d8d8;
-			font-weight: bold;
-			pointer-events: none;
-			z-index: 1;
-			letter-spacing: 2px;
-			user-select: none;
-		}
+            0%,
+            100% {
+                opacity: 1;
+            }
 
-		.game-result-layer {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(255, 255, 255, 0.95);
-			z-index: 10;
-			display: none;
-			align-items: center;
-			justify-content: center;
-			padding: 16px;
-			box-sizing: border-box;
-		}
+            50% {
+                opacity: 0.15;
+            }
+        }
 
-		.result-box {
-			background: #fff;
-			border: 1px solid #ddd;
-			border-radius: 12px;
-			padding: 16px;
-			width: 95%;
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-			text-align: center;
-			box-sizing: border-box;
-		}
+        .bg-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #d8d8d8;
+            font-weight: bold;
+            pointer-events: none;
+            z-index: 1;
+            letter-spacing: 2px;
+            user-select: none;
+        }
 
-		.result-title {
-			font-size: 14px;
-			font-weight: bold;
-			color: #00f;
-			margin-bottom: 6px;
-		}
+        .game-result-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 10;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+        }
 
-		.result-desc {
-			font-size: 11px;
-			color: #555;
-			margin-bottom: 12px;
-			line-height: 1.3;
-			word-break: keep-all;
-		}
+        .result-box {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 16px;
+            width: 95%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            box-sizing: border-box;
+        }
 
-		.result-action-btn {
-			background: #000;
-			color: #fff;
-			border: none;
-			font-size: 11px;
-			font-weight: bold;
-			padding: 7px 16px;
-			border-radius: 20px;
-			cursor: pointer;
-			transition: background 0.2s;
-			white-space: nowrap;
-		}
+        .result-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00f;
+            margin-bottom: 6px;
+        }
 
-		.result-action-btn:hover {
-			background: #333;
-		}
+        .result-desc {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            word-break: keep-all;
+        }
+
+        .result-action-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 7px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .result-action-btn:hover {
+            background: #333;
+        }
     </style>
 
 </head>
@@ -147,38 +154,40 @@
 <body>
 
 
-<div style="width: 100%; display: flex; justify-content: center; padding: 20px 0;">
-<div class="frame-col" style="width: 100%; max-width: 720px; margin-top: 16px;">
-			<div class="frame-label">10번 가로형 구슬 굴리기 (720x120)</div>
-			<div class="frame-sub">회색 배너 위에서 구슬 굴리기 (모바일 좌우 기울임 센서 연동)</div>
-			<div class="banner banner-horizontal" id="banner10">
-				<div class="bg-watermark">비상품 이미지 영역</div>
-				<!-- 비상품 배너로 회색 배경 전체 적용 -->
-				<div class="game-layer" id="layer10"></div>
-				<!-- 센서 작동 정보 안내 텍스트 -->
-				<div class="sensor-info"
-					style="position: absolute; top: 10px; right: 15px; font-size: 10px; color: #666; pointer-events: none; z-index: 10; background: rgba(255,255,255,0.7); padding: 3px 8px; border-radius: 4px;">
-					※ 모바일일 경우 좌우 움직임에 맞춰구르기(안드로이드)
-				</div>
-				<div class="hint" id="hint10"
-					style="bottom: 15px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #888; pointer-events: none; z-index: 10;">
-					마우스로 구슬을 밀거나 모바일을 좌우로 기울여보세요
-				</div>
-				<!-- 우측 골인 지점 박스 -->
-				<div class="goal-box" id="goalBox10" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border: 2px dashed #0066ff; background: rgba(0, 102, 255, 0.08); border-radius: 8px; z-index: 10; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #0066ff; font-weight: bold; text-align: center; pointer-events: none; line-height: 1.2; box-sizing: border-box;">
-					구슬을<br>넣어봐요!
-				</div>
-				<!-- 10번 성공 결과 모달 -->
-				<div class="game-result-layer" id="result10">
-					<div class="result-box">
-						<div class="result-title">성공!</div>
-						<div class="result-desc">나에게 꼭 맞는 추천 상품을 확인해보세요.</div>
-						<button class="result-action-btn">내게 맞는 상품 보러가기</button>
-					</div>
-				</div>
-			</div>
-		</div>
-</div>
+    <div style="width: 100%; display: flex; justify-content: center; padding: 20px 0;">
+        <div class="frame-col" style="width: 100%; max-width: 720px; margin-top: 16px;">
+            <div class="frame-label">10번 가로형 구슬 굴리기 (720x120)</div>
+            <div class="frame-sub">회색 배너 위에서 구슬 굴리기 (모바일 좌우 기울임 센서 연동)</div>
+            <br><br><br> <br><br><br> <br><br><br> <br><br><br>
+            <div class="banner banner-horizontal" id="banner10">
+                <div class="bg-watermark">비상품 이미지 영역</div>
+                <!-- 비상품 배너로 회색 배경 전체 적용 -->
+                <div class="game-layer" id="layer10"></div>
+                <!-- 센서 작동 정보 안내 텍스트 -->
+                <div class="sensor-info"
+                    style="position: absolute; top: 10px; right: 15px; font-size: 10px; color: #666; pointer-events: none; z-index: 10; background: rgba(255,255,255,0.7); padding: 3px 8px; border-radius: 4px;">
+                    ※ 모바일일 경우 좌우 움직임에 맞춰구르기(안드로이드)
+                </div>
+                <div class="hint" id="hint10"
+                    style="bottom: 15px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #888; pointer-events: none; z-index: 10;">
+                    마우스로 구슬을 밀거나 모바일을 좌우로 기울여보세요
+                </div>
+                <!-- 우측 골인 지점 박스 -->
+                <div class="goal-box" id="goalBox10"
+                    style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border: 2px dashed #0066ff; background: rgba(0, 102, 255, 0.08); border-radius: 8px; z-index: 10; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #0066ff; font-weight: bold; text-align: center; pointer-events: none; line-height: 1.2; box-sizing: border-box;">
+                    구슬을<br>넣어봐요!
+                </div>
+                <!-- 10번 성공 결과 모달 -->
+                <div class="game-result-layer" id="result10">
+                    <div class="result-box">
+                        <div class="result-title">성공!</div>
+                        <div class="result-desc">나에게 꼭 맞는 추천 상품을 확인해보세요.</div>
+                        <button class="result-action-btn">내게 맞는 상품 보러가기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- <div class='container main'>
         <header>
             <div class="center">
@@ -384,10 +393,10 @@
     </script>
 
     <script>
-		var isPageVisible = true;
-		document.addEventListener('visibilitychange', function () {
-			isPageVisible = !document.hidden;
-		});
+        var isPageVisible = true;
+        document.addEventListener('visibilitychange', function () {
+            isPageVisible = !document.hidden;
+        });
 
         function endGame(resultLayerEl) {
             if (resultLayerEl) {
@@ -398,230 +407,230 @@
             }
         }
 
-		(function () {
-			var banner = document.getElementById('banner10');
-			var layer = document.getElementById('layer10');
-			var result = document.getElementById('result10');
-			var goalBox = document.getElementById('goalBox10');
-			var R = 9;
-			var W = banner.clientWidth || 720;
-			var H = banner.clientHeight || 120;
-			var BOUNCE = 0.45, FRICTION = 0.99;
-			var mouseX = -999, mouseY = -999;
-			var desktopGravityY = 0.12; // 데스크톱용 하강 중력
-			var sensorX = 0, sensorY = 0;
-			var balls = [];
-			var ended = false;
+        (function () {
+            var banner = document.getElementById('banner10');
+            var layer = document.getElementById('layer10');
+            var result = document.getElementById('result10');
+            var goalBox = document.getElementById('goalBox10');
+            var R = 9;
+            var W = banner.clientWidth || 720;
+            var H = banner.clientHeight || 120;
+            var BOUNCE = 0.45, FRICTION = 0.99;
+            var mouseX = -999, mouseY = -999;
+            var desktopGravityY = 0.12; // 데스크톱용 하강 중력
+            var sensorX = 0, sensorY = 0;
+            var balls = [];
+            var ended = false;
 
-			function updateSize() {
-				W = banner.clientWidth || 720;
-				H = banner.clientHeight || 120;
-				R = Math.max(7, H * 0.11);
-				for (var i = 0; i < balls.length; i++) {
-					balls[i].el.style.width = (R * 2) + 'px';
-					balls[i].el.style.height = (R * 2) + 'px';
-				}
-			}
-			window.addEventListener('resize', updateSize);
-			window.addEventListener('orientationchange', updateSize);
-			setTimeout(updateSize, 300);
+            function updateSize() {
+                W = banner.clientWidth || 720;
+                H = banner.clientHeight || 120;
+                R = Math.max(7, H * 0.11);
+                for (var i = 0; i < balls.length; i++) {
+                    balls[i].el.style.width = (R * 2) + 'px';
+                    balls[i].el.style.height = (R * 2) + 'px';
+                }
+            }
+            window.addEventListener('resize', updateSize);
+            window.addEventListener('orientationchange', updateSize);
+            setTimeout(updateSize, 300);
 
-			for (var i = 0; i < 5; i++) {
-				var el = document.createElement('div');
-				el.className = 'ball';
-				el.style.width = (R * 2) + 'px';
-				el.style.height = (R * 2) + 'px';
-				layer.appendChild(el);
-				balls.push({
-					el: el,
-					x: 20 + Math.random() * (W - 40),
-					y: 20 + Math.random() * (H - 40),
-					vx: 0, vy: 0
-				});
-			}
+            for (var i = 0; i < 5; i++) {
+                var el = document.createElement('div');
+                el.className = 'ball';
+                el.style.width = (R * 2) + 'px';
+                el.style.height = (R * 2) + 'px';
+                layer.appendChild(el);
+                balls.push({
+                    el: el,
+                    x: 20 + Math.random() * (W - 40),
+                    y: 20 + Math.random() * (H - 40),
+                    vx: 0, vy: 0
+                });
+            }
 
-			// 모바일 센서 권한 수동 트리거 (iOS 사파리/최신 모바일 브라우저 보안 규정 대응)
-			function requestOrientationPermission() {
-				if (typeof DeviceOrientationEvent !== 'undefined' && 
-					typeof DeviceOrientationEvent.requestPermission === 'function') {
-					DeviceOrientationEvent.requestPermission()
-						.then(function (state) {
-							if (state === 'granted') {
-								// 권한 획득 완료
-							}
-						})
-						.catch(console.error);
-				}
-			}
-			banner.addEventListener('click', requestOrientationPermission);
-			banner.addEventListener('touchstart', requestOrientationPermission, { passive: true });
+            // 모바일 센서 권한 수동 트리거 (iOS 사파리/최신 모바일 브라우저 보안 규정 대응)
+            function requestOrientationPermission() {
+                if (typeof DeviceOrientationEvent !== 'undefined' &&
+                    typeof DeviceOrientationEvent.requestPermission === 'function') {
+                    DeviceOrientationEvent.requestPermission()
+                        .then(function (state) {
+                            if (state === 'granted') {
+                                // 권한 획득 완료
+                            }
+                        })
+                        .catch(console.error);
+                }
+            }
+            banner.addEventListener('click', requestOrientationPermission);
+            banner.addEventListener('touchstart', requestOrientationPermission, { passive: true });
 
-			var hasOrientationData = false;
+            var hasOrientationData = false;
 
-			// 모바일 기기 기울기 센서 (안드로이드/iOS X-Y 평면 2D 융합 및 부드러운 저감도 튜닝)
-			window.addEventListener('deviceorientation', function (e) {
-				if (!isPageVisible) return;
-				var g = e.gamma;
-				var b = e.beta;
-				var orientation = window.orientation || 0;
-				
-				var angleX = 0;
-				var angleY = 0;
+            // 모바일 기기 기울기 센서 (안드로이드/iOS X-Y 평면 2D 융합 및 부드러운 저감도 튜닝)
+            window.addEventListener('deviceorientation', function (e) {
+                if (!isPageVisible) return;
+                var g = e.gamma;
+                var b = e.beta;
+                var orientation = window.orientation || 0;
 
-				if (orientation === 90) {
-					angleX = -b;
-					angleY = g - 60; // 가로 모드: gamma를 앞뒤 피치 각도로 활용
-				} else if (orientation === -90) {
-					angleX = b;
-					angleY = -(g + 60);
-				} else {
-					angleX = g;
-					angleY = b - 60; // 세로 모드: beta를 앞뒤 피치 각도로 활용 (기본 60도 파지 기준)
-				}
+                var angleX = 0;
+                var angleY = 0;
 
-				if (angleX !== null && angleX !== undefined) {
-					sensorX = Math.max(-0.12, Math.min(0.12, angleX * 0.003)); // 감도 대폭 경감 (0.015 -> 0.003)
-					sensorY = Math.max(-0.12, Math.min(0.12, angleY * 0.002)); // Y축 피치 감도 대폭 경감 (0.012 -> 0.002)
-					desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
-					hasOrientationData = true;
-				}
-			});
+                if (orientation === 90) {
+                    angleX = -b;
+                    angleY = g - 60; // 가로 모드: gamma를 앞뒤 피치 각도로 활용
+                } else if (orientation === -90) {
+                    angleX = b;
+                    angleY = -(g + 60);
+                } else {
+                    angleX = g;
+                    angleY = b - 60; // 세로 모드: beta를 앞뒤 피치 각도로 활용 (기본 60도 파지 기준)
+                }
 
-			// 갤럭시/최신 안드로이드 크롬 각도센서 차단 대응용 X-Y 평면 2D devicemotion 가속도 센서 연동
-			window.addEventListener('devicemotion', function (e) {
-				if (!isPageVisible || hasOrientationData) return;
-				if (e.accelerationIncludingGravity) {
-					var ax = e.accelerationIncludingGravity.x || 0;
-					var ay = e.accelerationIncludingGravity.y || 0;
-					var orientation = window.orientation || 0;
-					
-					var gravityX = 0;
-					var gravityY = 0;
+                if (angleX !== null && angleX !== undefined) {
+                    sensorX = Math.max(-0.10, Math.min(0.10, angleX * 0.003)); // 좌우 감도는 매우 느리게 유지
+                    sensorY = Math.max(-0.35, Math.min(0.35, angleY * 0.016)); // 위아래 감도는 빠르게 왔다갔다하도록 상향 (0.002 -> 0.016)
+                    desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
+                    hasOrientationData = true;
+                }
+            });
 
-					if (orientation === 90) {
-						gravityX = ay;
-						gravityY = -ax - 5.5;
-					} else if (orientation === -90) {
-						gravityX = -ay;
-						gravityY = ax - 5.5;
-					} else {
-						gravityX = -ax;
-						gravityY = ay - 5.5; // 기본 세운 성분인 약 5.5m/s^2을 차감한 값을 피치 중력으로 매핑
-					}
+            // 갤럭시/최신 안드로이드 크롬 각도센서 차단 대응용 X-Y 평면 2D devicemotion 가속도 센서 연동
+            window.addEventListener('devicemotion', function (e) {
+                if (!isPageVisible || hasOrientationData) return;
+                if (e.accelerationIncludingGravity) {
+                    var ax = e.accelerationIncludingGravity.x || 0;
+                    var ay = e.accelerationIncludingGravity.y || 0;
+                    var orientation = window.orientation || 0;
 
-					sensorX = Math.max(-0.12, Math.min(0.12, gravityX * 0.012)); // 감도 대폭 경감 (0.06 -> 0.012)
-					sensorY = Math.max(-0.12, Math.min(0.12, gravityY * 0.01));  // 감도 대폭 경감 (0.05 -> 0.01)
-					desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
-				}
-			});
+                    var gravityX = 0;
+                    var gravityY = 0;
 
-			function updatePointer(clientX, clientY) {
-				var rect = banner.getBoundingClientRect();
-				mouseX = clientX - rect.left;
-				mouseY = clientY - rect.top;
-			}
-			banner.addEventListener('mousemove', function (e) { updatePointer(e.clientX, e.clientY); });
-			banner.addEventListener('mouseleave', function () { mouseX = -999; mouseY = -999; });
-			banner.addEventListener('touchstart', function (e) {
-				e.preventDefault();
-				updatePointer(e.touches[0].clientX, e.touches[0].clientY);
-			}, { passive: false });
-			banner.addEventListener('touchmove', function (e) {
-				e.preventDefault();
-				updatePointer(e.touches[0].clientX, e.touches[0].clientY);
-			}, { passive: false });
-			banner.addEventListener('touchend', function () { mouseX = -999; mouseY = -999; });
+                    if (orientation === 90) {
+                        gravityX = ay;
+                        gravityY = -ax - 5.5;
+                    } else if (orientation === -90) {
+                        gravityX = -ay;
+                        gravityY = ax - 5.5;
+                    } else {
+                        gravityX = -ax;
+                        gravityY = ay - 5.5; // 기본 세운 성분인 약 5.5m/s^2을 차감한 값을 피치 중력으로 매핑
+                    }
 
-			function loop() {
-				if (ended) return;
-				if (!isPageVisible) {
-					requestAnimationFrame(loop);
-					return;
-				}
-				// 구슬 골인 및 삭제 시 배열 안전성 확보를 위해 역순 스캔
-				for (var i = balls.length - 1; i >= 0; i--) {
-					var b = balls[i];
-					b.vx += sensorX;
-					b.vy += desktopGravityY + sensorY;
+                    sensorX = Math.max(-0.10, Math.min(0.10, gravityX * 0.012)); // 좌우 감도는 느리게 유지
+                    sensorY = Math.max(-0.35, Math.min(0.35, gravityY * 0.08));  // 위아래 감도는 빠르게 상향 (0.01 -> 0.08)
+                    desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
+                }
+            });
 
-					var dx = b.x - mouseX;
-					var dy = b.y - mouseY;
-					var dist = Math.sqrt(dx * dx + dy * dy);
-					if (dist < 65 && dist > 0.1) {
-						var force = (65 - dist) / 65 * 3.5; // 마우스 조작 반경 확대 및 감도 상향 (45/2.5 -> 65/3.5)
-						b.vx += (dx / dist) * force;
-						b.vy += (dy / dist) * force;
-					}
-					b.vx *= FRICTION;
-					b.vy *= FRICTION;
-					b.x += b.vx;
-					b.y += b.vy;
+            function updatePointer(clientX, clientY) {
+                var rect = banner.getBoundingClientRect();
+                mouseX = clientX - rect.left;
+                mouseY = clientY - rect.top;
+            }
+            banner.addEventListener('mousemove', function (e) { updatePointer(e.clientX, e.clientY); });
+            banner.addEventListener('mouseleave', function () { mouseX = -999; mouseY = -999; });
+            banner.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: false });
+            banner.addEventListener('touchmove', function (e) {
+                e.preventDefault();
+                updatePointer(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: false });
+            banner.addEventListener('touchend', function () { mouseX = -999; mouseY = -999; });
 
-					if (b.x < R) { b.x = R; b.vx *= -BOUNCE; }
-					if (b.x > W - R) { b.x = W - R; b.vx *= -BOUNCE; }
-					if (b.y < R) { b.y = R; b.vy *= -BOUNCE; }
-					if (b.y > H - R) { b.y = H - R; b.vy *= -BOUNCE; }
+            function loop() {
+                if (ended) return;
+                if (!isPageVisible) {
+                    requestAnimationFrame(loop);
+                    return;
+                }
+                // 구슬 골인 및 삭제 시 배열 안전성 확보를 위해 역순 스캔
+                for (var i = balls.length - 1; i >= 0; i--) {
+                    var b = balls[i];
+                    b.vx += sensorX;
+                    b.vy += desktopGravityY + sensorY;
 
-					// 우측 골 박스 영역 골인 체크 (W-76px ~ W-20px, 세로 중앙 높이 기준)
-					var inGoalX = b.x > (W - 76) && b.x < (W - 20);
-					var inGoalY = b.y > (H / 2 - 28) && b.y < (H / 2 + 28);
+                    var dx = b.x - mouseX;
+                    var dy = b.y - mouseY;
+                    var dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 65 && dist > 0.1) {
+                        var force = (65 - dist) / 65 * 3.5; // 마우스 조작 반경 확대 및 감도 상향 (45/2.5 -> 65/3.5)
+                        b.vx += (dx / dist) * force;
+                        b.vy += (dy / dist) * force;
+                    }
+                    b.vx *= FRICTION;
+                    b.vy *= FRICTION;
+                    b.x += b.vx;
+                    b.y += b.vy;
 
-					if (inGoalX && inGoalY) {
-						if (b.el && b.el.parentNode) {
-							layer.removeChild(b.el);
-						}
-						balls.splice(i, 1);
+                    if (b.x < R) { b.x = R; b.vx *= -BOUNCE; }
+                    if (b.x > W - R) { b.x = W - R; b.vx *= -BOUNCE; }
+                    if (b.y < R) { b.y = R; b.vy *= -BOUNCE; }
+                    if (b.y > H - R) { b.y = H - R; b.vy *= -BOUNCE; }
 
-						if (goalBox) {
-							goalBox.innerHTML = '남은 구슬<br>' + balls.length + '개';
-						}
+                    // 우측 골 박스 영역 골인 체크 (W-76px ~ W-20px, 세로 중앙 높이 기준)
+                    var inGoalX = b.x > (W - 76) && b.x < (W - 20);
+                    var inGoalY = b.y > (H / 2 - 28) && b.y < (H / 2 + 28);
 
-						if (balls.length === 0) {
-							ended = true;
-							if (goalBox) {
-								goalBox.innerHTML = '골인<br>완료!';
-							}
-							endGame(result);
-							return;
-						}
-						continue; // 제거된 구슬이므로 하위 연산 제외
-					}
+                    if (inGoalX && inGoalY) {
+                        if (b.el && b.el.parentNode) {
+                            layer.removeChild(b.el);
+                        }
+                        balls.splice(i, 1);
 
-					// 충돌 처리
-					for (var j = i - 1; j >= 0; j--) {
-						var o = balls[j];
-						var ddx = o.x - b.x;
-						var ddy = o.y - b.y;
-						var d = Math.sqrt(ddx * ddx + ddy * ddy);
-						if (d < R * 2 && d > 0.1) {
-							var overlap = (R * 2 - d) / 2;
-							var nx = ddx / d, ny = ddy / d;
-							b.x -= nx * overlap; b.y -= ny * overlap;
-							o.x += nx * overlap; o.y += ny * overlap;
-						}
-					}
-					b.el.style.left = (b.x - R) + 'px';
-					b.el.style.top = (b.y - R) + 'px';
-				}
-				requestAnimationFrame(loop);
-			}
-			loop();
+                        if (goalBox) {
+                            goalBox.innerHTML = '남은 구슬<br>' + balls.length + '개';
+                        }
 
-			// 10번 성공 모달 전체 영역 이동 연동
-			if (result) {
-				result.addEventListener('click', function () {
-					window.open('https://www.naver.com', '_blank');
-				});
-				var actionBtn = result.querySelector('.result-action-btn');
-				if (actionBtn) {
-					actionBtn.addEventListener('click', function (e) {
-						e.stopPropagation();
-						window.open('https://www.naver.com', '_blank');
-					});
-				}
-			}
-		})();
-	</script>
+                        if (balls.length === 0) {
+                            ended = true;
+                            if (goalBox) {
+                                goalBox.innerHTML = '골인<br>완료!';
+                            }
+                            endGame(result);
+                            return;
+                        }
+                        continue; // 제거된 구슬이므로 하위 연산 제외
+                    }
+
+                    // 충돌 처리
+                    for (var j = i - 1; j >= 0; j--) {
+                        var o = balls[j];
+                        var ddx = o.x - b.x;
+                        var ddy = o.y - b.y;
+                        var d = Math.sqrt(ddx * ddx + ddy * ddy);
+                        if (d < R * 2 && d > 0.1) {
+                            var overlap = (R * 2 - d) / 2;
+                            var nx = ddx / d, ny = ddy / d;
+                            b.x -= nx * overlap; b.y -= ny * overlap;
+                            o.x += nx * overlap; o.y += ny * overlap;
+                        }
+                    }
+                    b.el.style.left = (b.x - R) + 'px';
+                    b.el.style.top = (b.y - R) + 'px';
+                }
+                requestAnimationFrame(loop);
+            }
+            loop();
+
+            // 10번 성공 모달 전체 영역 이동 연동
+            if (result) {
+                result.addEventListener('click', function () {
+                    window.open('https://www.naver.com', '_blank');
+                });
+                var actionBtn = result.querySelector('.result-action-btn');
+                if (actionBtn) {
+                    actionBtn.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        window.open('https://www.naver.com', '_blank');
+                    });
+                }
+            }
+        })();
+    </script>
 
 </body>
 
