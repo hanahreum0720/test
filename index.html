@@ -422,6 +422,13 @@
             var balls = [];
             var ended = false;
 
+            // 초기 파지각 보정 및 틸트 활성화 변수
+            var baseBeta = null;
+            var baseGamma = null;
+            var baseAx = null;
+            var baseAy = null;
+            var activated = false;
+
             function updateSize() {
                 W = banner.clientWidth || 720;
                 H = banner.clientHeight || 120;
@@ -474,23 +481,41 @@
                 var b = e.beta;
                 var orientation = window.orientation || 0;
 
+                if (g === null || b === null) return;
+
+                // 최초 센서 측정 시점을 기준(파지각)으로 삼음
+                if (baseBeta === null) {
+                    baseBeta = b;
+                    baseGamma = g;
+                    return;
+                }
+
+                // 기기를 5도 이상 기울이거나 움직일 때 비로소 활성화
+                if (!activated) {
+                    var diffBeta = Math.abs(b - baseBeta);
+                    var diffGamma = Math.abs(g - baseGamma);
+                    if (diffBeta > 5 || diffGamma > 5) {
+                        activated = true;
+                    }
+                }
+
                 var angleX = 0;
                 var angleY = 0;
 
                 if (orientation === 90) {
-                    angleX = -b;
-                    angleY = g - 60; // 가로 모드: gamma를 앞뒤 피치 각도로 활용
+                    angleX = -(b - baseBeta);
+                    angleY = g - baseGamma;
                 } else if (orientation === -90) {
-                    angleX = b;
-                    angleY = -(g + 60);
+                    angleX = b - baseBeta;
+                    angleY = -(g - baseGamma);
                 } else {
-                    angleX = g;
-                    angleY = b - 60; // 세로 모드: beta를 앞뒤 피치 각도로 활용 (기본 60도 파지 기준)
+                    angleX = g - baseGamma;
+                    angleY = b - baseBeta;
                 }
 
-                if (angleX !== null && angleX !== undefined) {
+                if (activated) {
                     sensorX = Math.max(-0.10, Math.min(0.10, angleX * 0.003)); // 좌우 감도는 매우 느리게 유지
-                    sensorY = Math.max(-0.35, Math.min(0.35, angleY * 0.016)); // 위아래 감도는 빠르게 왔다갔다하도록 상향 (0.002 -> 0.016)
+                    sensorY = Math.max(-0.35, Math.min(0.35, angleY * 0.016)); // 위아래 감도는 빠르게 왔다갔다하도록 상향
                     desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
                     hasOrientationData = true;
                 }
@@ -504,23 +529,39 @@
                     var ay = e.accelerationIncludingGravity.y || 0;
                     var orientation = window.orientation || 0;
 
+                    if (baseAx === null) {
+                        baseAx = ax;
+                        baseAy = ay;
+                        return;
+                    }
+
+                    if (!activated) {
+                        var diffAx = Math.abs(ax - baseAx);
+                        var diffAy = Math.abs(ay - baseAy);
+                        if (diffAx > 1.0 || diffAy > 1.0) {
+                            activated = true;
+                        }
+                    }
+
                     var gravityX = 0;
                     var gravityY = 0;
 
                     if (orientation === 90) {
-                        gravityX = ay;
-                        gravityY = -ax - 5.5;
+                        gravityX = ay - baseAy;
+                        gravityY = -(ax - baseAx);
                     } else if (orientation === -90) {
-                        gravityX = -ay;
-                        gravityY = ax - 5.5;
+                        gravityX = -(ay - baseAy);
+                        gravityY = ax - baseAx;
                     } else {
-                        gravityX = -ax;
-                        gravityY = ay - 5.5; // 기본 세운 성분인 약 5.5m/s^2을 차감한 값을 피치 중력으로 매핑
+                        gravityX = -(ax - baseAx);
+                        gravityY = ay - baseAy;
                     }
 
-                    sensorX = Math.max(-0.10, Math.min(0.10, gravityX * 0.012)); // 좌우 감도는 느리게 유지
-                    sensorY = Math.max(-0.35, Math.min(0.35, gravityY * 0.08));  // 위아래 감도는 빠르게 상향 (0.01 -> 0.08)
-                    desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
+                    if (activated) {
+                        sensorX = Math.max(-0.10, Math.min(0.10, gravityX * 0.012)); // 좌우 감도는 느리게 유지
+                        sensorY = Math.max(-0.35, Math.min(0.35, gravityY * 0.08));  // 위아래 감도는 빠르게 상향
+                        desktopGravityY = 0; // 모바일 센서 구동 시 데스크톱 하강 중력 비활성화
+                    }
                 }
             });
 
@@ -529,14 +570,16 @@
                 mouseX = clientX - rect.left;
                 mouseY = clientY - rect.top;
             }
-            banner.addEventListener('mousemove', function (e) { updatePointer(e.clientX, e.clientY); });
+            banner.addEventListener('mousemove', function (e) { activated = true; updatePointer(e.clientX, e.clientY); });
             banner.addEventListener('mouseleave', function () { mouseX = -999; mouseY = -999; });
             banner.addEventListener('touchstart', function (e) {
                 e.preventDefault();
+                activated = true;
                 updatePointer(e.touches[0].clientX, e.touches[0].clientY);
             }, { passive: false });
             banner.addEventListener('touchmove', function (e) {
                 e.preventDefault();
+                activated = true;
                 updatePointer(e.touches[0].clientX, e.touches[0].clientY);
             }, { passive: false });
             banner.addEventListener('touchend', function () { mouseX = -999; mouseY = -999; });
@@ -547,17 +590,23 @@
                     requestAnimationFrame(loop);
                     return;
                 }
+
+                var currentSensorX = activated ? sensorX : 0;
+                var currentSensorY = activated ? sensorY : 0;
+                var currentGravityY = activated ? desktopGravityY : 0;
+
                 // 구슬 골인 및 삭제 시 배열 안전성 확보를 위해 역순 스캔
                 for (var i = balls.length - 1; i >= 0; i--) {
                     var b = balls[i];
-                    b.vx += sensorX;
-                    b.vy += desktopGravityY + sensorY;
+                    b.vx += currentSensorX;
+                    b.vy += currentGravityY + currentSensorY;
 
                     var dx = b.x - mouseX;
                     var dy = b.y - mouseY;
                     var dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < 65 && dist > 0.1) {
-                        var force = (65 - dist) / 65 * 3.5; // 마우스 조작 반경 확대 및 감도 상향 (45/2.5 -> 65/3.5)
+                        activated = true;
+                        var force = (65 - dist) / 65 * 3.5; // 마우스 조작 반경 확대 및 감도 상향
                         b.vx += (dx / dist) * force;
                         b.vy += (dy / dist) * force;
                     }
